@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --palette-pink: #FFD3F6;
+  --palette-mint: #C0E6DE;
+  --palette-navy: #0D132C;
+  --palette-teal: #426B69;
+  --palette-porcelain: #F4F4F8;
+
+  --color-noir: #0D132C;
+  --color-noir-light: #161F42;
+  --color-noir-hover: #070A18;
+  
+  --color-slate-teal: #426B69;
+  --color-slate-teal-light: #5A8F8C;
+  --color-slate-teal-soft: rgba(66, 107, 105, 0.14);
+
+  --color-rose: #FFD3F6;
+  --color-rose-dark: #8C2B72;
+  --color-rose-soft: rgba(255, 211, 246, 0.35);
+
+  --color-mint: #C0E6DE;
+  --color-mint-dark: #234D46;
+  --color-mint-soft: rgba(192, 230, 222, 0.35);
+
+  --color-bg-canvas: #F4F4F8;
+  --color-bg-canvas-warm: #FAF9FC;
+  --color-surface-card: #FFFFFF;
+  --color-surface-tinted: #EBEBF2;
+  --color-surface-subtle: #E1E1EB;
+
+  --color-text-main: #0D132C;
+  --color-text-secondary: #313B56;
+  --color-text-muted: #5C6784;
+  --color-text-light: #8E97AE;
+
+  --color-border-subtle: rgba(13, 19, 44, 0.08);
+  --color-border-medium: rgba(13, 19, 44, 0.16);
+
+  --radius-default: 10px;
+}
+
+.dark,
+.ambience-cozy-night {
+  --color-bg-canvas: #070A18;
+  --color-bg-canvas-warm: #0D132C;
+  --color-surface-card: #121938;
+  --color-surface-tinted: #18214A;
+  --color-surface-subtle: #212C5C;
+  --color-text-main: #F4F4F8;
+  --color-text-secondary: #C0E6DE;
+  --color-text-muted: #8E97AE;
+  --color-border-subtle: rgba(192, 230, 222, 0.15);
+  --color-border-medium: rgba(192, 230, 222, 0.28);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg-canvas);
+  color: var(--color-text-main);
+  transition: background-color 400ms cubic-bezier(0.16, 1, 0.3, 1), color 400ms cubic-bezier(0.16, 1, 0.3, 1);
+  font-family: var(--font-outfit), sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom Luxury Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-canvas);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-slate-teal);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-noir);
+}
+
+/* Spool spin animation */
+@keyframes spinMechanical {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-mechanical {
+  animation: spinMechanical 2.2s linear infinite;
+}

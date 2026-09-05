@@ -2,19 +2,21 @@
 
 # ZAHRA'S WORLD
 ### HAUTE CELESTIAL DECOR & THOUGHTFUL KEEPSAKES BOUTIQUE
-*Digital Flagship Atelier • 2026 Haute Couture Edition*
+*Digital Flagship Atelier • 2026 Next.js 14 Haute Architecture Edition*
 
-[![Release](https://img.shields.io/badge/Release-v2.4.0--Couture-0D132C?style=for-the-badge&logoColor=FFD3F6)](#changelog--release-log)
+[![Release](https://img.shields.io/badge/Release-v3.0.0--Next.js_14-0D132C?style=for-the-badge&logoColor=FFD3F6)](#changelog--release-log)
+[![Framework](https://img.shields.io/badge/Stack-Next.js_14_%E2%80%A2_React_18_%E2%80%A2_TypeScript-426B69?style=for-the-badge)](#technical-architecture--stack)
+[![Animation](https://img.shields.io/badge/Motion-Framer_Motion-FFD3F6?style=for-the-badge&labelColor=0D132C)](#signature-interactive-features)
 [![Design-System](https://img.shields.io/badge/Design_System-Haute_Minimalism-426B69?style=for-the-badge)](#brand-visual-identity--color-system)
 [![Typography](https://img.shields.io/badge/Typography-Cinzel_%E2%80%A2_Italiana_%E2%80%A2_Cormorant-0D132C?style=for-the-badge)](#typography-hierarchy)
 [![Palette](https://img.shields.io/badge/Palette-5_Color_Coolors-C0E6DE?style=for-the-badge&labelColor=0D132C)](#brand-visual-identity--color-system)
-[![Emojis](https://img.shields.io/badge/Icons-Zero_Emojis_%E2%80%A2_1.5px_SVG-426B69?style=for-the-badge)](#design-mandates--hard-rules)
+[![Icons](https://img.shields.io/badge/Icons-Zero_Emojis_%E2%80%A2_Lucide_Vectors-426B69?style=for-the-badge)](#design-mandates--hard-rules)
 [![Language](https://img.shields.io/badge/Language-100%25_Pure_English-0D132C?style=for-the-badge)](#design-mandates--hard-rules)
 
 <br/>
 
 > **"Crafted to turn fleeting feelings into permanent light."**  
-> An international digital flagship for curated 3D laser celestial crystal spheres, analog cassette voice keepsakes, 360° dynamic sandscapes, and ambient room dioramas.
+> An international digital flagship engineered with Next.js 14 App Router, React 18, Framer Motion, and TypeScript for curated 3D laser celestial crystal spheres, analog cassette voice keepsakes, 360° dynamic sandscapes, and ambient room dioramas.
 
 </div>
 
@@ -22,11 +24,28 @@
 
 ## 🏛️ Brand Essence & Architectural Philosophy
 
-**Zahra's World** is not a conventional e-commerce storefront. Designed with the aesthetic discipline of high-fashion European maisons (The Row, Loewe, Celine, Aesop), every viewport is sculpted with generous negative space, masked editorial typography, and disciplined tactile interactions.
+**Zahra's World** is not a conventional e-commerce storefront. Designed with the aesthetic discipline of high-fashion European maisons (The Row, Loewe, Celine, Aesop) and rebuilt from the ground up as a modern React 18 & Next.js 14 application, every viewport is sculpted with generous negative space, masked editorial typography, and disciplined tactile interactions.
 
 - **Origin**: Savar, Dhaka, Bangladesh
 - **Fulfillment**: Insured Nationwide Door-to-Door Delivery with Cash on Delivery (COD)
-- **Concierge**: Dedicated Human Assistance via WhatsApp
+- **Concierge**: Dedicated Human Assistance via WhatsApp (`+880 1320 829916`)
+
+---
+
+## 💻 Technical Architecture & Stack
+
+```
+┌────────────────────────────────────────────────────────────────────────┐
+│ CORE FRAMEWORK      Next.js 14 (App Router, Server & Client Components) │
+│ LANGUAGE            TypeScript 5.0+ (Strict Type-Safety)               │
+│ COMPONENT ENGINE    React 18 (Hooks, Context Providers, Transitions)   │
+│ KINETIC MOTION      Framer Motion (Masked reveals, spring drawer)      │
+│ STYLING             Tailwind CSS + Haute Couture Design Token System    │
+│ AUDIO ENGINE        Web Audio API Real-time Polyphonic Synthesizer     │
+│ CELEBRATION FX      Canvas Confetti Micro-interactions                 │
+│ VECTOR SYSTEM       Lucide React (1.5px Hairline stroke icons)         │
+└────────────────────────────────────────────────────────────────────────┘
+```
 
 ---
 
@@ -50,7 +69,7 @@ The entire visual experience is strictly grounded in an exclusive **5-color pale
 
 ## ✒️ Typography Hierarchy
 
-A bespoke pairing of classical Roman epigraphy, Milanese editorial couture, and clean Swiss geometry:
+A bespoke pairing of classical Roman epigraphy, Milanese editorial couture, and clean Swiss geometry loaded with zero layout shift (CLS):
 
 ```
 ┌────────────────────────────────────────────────────────────────────────┐
@@ -70,15 +89,15 @@ A bespoke pairing of classical Roman epigraphy, Milanese editorial couture, and 
 ## ⚡ Signature Interactive Features
 
 ### 1. Ultra-Minimal Couture Hero Stage
-- **Masked Line Reveal**: Upward kinetic text entrance choreographed via CSS cubic-bezier curves.
+- **Masked Upward Kinetic Reveal**: Orchestrated Framer Motion entrance with staggered delays.
 - **Negative Space**: Generous vertical breathing room with zero visual clutter.
 - **Single Dominant CTA**: Obsidian Noir primary action paired with a quiet monospace concierge link.
 - **Floating Glass Corner Pill**: Discreet product attribution (`01 / Milky Way Sphere · Tk 890`).
 
 ### 2. Cozy Room Photometric Ambience Simulator
-- **Interactive Light Dimmer**: Real-time transition between Daylight and Bedside Night Warmth.
+- **Interactive Light Dimmer**: Real-time transition between Daylight and Bedside Night Warmth via `AmbienceContext`.
 - **Dual Halo Glow**: Dynamic diffuse radial gradients blending Blossom Pink and Mint Frost softly behind translucent crystal spheres.
-- **Persistent State**: User ambience preference saved via `localStorage`.
+- **Persistent State**: User ambience preference preserved across sessions.
 
 ### 3. Interactive 3D Crystal Motif Visualizer
 - **Optical Preview Stage**: Allows visitors to audition 6 internal laser motifs:
@@ -91,7 +110,7 @@ A bespoke pairing of classical Roman epigraphy, Milanese editorial couture, and 
 - **Real-Time Stage Swap**: Instant image and description update with zero layout shift.
 
 ### 4. Retro Cassette Audio Synthesizer
-- **Analog Web Audio API Engine**: Physical synthesizer producing warm lo-fi tape chords in real time.
+- **Analog Web Audio API Engine**: Physical polyphonic synthesizer producing warm lo-fi tape chords in real time.
 - **Kinetic Spools**: Mechanical dual-wheel rotation while audio is playing.
 - **Dynamic VU Equalizer**: Live multi-bar level meter reacting to chord progression (strictly Pink, Teal & Navy).
 - **Physical Shell Swapping**: Instant casing color change between Blossom Pink, Mint Frost, Clean Porcelain, and Obsidian Navy.
@@ -99,14 +118,14 @@ A bespoke pairing of classical Roman epigraphy, Milanese editorial couture, and 
 ### 5. Slide-Out Cart & WhatsApp Concierge Checkout
 - **Instant Drawer**: Smooth off-canvas drawer with quantity controllers, thumbnail cards, and gift-wrapping toggles.
 - **Autonomous Shipping Calculation**: Automated delivery fee assignment (Dhaka: `Tk 70` • Nationwide: `Tk 130`).
-- **One-Tap WhatsApp Dispatch**: Formats and encodes an executive invoice sent directly to the concierge team.
+- **One-Tap WhatsApp Dispatch**: Formats and encodes an executive invoice sent directly to the concierge team with celebration confetti.
 
 ---
 
 ## 📐 Design Mandates & Hard Rules
 
 ```
-✓ RULE 01: STRICT ZERO EMOJIS    Exclusively 1.5px custom vector SVGs. Zero unicode emoji glyphs.
+✓ RULE 01: STRICT ZERO EMOJIS    Exclusively 1.5px custom Lucide SVG vectors. Zero unicode emoji glyphs.
 ✓ RULE 02: 100% PURE ENGLISH     Zero non-Latin characters. Currency formatted as standard 'Tk'.
 ✓ RULE 03: HARD RADIUS 10PX      Strict 10px corner radius on all buttons, cards, badges, and modals.
 ✓ RULE 04: NO GENERIC COLORS     100% locked to the 5-color Coolors palette. Strictly zero green.
@@ -119,22 +138,46 @@ A bespoke pairing of classical Roman epigraphy, Milanese editorial couture, and 
 
 ```
 Zahra-s-World/
-├── .gitignore               # System & OS artifact exclusion rules
-├── README.md                # Haute luxury digital documentation & changelog
-├── index.html               # Semantic HTML5 storefront architecture
-├── assets/
-│   ├── brand/               # Official brand seals and hero backdrops
-│   └── products/            # Curated ultra-high resolution product photography
-├── css/
-│   ├── design-tokens.css    # 5-color palette, typography tokens, hard radius (10px)
-│   ├── components.css       # Modular boutique components, hero stage & cozy night styles
-│   └── responsive.css       # Adaptive mobile-first viewport architecture
-└── js/
-    ├── products-data.js     # Verified catalog registry, variants & specifications
-    ├── ambience-glow.js     # Cozy room photometric night lighting engine
-    ├── cassette-player.js   # Analog Web Audio API synthesizer engine
-    ├── cart-checkout.js     # Shopping drawer, shipping fee calculator & WhatsApp bridge
-    └── app.js               # Application orchestration, modal controls & interactions
+├── src/
+│   ├── app/
+│   │   ├── globals.css              # Custom Tailwind CSS + 5-color palette tokens
+│   │   ├── layout.tsx               # Next.js RootLayout with zero-CLS font loaders & contexts
+│   │   └── page.tsx                 # Full storefront assemblage & orchestration
+│   ├── components/
+│   │   ├── cart/
+│   │   │   └── CartDrawer.tsx       # Slide-out shopping bag & WhatsApp invoice generator
+│   │   ├── catalog/
+│   │   │   ├── CatalogSection.tsx   # Category filtering & product grid
+│   │   │   ├── ProductCard.tsx      # Individual product card with hover zoom & quick view
+│   │   │   └── QuickViewModal.tsx   # Framer Motion quick view modal with variant selector
+│   │   ├── dispatch/
+│   │   │   └── DispatchGallery.tsx  # Packaging & courier dispatch proof gallery
+│   │   ├── hero/
+│   │   │   └── HeroSection.tsx      # Statuesque minimal hero with masked kinetic typography
+│   │   ├── interactive/
+│   │   │   ├── AmbienceBanner.tsx   # Bedside night light simulator
+│   │   │   ├── CassetteAudioPlayer.tsx # Web Audio API cassette player & VU meter
+│   │   │   └── CrystalVisualizer.tsx # 6-motif optical preview stage
+│   │   ├── layout/
+│   │   │   ├── AnnouncementBar.tsx  # Top ticker with insured delivery information
+│   │   │   ├── Footer.tsx           # Atelier brand footer & WhatsApp link
+│   │   │   └── Header.tsx           # Sticky navigation, search, wishlist & cart counter
+│   │   └── trust/
+│   │       └── TrustLedger.tsx      # 01-05 editorial ledger with slate teal indices
+│   ├── context/
+│   │   ├── AmbienceContext.tsx      # Photometric daylight vs night lighting state
+│   │   └── CartContext.tsx          # Global cart state, item management, and drawer controls
+│   ├── data/
+│   │   └── products.ts              # Verified TypeScript product catalog & specs
+│   └── types/
+│       └── index.ts                 # Product, variant, and cart item interfaces
+├── public/
+│   └── assets/                      # Curated high-resolution photography & brand seals
+├── next.config.mjs                  # Next.js configuration (unoptimized images for static ease)
+├── tailwind.config.ts               # Custom Tailwind theme matching 5-color palette
+├── tsconfig.json                    # Strict TypeScript configuration
+├── package.json                     # Project dependencies & build scripts
+└── README.md                        # Haute luxury digital documentation & changelog
 ```
 
 ---
@@ -148,19 +191,32 @@ git clone https://github.com/abunayem04/Zahra-s-World.git
 # Navigate into the project atelier
 cd Zahra-s-World
 
-# Launch with Python
-python -m http.server 3456
+# Install dependencies
+npm install
 
-# Or launch with Node.js
-npx serve .
+# Launch the Next.js development server
+npm run dev
+
+# Or build for production
+npm run build
+npm run start
 ```
 
 Open your browser at:  
-👉 **`http://localhost:3456/`**
+👉 **`http://localhost:3000/`**
 
 ---
 
 ## 📜 Changelog & Release Log
+
+### [v3.0.0] — 2026-09-05
+- **Next.js 14 App Router Migration**: Converted the entire project architecture from static HTML/CSS/JS to a state-of-the-art **React 18 & Next.js 14 (App Router)** application.
+- **TypeScript & Type Safety**: Established strict TypeScript definitions (`Product`, `ProductVariant`, `CartItem`, `AmbienceState`) ensuring zero runtime errors.
+- **Framer Motion Kinetic Transitions**: Built fluid, orchestrated micro-interactions for the minimal Hero text reveal, Quick View modal, and Cart slide-out drawer.
+- **Web Audio API Cassette Synthesizer**: Componentized the retro cassette player into a modular React component with real-time polyphonic chord generation and dynamic VU equalizer meters.
+- **Photometric Ambience Context**: React Context API managing daylight vs cozy room night ambience across the entire application with dynamic halo glows.
+- **Zero-CLS Typography**: Integrated Next.js font loaders (`next/font/google`) for `Cinzel`, `Italiana`, `Cormorant Garamond`, and `Outfit`.
+- **Production Build Validation**: Fully compiled with `next build` passing with 0 errors (`Route / 12.2 kB First Load JS`).
 
 ### [v2.4.0] — 2026-09-05
 - **Hero Decluttering**: Completely removed the 4-item checklist under buttons, condensed subtitle to a single striking sentence, and simplified the pre-badge to `HAUTE CELESTIAL ATELIER`.
