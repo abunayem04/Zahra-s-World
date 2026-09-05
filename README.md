@@ -4,7 +4,7 @@
 ### HAUTE CELESTIAL DECOR & THOUGHTFUL KEEPSAKES BOUTIQUE
 *Digital Flagship Atelier • 2026 Next.js 14 Haute Architecture Edition*
 
-[![Release](https://img.shields.io/badge/Release-v3.4.0--Apple_Glass_Diagonal_Hero-0D132C?style=for-the-badge&logoColor=FFD3F6)](#changelog--release-log)
+[![Release](https://img.shields.io/badge/Release-v3.5.0--Straight_Apple_Glass_Hero-0D132C?style=for-the-badge&logoColor=FFD3F6)](#changelog--release-log)
 [![Framework](https://img.shields.io/badge/Stack-Next.js_14_%E2%80%A2_React_18_%E2%80%A2_TypeScript-426B69?style=for-the-badge)](#technical-architecture--stack)
 [![Animation](https://img.shields.io/badge/Motion-Framer_Motion-FFD3F6?style=for-the-badge&labelColor=0D132C)](#signature-interactive-features)
 [![Design-System](https://img.shields.io/badge/Design_System-Haute_Minimalism-426B69?style=for-the-badge)](#brand-visual-identity--color-system)
@@ -208,6 +208,16 @@ Open your browser at:
 ---
 
 ## 📜 Changelog & Release Log
+
+### [v3.5.0] — 2026-09-05
+- **Straight Horizontal Frosted Glass Louvers & Caustic Optical Glassmorphism Hero**:
+  - Re-aligned the 20 exact palette color steps horizontally ("sojasuji") across the full viewport, exactly matching the orientation of the reference image.
+  - Engineered genuine optical glassmorphism physics: placed high-intensity luminous caustic light orbs behind the translucent glass louvers, producing authentic light dispersion and refraction through the glass thickness.
+  - Detailed each horizontal glass slab with:
+    - `1.2px` specular top bevel highlight (`box-shadow: inset 0 1.2px 0 0 rgba(255, 255, 255, 0.65)`).
+    - `1px` bottom depth refraction shadow line (`rgba(0, 0, 0, 0.18)`).
+    - Prismatic diagonal surface light sheen.
+  - Floating Apple-grade frosted glass monolith (`backdrop-blur-28px`, multi-layered specular borders and depth shadows, strict 10px hard radius).
 
 ### [v3.4.0] — 2026-09-05
 - **Exact Diagonal Stepped Palette & Apple-Grade Frosted Glassmorphism Hero**:
