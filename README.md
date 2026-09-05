@@ -4,7 +4,7 @@
 ### HAUTE CELESTIAL DECOR & THOUGHTFUL KEEPSAKES BOUTIQUE
 *Digital Flagship Atelier • 2026 Next.js 14 Haute Architecture Edition*
 
-[![Release](https://img.shields.io/badge/Release-v3.5.0--Straight_Apple_Glass_Hero-0D132C?style=for-the-badge&logoColor=FFD3F6)](#changelog--release-log)
+[![Release](https://img.shields.io/badge/Release-v3.6.0--Seamless_Glass_Hero-0D132C?style=for-the-badge&logoColor=FFD3F6)](#changelog--release-log)
 [![Framework](https://img.shields.io/badge/Stack-Next.js_14_%E2%80%A2_React_18_%E2%80%A2_TypeScript-426B69?style=for-the-badge)](#technical-architecture--stack)
 [![Animation](https://img.shields.io/badge/Motion-Framer_Motion-FFD3F6?style=for-the-badge&labelColor=0D132C)](#signature-interactive-features)
 [![Design-System](https://img.shields.io/badge/Design_System-Haute_Minimalism-426B69?style=for-the-badge)](#brand-visual-identity--color-system)
@@ -208,6 +208,14 @@ Open your browser at:
 ---
 
 ## 📜 Changelog & Release Log
+
+### [v3.6.0] — 2026-09-05
+- **Purged Horizontal Divider Lines & Refined Seamless Glassmorphism**:
+  - Removed all white top bevel borders, bottom depth lines, and inset divider shadows between horizontal rows.
+  - Rendered seamless, continuous color transitions across the 20 stepped swatches with zero divider artifacts.
+  - Refined Apple VisionOS-level frosted glassmorphism:
+    - Added an overall frosted liquid glass diffusion layer (`backdrop-blur-4px` with radial caustic light glow) over the stepped backdrop.
+    - Upgraded floating center tablet with `backdrop-blur-36px`, `saturate(190%)`, and luminous specular glass edge bevels.
 
 ### [v3.5.0] — 2026-09-05
 - **Straight Horizontal Frosted Glass Louvers & Caustic Optical Glassmorphism Hero**:

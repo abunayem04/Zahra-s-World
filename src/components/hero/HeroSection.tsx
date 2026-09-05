@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, ArrowUpRight, Gem } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Gem, Sparkles } from "lucide-react";
 
 // Exact 20 color steps sampled directly from the user's reference image
 const GLASS_SLABS = [
@@ -30,71 +30,56 @@ const GLASS_SLABS = [
 ];
 
 export const HeroSection: React.FC = () => {
-  const [activeSlab, setActiveSlab] = useState<number | null>(null);
-
   return (
     <section className="relative overflow-hidden min-h-[85vh] lg:min-h-[90vh] flex items-center justify-center py-16 px-4 sm:px-6 lg:px-8">
       
       {/* =========================================================================
-          BACKGROUND: 20 STRAIGHT HORIZONTAL FROSTED GLASS SLABS ("SOJASUJI")
-          WITH REAL OPTICAL REFRACTION, SPECULAR BEVEL LIGHT & CAUSTIC DEPTH
+          BACKGROUND: 20 SEAMLESS HORIZONTAL COLOR STEPS (ZERO WHITE LINES)
+          AUTHENTIC FROSTED GLASSMORPHY TEXTURE & CAUSTIC DEPTH
           ========================================================================= */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10 flex flex-col justify-stretch">
         
-        {/* Luminous Light Sources Behind Glass (Crucial for Glassmorphism Illumination) */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[550px] rounded-full bg-white/70 blur-[130px] pointer-events-none" />
-        <div className="absolute top-1/2 left-1/3 w-[500px] h-[500px] rounded-full bg-[#FFD3F6]/50 blur-[140px] pointer-events-none" />
-        <div className="absolute bottom-10 right-1/4 w-[450px] h-[450px] rounded-full bg-[#C0E6DE]/30 blur-[120px] pointer-events-none" />
-
-        {/* 20 Straight Horizontal Glass Louvers Stacked Vertically */}
+        {/* 20 Clean Seamless Color Bands - Exactly Matching Reference Swatches (NO BORDERS) */}
         <div className="relative w-full h-full flex flex-col justify-stretch flex-1">
-          {GLASS_SLABS.map((slab, idx) => {
-            const isHovered = activeSlab === idx;
-            return (
-              <div
-                key={idx}
-                onMouseEnter={() => setActiveSlab(idx)}
-                onMouseLeave={() => setActiveSlab(null)}
-                className="relative w-full flex-1 min-h-[26px] sm:min-h-[30px] md:min-h-[36px] transition-all duration-300 pointer-events-auto group"
-                style={{
-                  // Translucent tinted glass substrate
-                  background: `linear-gradient(180deg, rgba(${slab.rgb}, 0.72) 0%, rgba(${slab.rgb}, 0.88) 100%)`,
-                  backdropFilter: "blur(14px)",
-                  WebkitBackdropFilter: "blur(14px)",
-                  // Apple-grade specular top bevel highlight & bottom edge shadow
-                  boxShadow: isHovered
-                    ? `inset 0 2px 0 0 rgba(255, 255, 255, 0.95), 0 4px 16px rgba(${slab.rgb}, 0.5)`
-                    : `inset 0 1.2px 0 0 rgba(255, 255, 255, 0.65), inset 0 -1px 0 0 rgba(0, 0, 0, 0.22)`,
-                  borderBottom: "1px solid rgba(0, 0, 0, 0.18)",
-                }}
-              >
-                {/* Diagonal Prismatic Glass Sheen Across Each Slab */}
-                <div 
-                  className="absolute inset-0 pointer-events-none opacity-40 group-hover:opacity-75 transition-opacity"
-                  style={{
-                    background: "linear-gradient(115deg, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.05) 35%, transparent 60%, rgba(255,255,255,0.2) 100%)",
-                  }}
-                />
-
-                {/* Micro-Refraction Glass Edge */}
-                <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/80 to-transparent pointer-events-none" />
-              </div>
-            );
-          })}
+          {GLASS_SLABS.map((slab, idx) => (
+            <div
+              key={idx}
+              className="w-full flex-1"
+              style={{
+                backgroundColor: slab.hex,
+                border: "none",
+                outline: "none",
+                margin: 0,
+                padding: 0,
+                // Zero white lines or shadows between rows
+                boxShadow: "none",
+              }}
+            />
+          ))}
         </div>
 
-        {/* Global Liquid Glass Satin Reflection Overlay */}
+        {/* Apple-Level Frosted Glass Diffusion & Luminous Caustic Light Overlay */}
         <div 
           className="absolute inset-0 pointer-events-none"
           style={{
-            background: "radial-gradient(ellipse at 50% 30%, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.05) 50%, transparent 85%)",
+            // Soft frosted sheen diffusing the stepped backdrop
+            background: `
+              radial-gradient(ellipse at 50% 30%, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.1) 45%, transparent 75%),
+              linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, transparent 50%, rgba(0, 0, 0, 0.15) 100%)
+            `,
+            backdropFilter: "blur(4px)",
+            WebkitBackdropFilter: "blur(4px)",
           }}
         />
+
+        {/* Ambient Caustic Light Points Illuminating the Glass Surface */}
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] rounded-full bg-white/40 blur-[130px] pointer-events-none" />
+        <div className="absolute bottom-16 right-1/4 w-[400px] h-[400px] rounded-full bg-[#C0E6DE]/25 blur-[120px] pointer-events-none" />
       </div>
 
       {/* =========================================================================
-          FOREGROUND: APPLE PRO GLASS FLOATING MONOLITH
-          CLEAN, STATUESQUE, ZERO CLUTTER ("HERO PAGE A KISU E RAKHA LAGBE NA")
+          FOREGROUND: APPLE PRO FROSTED GLASS FLOATING MONOLITH
+          STATUESQUE, UNCLUTTERED, PURE LUXURY
           ========================================================================= */}
       <motion.div
         initial={{ opacity: 0, y: 20, scale: 0.97 }}
@@ -102,28 +87,28 @@ export const HeroSection: React.FC = () => {
         transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
         className="relative z-20 max-w-2xl w-full mx-auto"
       >
-        {/* Apple-Level Frosted Glass Tablet Card (Strict 10px Radius) */}
+        {/* Apple VisionOS-Grade Frosted Glass Tablet Card (Strict 10px Radius) */}
         <div 
           className="relative rounded-[10px] p-8 sm:p-12 md:p-14 text-center overflow-hidden"
           style={{
-            background: "rgba(255, 255, 255, 0.32)",
-            backdropFilter: "blur(28px)",
-            WebkitBackdropFilter: "blur(28px)",
-            border: "1px solid rgba(255, 255, 255, 0.7)",
+            background: "rgba(255, 255, 255, 0.28)",
+            backdropFilter: "blur(36px) saturate(190%)",
+            WebkitBackdropFilter: "blur(36px) saturate(190%)",
+            border: "1px solid rgba(255, 255, 255, 0.75)",
             boxShadow: `
-              0 30px 90px -15px rgba(0, 0, 0, 0.28),
-              0 15px 35px -10px rgba(0, 0, 0, 0.15),
+              0 35px 90px -15px rgba(0, 0, 0, 0.32),
+              0 15px 40px -10px rgba(0, 0, 0, 0.18),
               inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.95),
               inset 0 -1.5px 2px 0 rgba(0, 0, 0, 0.12)
             `,
           }}
         >
           {/* Specular Ambient Glow Orbs inside the Glass Tablet */}
-          <div className="absolute -top-28 -left-28 w-56 h-56 rounded-full bg-white/50 blur-3xl pointer-events-none" />
-          <div className="absolute -bottom-28 -right-28 w-56 h-56 rounded-full bg-palette-pink/40 blur-3xl pointer-events-none" />
+          <div className="absolute -top-28 -left-28 w-56 h-56 rounded-full bg-white/55 blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-28 -right-28 w-56 h-56 rounded-full bg-palette-pink/45 blur-3xl pointer-events-none" />
 
           {/* Minimalist Atelier Provenance Pill */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-[10px] bg-white/70 backdrop-blur-md border border-white/80 text-noir font-mono text-[10px] font-bold uppercase tracking-[0.24em] shadow-sm mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-[10px] bg-white/75 backdrop-blur-md border border-white/80 text-noir font-mono text-[10px] font-bold uppercase tracking-[0.24em] shadow-sm mb-6">
             <Gem className="w-3.5 h-3.5 text-pink-600" />
             <span>Haute Celestial Atelier</span>
           </div>
