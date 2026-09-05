@@ -9,9 +9,7 @@ import {
   Heart, 
   Menu, 
   X, 
-  Sparkles,
-  LogIn,
-  UserPlus
+  Sparkles
 } from "lucide-react";
 import { AuthModal } from "@/components/auth/AuthModal";
 
@@ -115,39 +113,23 @@ export const Header: React.FC = () => {
             )}
           </button>
 
-          {/* Log In Button */}
+          {/* Login Button (Boutique Rounded Outline) */}
           <button
             onClick={() => setAuthMode("login")}
-            className="hidden md:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-[10px] bg-white/70 backdrop-blur-md border border-black/[0.08] hover:border-[#D81B60]/40 text-xs font-mono font-semibold uppercase tracking-[0.14em] text-noir hover:text-[#D81B60] transition-all shadow-[0_1px_3px_rgba(0,0,0,0.02)] active:scale-95"
-            aria-label="Client Log In"
+            className="hidden sm:inline-flex items-center justify-center px-4 sm:px-5 py-2 rounded-[10px] border-[1.5px] border-[#3D0C24] bg-white hover:bg-rose-50/70 text-[#3D0C24] font-sans font-semibold text-xs sm:text-[13px] tracking-tight shadow-sm hover:shadow transition-all duration-200 active:scale-95 select-none"
+            aria-label="Client Login"
           >
-            <LogIn className="w-3.5 h-3.5 text-noir/70" />
-            <span>Log In</span>
+            Login
           </button>
 
-          {/* Sign Up Button */}
+          {/* Sign Up Button (Lush Hot Pink/Magenta Pill) */}
           <button
             onClick={() => setAuthMode("signup")}
-            className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-[10px] bg-noir hover:bg-noir-light text-white text-xs font-mono font-semibold uppercase tracking-[0.14em] shadow-sm hover:shadow transition-all active:scale-95"
-            aria-label="Create Atelier Account"
+            className="hidden sm:inline-flex items-center justify-center px-4 sm:px-5 py-2 rounded-[10px] bg-gradient-to-r from-[#D81B60] to-[#C2185B] hover:from-[#E91E63] hover:to-[#D81B60] text-white font-sans font-semibold text-xs sm:text-[13px] tracking-tight shadow-[0_2px_12px_rgba(216,27,96,0.3)] hover:shadow-[0_4px_18px_rgba(216,27,96,0.4)] transition-all duration-200 active:scale-95 select-none"
+            aria-label="Client Sign Up"
           >
-            <UserPlus className="w-3.5 h-3.5 text-palette-pink" />
-            <span>Sign Up</span>
+            Sign Up
           </button>
-
-          {/* Concierge VIP Button with Live Dot */}
-          <a
-            href="https://wa.me/8801320829916"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden lg:inline-flex items-center gap-2 px-3.5 py-2 rounded-[10px] border border-black/[0.08] bg-white/70 backdrop-blur-md hover:bg-noir hover:text-white text-xs font-mono font-semibold uppercase tracking-[0.14em] text-noir transition-all duration-300 shadow-[0_1px_3px_rgba(0,0,0,0.02)] hover:shadow-sm active:scale-[0.98]"
-          >
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-            </span>
-            <span>Concierge</span>
-          </a>
 
           {/* Mobile Menu Toggle */}
           <button
@@ -213,22 +195,22 @@ export const Header: React.FC = () => {
           </a>
 
           {/* Mobile Auth Actions */}
-          <div className="pt-2 border-t border-black/[0.06] flex items-center gap-2">
+          <div className="pt-3 border-t border-black/[0.06] flex items-center gap-2.5">
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
                 setAuthMode("login");
               }}
-              className="flex-1 py-2.5 rounded-[10px] bg-white border border-black/10 text-xs font-mono font-semibold uppercase tracking-wider text-noir text-center"
+              className="flex-1 py-2.5 rounded-[10px] bg-white border-[1.5px] border-[#3D0C24] text-[#3D0C24] text-xs font-sans font-semibold tracking-tight text-center shadow-sm active:scale-95"
             >
-              Log In
+              Login
             </button>
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
                 setAuthMode("signup");
               }}
-              className="flex-1 py-2.5 rounded-[10px] bg-noir text-white text-xs font-mono font-semibold uppercase tracking-wider text-center"
+              className="flex-1 py-2.5 rounded-[10px] bg-gradient-to-r from-[#D81B60] to-[#C2185B] text-white text-xs font-sans font-semibold tracking-tight text-center shadow-md active:scale-95"
             >
               Sign Up
             </button>
