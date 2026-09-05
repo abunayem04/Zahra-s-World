@@ -4,7 +4,7 @@
 ### HAUTE CELESTIAL DECOR & THOUGHTFUL KEEPSAKES BOUTIQUE
 *Digital Flagship Atelier • 2026 Next.js 14 Haute Architecture Edition*
 
-[![Release](https://img.shields.io/badge/Release-v3.7.0--Signature_Header-0D132C?style=for-the-badge&logoColor=FFD3F6)](#changelog--release-log)
+[![Release](https://img.shields.io/badge/Release-v3.8.0--Client_Auth_Daylight-0D132C?style=for-the-badge&logoColor=FFD3F6)](#changelog--release-log)
 [![Framework](https://img.shields.io/badge/Stack-Next.js_14_%E2%80%A2_React_18_%E2%80%A2_TypeScript-426B69?style=for-the-badge)](#technical-architecture--stack)
 [![Animation](https://img.shields.io/badge/Motion-Framer_Motion-FFD3F6?style=for-the-badge&labelColor=0D132C)](#signature-interactive-features)
 [![Design-System](https://img.shields.io/badge/Design_System-Haute_Minimalism-426B69?style=for-the-badge)](#brand-visual-identity--color-system)
@@ -208,6 +208,20 @@ Open your browser at:
 ---
 
 ## 📜 Changelog & Release Log
+
+### [v3.8.0] — 2026-09-05
+- **Integrated Client Login & Sign Up Actions & Purged Dark Mode**:
+  - **Login & Sign Up Actions in Header**:
+    - Embedded sleek, luxury frosted "Log In" button and obsidian noir "Sign Up" button directly in the main header navigation cluster.
+    - Integrated mobile auth actions in the responsive drawer.
+  - **Client Atelier Auth Modal (`AuthModal.tsx`)**:
+    - Interactive modal with smooth tabs for member login and new client registration.
+    - Captures customer phone number for insured courier updates and COD dispatch.
+    - Features strict 10px radius, 100% pure English copy, and zero unicode emojis.
+  - **Dark Mode Completely Deprecated**:
+    - Removed Daylight / Cozy Mode toggle button from the header navigation.
+    - Removed `AmbienceBanner` from the home page.
+    - Hardened `AmbienceContext` to permanently purge any dark classes from `document.documentElement`, locking the application into a luminous, pristine daylight aesthetic.
 
 ### [v3.7.0] — 2026-09-05
 - **Brand Identity Calligraphy & Ultra-Premium Frosted Glass Navbar**:

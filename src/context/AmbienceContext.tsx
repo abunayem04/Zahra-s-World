@@ -18,22 +18,17 @@ export const AmbienceProvider: React.FC<{ children: React.ReactNode }> = ({ chil
 
   useEffect(() => {
     setMounted(true);
-    const saved = localStorage.getItem("zahra_ambience_night");
-    if (saved === "true") {
-      setIsNight(true);
-      document.documentElement.classList.add("dark", "ambience-cozy-night");
+    // Dark mode removed per boutique design specifications: ensure document stays in pristine daylight mode
+    document.documentElement.classList.remove("dark", "ambience-cozy-night");
+    try {
+      localStorage.removeItem("zahra_ambience_night");
+    } catch {
+      // ignore
     }
   }, []);
 
   const toggleNight = () => {
-    const next = !isNight;
-    setIsNight(next);
-    localStorage.setItem("zahra_ambience_night", String(next));
-    if (next) {
-      document.documentElement.classList.add("dark", "ambience-cozy-night");
-    } else {
-      document.documentElement.classList.remove("dark", "ambience-cozy-night");
-    }
+    // Dark mode disabled
   };
 
   return (
