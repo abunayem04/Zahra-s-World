@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cinzel, Italiana, Cormorant_Garamond, Outfit } from "next/font/google";
+import { Cinzel, Italiana, Cormorant_Garamond, Outfit, Alex_Brush } from "next/font/google";
 import "./globals.css";
 import { AmbienceProvider } from "@/context/AmbienceContext";
 import { CartProvider } from "@/context/CartContext";
@@ -13,6 +13,13 @@ const cinzel = Cinzel({
   subsets: ["latin"],
   weight: ["500", "600", "700", "800"],
   variable: "--font-cinzel",
+  display: "swap",
+});
+
+const alexBrush = Alex_Brush({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-signature",
   display: "swap",
 });
 
@@ -58,7 +65,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${cinzel.variable} ${italiana.variable} ${cormorant.variable} ${outfit.variable}`}
+      className={`${cinzel.variable} ${alexBrush.variable} ${italiana.variable} ${cormorant.variable} ${outfit.variable}`}
     >
       <body className="antialiased min-h-screen flex flex-col selection:bg-roseBlossom selection:text-noir">
         <AmbienceProvider>

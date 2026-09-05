@@ -44,6 +44,7 @@ const config: Config = {
         },
       },
       fontFamily: {
+        signature: ["var(--font-signature)", "cursive"],
         display: ["var(--font-cinzel)", "Georgia", "serif"],
         couture: ["var(--font-italiana)", "Georgia", "serif"],
         editorial: ["var(--font-cormorant)", "Georgia", "serif"],

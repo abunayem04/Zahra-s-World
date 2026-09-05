@@ -4,7 +4,7 @@
 ### HAUTE CELESTIAL DECOR & THOUGHTFUL KEEPSAKES BOUTIQUE
 *Digital Flagship Atelier • 2026 Next.js 14 Haute Architecture Edition*
 
-[![Release](https://img.shields.io/badge/Release-v3.6.0--Seamless_Glass_Hero-0D132C?style=for-the-badge&logoColor=FFD3F6)](#changelog--release-log)
+[![Release](https://img.shields.io/badge/Release-v3.7.0--Signature_Header-0D132C?style=for-the-badge&logoColor=FFD3F6)](#changelog--release-log)
 [![Framework](https://img.shields.io/badge/Stack-Next.js_14_%E2%80%A2_React_18_%E2%80%A2_TypeScript-426B69?style=for-the-badge)](#technical-architecture--stack)
 [![Animation](https://img.shields.io/badge/Motion-Framer_Motion-FFD3F6?style=for-the-badge&labelColor=0D132C)](#signature-interactive-features)
 [![Design-System](https://img.shields.io/badge/Design_System-Haute_Minimalism-426B69?style=for-the-badge)](#brand-visual-identity--color-system)
@@ -208,6 +208,17 @@ Open your browser at:
 ---
 
 ## 📜 Changelog & Release Log
+
+### [v3.7.0] — 2026-09-05
+- **Brand Identity Calligraphy & Ultra-Premium Frosted Glass Navbar**:
+  - **Logo Icon Purged**: Removed the circular emblem and diamond icon from the navigation header per user directive, allowing the brand name to breathe with pure typographic confidence.
+  - **Sweet Signature Font Typography**: Styled `Zahra's World` using the sweet, flowing luxury cursive script `Alex_Brush` (`font-signature`, `text-3xl sm:text-[38px]`) with delicate hover luster, echoing high-fashion Parisian couture ateliers.
+  - **Ultra-Premium Frosted Glass Navigation Bar**:
+    - **Backdrop**: Translucent Apple-grade frosted glass (`bg-white/85 dark:bg-noir/85 backdrop-blur-2xl border-b border-black/[0.06] shadow-[0_4px_24px_-4px_rgba(0,0,0,0.06)]`).
+    - **Luxury Search Capsule**: Sleek inset frosted input with subtle border transition, delicate 1.5px search stroke, and `⌘K` keyboard shortcut badge.
+    - **"All Creations" Satin Rose CTA**: Polished multi-stop satin rose gradient pill button (`#D81B60` to `#AD1457`) with subtle ambient glow and animated sparkles.
+    - **Frosted Wishlist & Bag Quick-Actions**: Frosted glass capsules (`bg-white/70 backdrop-blur-md border border-black/[0.08]`) with smooth micro-interactions and glowing count pill.
+    - **Photometric Ambience & Live VIP Concierge**: Upgraded Daylight/Cozy Mode toggle and added live WhatsApp VIP Concierge pill with animated emerald status pulse dot.
 
 ### [v3.6.0] — 2026-09-05
 - **Purged Horizontal Divider Lines & Refined Seamless Glassmorphism**:
