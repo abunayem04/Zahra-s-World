@@ -6,6 +6,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   initLanguage();
   initHeader();
+  if (window.heroStage) window.heroStage.init();
   renderProducts('all');
   initCategoryFilters();
   initCrystalMotifVisualizer();
@@ -524,3 +525,133 @@ function updateCheckoutModalSummary() {
     </div>
   `;
 }
+
+/* ==========================================================================
+   HERO STAGE CONTROLLER (Interactive 4-Flagship Audition & Light Tone)
+   ========================================================================== */
+const HERO_FLAGSHIPS = [
+  {
+    id: "crystal-ball-night-light",
+    index: "01 / 04",
+    title: "Milky Way Galaxy Sphere",
+    specs: "80mm K9 Optical Crystal • Beechwood LED Base",
+    provenance: "Batch 026 // Solid Core",
+    price: "Tk 890",
+    image: "assets/products/crystal_galaxy.jpg",
+    tag: "Bestseller Atelier Choice"
+  },
+  {
+    id: "mini-cassette-recorder-keychain",
+    index: "02 / 04",
+    title: "Analog Cassette Voice Memo",
+    specs: "Real Voice Recording • Mechanical Spools",
+    provenance: "Edition 2026 // Lo-Fi",
+    price: "Tk 650",
+    image: "assets/products/cassette_keychain.jpg",
+    tag: "Personal Keepsake"
+  },
+  {
+    id: "moving-sand-art-lamp",
+    index: "03 / 04",
+    title: "360° Kinetic Sandscape Lamp",
+    specs: "Fluid Mineral Quartz • Touch Dimmable Halo",
+    provenance: "Limited Atelier Series",
+    price: "Tk 1,450",
+    image: "assets/products/sand_art_lamp.jpg",
+    tag: "Architectural Decor"
+  },
+  {
+    id: "snowing-streetlamp-night-light",
+    index: "04 / 04",
+    title: "Swirling Snow Streetlamp Light",
+    specs: "Continuous Snow Vortex • Victorian Lantern",
+    provenance: "Chamber Series",
+    price: "Tk 1,290",
+    image: "assets/products/streetlamp_diorama.jpg",
+    tag: "Atmospheric Room Accents"
+  }
+];
+
+window.heroStage = {
+  currentIndex: 0,
+  currentTone: 'warm',
+  timer: null,
+
+  init() {
+    this.bindPillars();
+    this.startAutoCycle();
+  },
+
+  select(idx) {
+    if (idx < 0 || idx >= HERO_FLAGSHIPS.length) return;
+    this.currentIndex = idx;
+    const data = HERO_FLAGSHIPS[idx];
+
+    document.querySelectorAll('.pillar-card').forEach((card, i) => {
+      card.classList.toggle('active', i === idx);
+    });
+
+    const img = document.getElementById('heroMainImg');
+    if (img) {
+      img.style.opacity = '0.3';
+      img.style.transform = 'scale(1.02)';
+      setTimeout(() => {
+        img.src = data.image;
+        img.alt = data.title;
+        img.style.opacity = '1';
+        img.style.transform = 'scale(1)';
+      }, 200);
+    }
+
+    const tag = document.getElementById('heroStageTag');
+    if (tag) tag.textContent = data.tag;
+
+    const indexEl = document.getElementById('heroPlinthIndex');
+    if (indexEl) indexEl.textContent = data.index;
+
+    const provEl = document.getElementById('heroPlinthProvenance');
+    if (provEl) provEl.textContent = data.provenance;
+
+    const titleEl = document.getElementById('heroPlinthTitle');
+    if (titleEl) titleEl.textContent = data.title;
+
+    const specsEl = document.getElementById('heroPlinthSpecs');
+    if (specsEl) specsEl.textContent = data.specs;
+
+    const priceEl = document.getElementById('heroPlinthPrice');
+    if (priceEl) priceEl.textContent = data.price;
+  },
+
+  setTone(tone) {
+    this.currentTone = tone;
+    const warmBtn = document.getElementById('heroToneWarm');
+    const moonBtn = document.getElementById('heroToneMoon');
+    if (warmBtn && moonBtn) {
+      warmBtn.classList.toggle('active', tone === 'warm');
+      moonBtn.classList.toggle('active', tone === 'moon');
+    }
+  },
+
+  acquireCurrent() {
+    const current = HERO_FLAGSHIPS[this.currentIndex];
+    if (window.cart && current) {
+      window.cart.addItem(current.id);
+    }
+  },
+
+  bindPillars() {
+    const stage = document.getElementById('heroVisualStage');
+    if (stage) {
+      stage.addEventListener('mouseenter', () => clearInterval(this.timer));
+      stage.addEventListener('mouseleave', () => this.startAutoCycle());
+    }
+  },
+
+  startAutoCycle() {
+    clearInterval(this.timer);
+    this.timer = setInterval(() => {
+      const nextIdx = (this.currentIndex + 1) % HERO_FLAGSHIPS.length;
+      this.select(nextIdx);
+    }, 7000);
+  }
+};
