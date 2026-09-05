@@ -4,7 +4,7 @@
 ### HAUTE CELESTIAL DECOR & THOUGHTFUL KEEPSAKES BOUTIQUE
 *Digital Flagship Atelier • 2026 Next.js 14 Haute Architecture Edition*
 
-[![Release](https://img.shields.io/badge/Release-v3.3.0--Bento_Radiant_Hero-0D132C?style=for-the-badge&logoColor=FFD3F6)](#changelog--release-log)
+[![Release](https://img.shields.io/badge/Release-v3.4.0--Apple_Glass_Diagonal_Hero-0D132C?style=for-the-badge&logoColor=FFD3F6)](#changelog--release-log)
 [![Framework](https://img.shields.io/badge/Stack-Next.js_14_%E2%80%A2_React_18_%E2%80%A2_TypeScript-426B69?style=for-the-badge)](#technical-architecture--stack)
 [![Animation](https://img.shields.io/badge/Motion-Framer_Motion-FFD3F6?style=for-the-badge&labelColor=0D132C)](#signature-interactive-features)
 [![Design-System](https://img.shields.io/badge/Design_System-Haute_Minimalism-426B69?style=for-the-badge)](#brand-visual-identity--color-system)
@@ -208,6 +208,13 @@ Open your browser at:
 ---
 
 ## 📜 Changelog & Release Log
+
+### [v3.4.0] — 2026-09-05
+- **Exact Diagonal Stepped Palette & Apple-Grade Frosted Glassmorphism Hero**:
+  - Sampled the exact 20 stepped color bands from the user's uploaded reference image (progressing from `#FFFFFF`, `#FFF0F9`, `#FFD4F0` through `#FA41C3`, `#D405A3`, down to deep obsidian `#220017`).
+  - Rendered the stepped bands diagonally angled at `-14deg` ("aktu tera vabe") with full viewport coverage.
+  - Implemented Apple-level glassmorphism details: specular light top bevels, inner translucent reflections, and subtle depth separation lines.
+  - Decluttered the hero foreground completely ("hero page a kisu e rakha lagbe na"): centered floating Apple frosted glassmorphism card (`backdrop-blur-2xl`) with statuesque typography and 10px radius buttons.
 
 ### [v3.3.0] — 2026-09-05
 - **Bento Hero Grid & Luscious Pink Radiant Gradient Architecture**:

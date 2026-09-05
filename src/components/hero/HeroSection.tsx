@@ -1,352 +1,150 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import Image from "next/image";
+import React from "react";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
-import { 
-  ArrowRight, 
-  Truck, 
-  RotateCcw, 
-  ShieldCheck, 
-  ChevronLeft, 
-  ChevronRight, 
-  Sparkles,
-  MapPin,
-  CheckCircle2,
-  PackageCheck
-} from "lucide-react";
-import { useCart } from "@/context/CartContext";
+import { motion } from "framer-motion";
+import { ArrowRight, ArrowUpRight, Sparkles, Gem } from "lucide-react";
 
-const HERO_SLIDES = [
-  {
-    id: "crystal-ball-night-light",
-    slug: "crystal-galaxy",
-    categoryKicker: "C E L E S T I A L   S P H E R E",
-    titleMain: "P O E T R Y",
-    titleSub: "LIGHT • MEMORY • SANCTUARY",
-    description: "Bespoke 3D laser-engraved optical crystal spheres with warm 2700K solid beechwood LED base.",
-    price: 890,
-    badge: "Most Loved Atelier Choice",
-    image: "/assets/products/crystal_galaxy.jpg",
-    accentTone: "Blossom Amber",
-  },
-  {
-    id: "mini-cassette-recorder-keychain",
-    slug: "cassette-recorder",
-    categoryKicker: "A C O U S T I C   K E E P S A K E",
-    titleMain: "V O I C E",
-    titleSub: "ANALOG • MECHANICAL • TIMELESS",
-    description: "Mini vintage voice recorder keychain with real audio capture, dual spinning spools, and playback.",
-    price: 650,
-    badge: "Personal Keepsake Edition",
-    image: "/assets/products/cassette_keychain.jpg",
-    accentTone: "Lo-Fi Pink",
-  },
-  {
-    id: "moving-sand-art-lamp",
-    slug: "sand-art-lamp",
-    categoryKicker: "K I N E T I C   A E S T H E T I C",
-    titleMain: "S A N D S",
-    titleSub: "ROTATION • FLUID • TRANQUIL",
-    description: "360° rotating dynamic sand art hourglass lamp with touch-dimmable circular halo lighting.",
-    price: 1450,
-    badge: "Architectural Room Centerpiece",
-    image: "/assets/products/sand_art_lamp.jpg",
-    accentTone: "Mineral Sunset",
-  },
-  {
-    id: "snowing-streetlamp-night-light",
-    slug: "snowing-streetlamp",
-    categoryKicker: "V I C T O R I A N   D I O R A M A",
-    titleMain: "S N O W",
-    titleSub: "WINTER • NOCTURNE • WARMTH",
-    description: "Continuous swirling snow vortex diorama with illuminated antique streetlamp lantern.",
-    price: 1290,
-    badge: "Chamber Ambient Series",
-    image: "/assets/products/streetlamp_diorama.jpg",
-    accentTone: "Winter Glow",
-  },
+// Exact 20 color steps sampled directly from the user's reference palette image
+const GLASS_PALETTE_STEPS = [
+  { color: "#FFFFFF", name: "Pure Light" },
+  { color: "#FFF0F9", name: "Pale Blush" },
+  { color: "#FFE2F4", name: "Soft Blossom" },
+  { color: "#FFD4F0", name: "Rose Mist" },
+  { color: "#FFC4EB", name: "Petal Frost" },
+  { color: "#FFB2E6", name: "Orchid Tint" },
+  { color: "#FFA0E0", name: "Luminous Pink" },
+  { color: "#FF8DDA", name: "Sweet Rose" },
+  { color: "#FF76D3", name: "Radiant Pink" },
+  { color: "#FF5ECC", name: "Vivid Bloom" },
+  { color: "#FA41C3", name: "Neon Magenta" },
+  { color: "#EB1FB6", name: "Electric Berry" },
+  { color: "#D405A3", name: "Deep Orchid" },
+  { color: "#B8008C", name: "Rich Magenta" },
+  { color: "#9C0076", name: "Royal Berry" },
+  { color: "#810061", name: "Velvet Plum" },
+  { color: "#67004D", name: "Midnight Wine" },
+  { color: "#4E003A", name: "Deep Amethyst" },
+  { color: "#370028", name: "Dark Mulberry" },
+  { color: "#220017", name: "Obsidian Violet" },
 ];
 
 export const HeroSection: React.FC = () => {
-  const { addItem } = useCart();
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
-
-  const slide = HERO_SLIDES[currentSlide];
-
-  // Auto-play slider every 6 seconds unless paused
-  useEffect(() => {
-    if (isPaused) return;
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length);
-    }, 6000);
-    return () => clearInterval(timer);
-  }, [isPaused]);
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev === 0 ? HERO_SLIDES.length - 1 : prev - 1));
-  };
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length);
-  };
-
   return (
-    <section 
-      className="relative overflow-hidden py-6 md:py-10 transition-all duration-700"
-      style={{
-        background: `
-          radial-gradient(ellipse at 50% 0%, rgba(255, 211, 246, 0.65) 0%, rgba(255, 182, 234, 0.35) 45%, rgba(244, 244, 248, 0) 75%),
-          linear-gradient(180deg, 
-            #FFF4FA 0%, 
-            #FFE6F7 20%, 
-            #FFD3F6 45%, 
-            #F8BBE5 70%, 
-            #F299D6 88%, 
-            #E062B8 96%, 
-            #0D132C 100%
-          )
-        `,
-      }}
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-    >
-      {/* Radiant Background Glow Orbs */}
-      <div className="absolute top-10 left-1/4 w-[600px] h-[600px] rounded-full bg-palette-pink/40 blur-[140px] pointer-events-none -z-10" />
-      <div className="absolute bottom-10 right-1/4 w-[500px] h-[500px] rounded-full bg-palette-mint/25 blur-[120px] pointer-events-none -z-10" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Bento Grid: 72% Wide Slider Banner + 28% Two Stacked Side Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch">
-          
-          {/* ============================================================
-              LEFT: WIDE HERO SLIDER BANNER (lg:col-span-8 or 9)
-              ============================================================ */}
-          <div className="lg:col-span-8 flex flex-col">
-            <div className="relative flex-1 min-h-[440px] sm:min-h-[480px] rounded-[10px] overflow-hidden bg-[#FFF5FA]/90 backdrop-blur-md border border-white/60 shadow-xl flex flex-col justify-between p-6 sm:p-10 transition-all">
+    <section className="relative overflow-hidden min-h-[82vh] lg:min-h-[88vh] flex items-center justify-center py-16 px-4 sm:px-6 lg:px-8">
+      
+      {/* =========================================================================
+          BACKGROUND: 20 EXACT COLOR BANDS, SLIGHTLY ANGLED ("AKTU TERA VABE")
+          WITH APPLE-LEVEL GLASSMORPHY REFRACTIONS, SPECULAR SHEEN & HAIRLINES
+          ========================================================================= */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
+        
+        {/* Angled container rotated at -14deg, scaled to bleed seamlessly off-screen */}
+        <div 
+          className="absolute -inset-[60%] flex flex-col justify-center items-stretch"
+          style={{
+            transform: "rotate(-14deg) scale(1.35)",
+            transformOrigin: "center center",
+          }}
+        >
+          {GLASS_PALETTE_STEPS.map((step, idx) => (
+            <div
+              key={idx}
+              className="h-10 sm:h-12 md:h-14 lg:h-16 w-full relative transition-all duration-500"
+              style={{
+                backgroundColor: step.color,
+              }}
+            >
+              {/* Glass Specular Top Highlight (Apple Glass Bevel) */}
+              <div className="absolute top-0 left-0 right-0 h-[1px] bg-white/40 pointer-events-none" />
               
-              {/* Top Row: Slide Provenance & Price Tag */}
-              <div className="relative z-20 flex items-center justify-between gap-4">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[8px] bg-white/85 text-noir font-mono text-[10px] font-bold uppercase tracking-[0.18em] shadow-sm border border-noir/5">
-                  <Sparkles className="w-3 h-3 text-pink-600" />
-                  <span>{slide.badge}</span>
-                </div>
+              {/* Glass Inner Reflection Sheen */}
+              <div 
+                className="absolute inset-0 pointer-events-none opacity-30"
+                style={{
+                  background: "linear-gradient(90deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.05) 50%, rgba(0,0,0,0.1) 100%)",
+                }}
+              />
 
-                <div className="flex items-center gap-2 bg-noir/85 backdrop-blur-md text-white px-3.5 py-1.5 rounded-[8px] font-mono text-xs font-bold tracking-wider shadow-sm border border-white/10">
-                  <span className="text-palette-pink font-semibold">Tk</span>
-                  <span className="text-base">{slide.price}</span>
-                </div>
-              </div>
-
-              {/* Center Content: Asymmetric Text + Layered Product Photography */}
-              <div className="relative z-20 grid grid-cols-1 md:grid-cols-12 gap-6 items-center my-auto py-4">
-                
-                {/* Text Content (md:col-span-6) */}
-                <div className="md:col-span-6 flex flex-col items-start text-left">
-                  <span className="font-mono text-[11px] sm:text-xs font-semibold uppercase tracking-[0.25em] text-noir/60 mb-2">
-                    {slide.categoryKicker}
-                  </span>
-
-                  <h1 className="font-display text-4xl sm:text-5xl lg:text-[54px] font-bold text-noir uppercase tracking-widest leading-[1.05] mb-2">
-                    {slide.titleMain}
-                  </h1>
-
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className="h-[1px] w-6 bg-noir/40" />
-                    <span className="font-mono text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.2em] text-noir/70">
-                      {slide.titleSub}
-                    </span>
-                    <span className="h-[1px] w-6 bg-noir/40" />
-                  </div>
-
-                  <p className="font-sans text-xs sm:text-sm text-noir/80 font-normal leading-relaxed max-w-sm mb-6">
-                    {slide.description}
-                  </p>
-
-                  <div className="flex items-center gap-3">
-                    <button
-                      onClick={() => addItem(slide.id)}
-                      className="inline-flex items-center gap-2 px-6 py-3 rounded-[10px] bg-noir text-white font-mono text-xs font-bold uppercase tracking-[0.14em] hover:bg-noir/85 hover:scale-[1.02] shadow-md transition-all"
-                    >
-                      <span>Acquire Creation</span>
-                      <ArrowRight className="w-3.5 h-3.5 text-palette-pink" />
-                    </button>
-
-                    <Link
-                      href="#collection"
-                      className="inline-flex items-center px-4 py-3 rounded-[10px] bg-white/70 hover:bg-white text-noir font-mono text-xs font-semibold uppercase tracking-wider border border-noir/10 transition-all shadow-sm"
-                    >
-                      <span>Explore</span>
-                    </Link>
-                  </div>
-                </div>
-
-                {/* Visual Product Staging (md:col-span-6) */}
-                <div className="md:col-span-6 relative flex items-center justify-center">
-                  <div className="relative w-full max-w-[320px] aspect-square rounded-[10px] overflow-hidden shadow-2xl border border-white/80 group">
-                    <AnimatePresence mode="wait">
-                      <motion.div
-                        key={slide.id}
-                        initial={{ opacity: 0, scale: 0.94 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0, scale: 1.05 }}
-                        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                        className="relative w-full h-full"
-                      >
-                        <Image
-                          src={slide.image}
-                          alt={slide.titleMain}
-                          fill
-                          priority
-                          className="object-cover group-hover:scale-105 transition-transform duration-700"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
-                      </motion.div>
-                    </AnimatePresence>
-
-                    {/* Subtle Tone Tag Pill */}
-                    <div className="absolute bottom-3 right-3 bg-white/90 backdrop-blur-md px-2.5 py-1 rounded-[6px] border border-black/5 font-mono text-[9px] font-bold uppercase tracking-wider text-noir shadow-sm">
-                      {slide.accentTone}
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Bottom Row: Next/Prev Controls & Pill Pagination Indicators */}
-              <div className="relative z-20 flex items-center justify-between pt-2 border-t border-black/5">
-                <div className="flex items-center gap-2">
-                  <button
-                    onClick={prevSlide}
-                    aria-label="Previous Slide"
-                    className="w-8 h-8 rounded-[8px] bg-white/80 hover:bg-white text-noir flex items-center justify-center border border-black/10 shadow-sm transition-all hover:scale-105"
-                  >
-                    <ChevronLeft className="w-4 h-4" />
-                  </button>
-                  <button
-                    onClick={nextSlide}
-                    aria-label="Next Slide"
-                    className="w-8 h-8 rounded-[8px] bg-white/80 hover:bg-white text-noir flex items-center justify-center border border-black/10 shadow-sm transition-all hover:scale-105"
-                  >
-                    <ChevronRight className="w-4 h-4" />
-                  </button>
-                </div>
-
-                {/* Dashed / Pill Pagination Bars (like Screenshot 1) */}
-                <div className="flex items-center gap-1.5">
-                  {HERO_SLIDES.map((item, idx) => (
-                    <button
-                      key={item.id}
-                      onClick={() => setCurrentSlide(idx)}
-                      aria-label={`Go to slide ${idx + 1}`}
-                      className={`h-2 rounded-full transition-all duration-300 ${
-                        idx === currentSlide
-                          ? "w-8 bg-noir shadow-sm"
-                          : "w-2.5 bg-noir/20 hover:bg-noir/40"
-                      }`}
-                    />
-                  ))}
-                </div>
-
-                <div className="font-mono text-[10px] font-semibold text-noir/60 uppercase tracking-widest">
-                  0{currentSlide + 1} / 0{HERO_SLIDES.length}
-                </div>
-              </div>
+              {/* Glass Bottom Shadow Line (Subtle Depth Step) */}
+              <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-black/15 pointer-events-none" />
             </div>
+          ))}
+        </div>
+
+        {/* Ambient Radial Glass Glow (Softens center for ultra-luxurious frosted contrast) */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] rounded-full bg-white/25 blur-3xl pointer-events-none" />
+        
+        {/* Apple Glass Refraction Overlay */}
+        <div className="absolute inset-0 backdrop-blur-[1px] bg-white/5 pointer-events-none" />
+      </div>
+
+      {/* =========================================================================
+          FOREGROUND: APPLE-GRADE FROSTED GLASS EMBLEM & STATUESQUE TYPOGRAPHY
+          COMPLETELY UNCLUTTERED ("HERO PAGE A KISU E RAKHA LAGBE NA")
+          ========================================================================= */}
+      <motion.div
+        initial={{ opacity: 0, y: 24, scale: 0.96 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+        className="relative z-10 max-w-2xl w-full mx-auto"
+      >
+        {/* Apple-Level Glassmorphism Centerpiece Card */}
+        <div className="relative rounded-[10px] p-8 sm:p-12 md:p-14 text-center overflow-hidden backdrop-blur-2xl bg-white/35 dark:bg-black/35 border border-white/60 dark:border-white/20 shadow-[0_20px_70px_rgba(0,0,0,0.15)]">
+          
+          {/* Subtle Glass Card Specular Light Sheen */}
+          <div className="absolute -top-24 -left-24 w-48 h-48 rounded-full bg-white/40 blur-2xl pointer-events-none" />
+          <div className="absolute -bottom-24 -right-24 w-48 h-48 rounded-full bg-palette-pink/30 blur-2xl pointer-events-none" />
+
+          {/* Minimalist Atelier Mark */}
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-[10px] bg-white/60 dark:bg-white/10 backdrop-blur-md border border-white/60 dark:border-white/15 text-noir dark:text-canvas font-mono text-[10px] font-bold uppercase tracking-[0.25em] shadow-sm mb-6">
+            <Gem className="w-3 h-3 text-pink-600 dark:text-palette-pink" />
+            <span>Haute Celestial Atelier</span>
           </div>
 
-          {/* ============================================================
-              RIGHT: TWO STACKED PROMOTIONAL VALUE CARDS (lg:col-span-4)
-              ============================================================ */}
-          <div className="lg:col-span-4 flex flex-col gap-5">
-            
-            {/* 1. Nationwide Delivery Card (Top) */}
-            <div className="flex-1 rounded-[10px] overflow-hidden bg-gradient-to-br from-[#FFF5FA] via-[#FFEBF7] to-[#FFD8F3] border border-white/70 shadow-lg p-6 sm:p-7 flex flex-col justify-between relative group hover:shadow-xl hover:-translate-y-0.5 transition-all">
-              {/* Background ambient radial highlight */}
-              <div className="absolute top-0 right-0 w-36 h-36 rounded-full bg-palette-pink/30 blur-2xl pointer-events-none" />
+          {/* Master Headline: Pure, Statuesque & Elegant */}
+          <h1 className="font-display text-4xl sm:text-6xl md:text-7xl font-bold uppercase tracking-widest text-noir dark:text-white leading-[1.05] mb-4">
+            Zahra&apos;s World
+          </h1>
 
-              <div>
-                {/* Icon Badge */}
-                <div className="w-12 h-12 rounded-[10px] bg-white shadow-md border border-pink-200/60 flex items-center justify-center text-pink-600 mb-4 group-hover:scale-110 transition-transform">
-                  <MapPin className="w-6 h-6 text-pink-600" />
-                </div>
+          {/* Poetic Subtitle */}
+          <p className="font-couture text-xl sm:text-2xl md:text-3xl italic font-normal text-noir/85 dark:text-white/90 mb-8 tracking-wide">
+            Poetry in Light &amp; Living Form
+          </p>
 
-                <div className="flex items-center gap-2 mb-1">
-                  <span className="h-[1px] w-4 bg-pink-400" />
-                  <span className="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-pink-700">
-                    Insured Courier
-                  </span>
-                </div>
+          {/* Two Apple-Style Glass Frosted Action Buttons (Strict 10px Radius) */}
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <Link
+              href="#collection"
+              className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-[10px] bg-noir text-white font-mono text-xs font-bold uppercase tracking-[0.14em] hover:bg-noir/85 hover:scale-[1.02] shadow-lg transition-all"
+            >
+              <span>Explore Collection</span>
+              <ArrowRight className="w-3.5 h-3.5 text-palette-pink" />
+            </Link>
 
-                <h3 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-wider text-noir leading-snug mb-2">
-                  DELIVERY ALL OVER BANGLADESH
-                </h3>
+            <a
+              href="https://wa.me/8801320829916"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-[10px] bg-white/60 dark:bg-white/10 hover:bg-white/90 text-noir dark:text-canvas font-mono text-xs font-semibold uppercase tracking-[0.14em] border border-white/70 dark:border-white/20 backdrop-blur-md shadow-sm transition-all hover:scale-[1.02]"
+            >
+              <span>Concierge</span>
+              <ArrowUpRight className="w-3.5 h-3.5 text-pink-600 dark:text-palette-pink" />
+            </a>
+          </div>
 
-                <p className="font-sans text-xs text-noir/75 leading-relaxed mb-4">
-                  Doorstep courier delivery with 100% Cash on Delivery (COD) inspection promise.
-                </p>
-              </div>
-
-              {/* Delivery Rates Pill Strip */}
-              <div className="bg-white/80 backdrop-blur-sm rounded-[8px] p-3 border border-pink-200/50 shadow-sm flex items-center justify-between font-mono text-[11px]">
-                <div className="flex flex-col">
-                  <span className="text-noir/60 uppercase text-[9px] tracking-wider font-semibold">Inside Dhaka (24-48h)</span>
-                  <span className="text-noir font-bold">Tk 70</span>
-                </div>
-                <div className="h-6 w-[1px] bg-pink-200" />
-                <div className="flex flex-col items-end">
-                  <span className="text-noir/60 uppercase text-[9px] tracking-wider font-semibold">Outside Dhaka (48-72h)</span>
-                  <span className="text-pink-700 font-bold">Tk 130</span>
-                </div>
-              </div>
-            </div>
-
-            {/* 2. Easy Exchange & Quality Seal Card (Bottom) */}
-            <div className="flex-1 rounded-[10px] overflow-hidden bg-gradient-to-br from-[#FFF5FA] via-[#FFEBF7] to-[#FFD8F3] border border-white/70 shadow-lg p-6 sm:p-7 flex flex-col justify-between relative group hover:shadow-xl hover:-translate-y-0.5 transition-all">
-              {/* Background ambient radial highlight */}
-              <div className="absolute bottom-0 right-0 w-36 h-36 rounded-full bg-palette-mint/25 blur-2xl pointer-events-none" />
-
-              <div>
-                {/* Icon Badge */}
-                <div className="w-12 h-12 rounded-[10px] bg-white shadow-md border border-pink-200/60 flex items-center justify-center text-pink-600 mb-4 group-hover:scale-110 transition-transform">
-                  <RotateCcw className="w-6 h-6 text-pink-600" />
-                </div>
-
-                <div className="flex items-center gap-2 mb-1">
-                  <span className="h-[1px] w-4 bg-pink-400" />
-                  <span className="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-pink-700">
-                    Peace of Mind
-                  </span>
-                </div>
-
-                <h3 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-wider text-noir leading-snug mb-2">
-                  EASY EXCHANGE AVAILABLE
-                </h3>
-
-                <p className="font-sans text-xs text-noir/75 leading-relaxed mb-4">
-                  Check product before paying courier. Full 7-day immediate replacement for any transit damage.
-                </p>
-              </div>
-
-              {/* Trust Badge Footer */}
-              <div className="bg-white/80 backdrop-blur-sm rounded-[8px] p-3 border border-pink-200/50 shadow-sm flex items-center justify-between font-mono text-[11px]">
-                <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-4 h-4 text-slateTeal" />
-                  <span className="text-noir font-semibold uppercase text-[10px] tracking-wider">
-                    Zero Damage Guarantee
-                  </span>
-                </div>
-                <div className="flex items-center gap-1 text-pink-700 font-bold text-[10px] uppercase">
-                  <span>Shop Confidently</span>
-                </div>
-              </div>
-            </div>
-
+          {/* Minimalist Monospace Provenance Footer */}
+          <div className="mt-8 pt-6 border-t border-noir/10 dark:border-white/10 flex items-center justify-center gap-4 text-noir/60 dark:text-white/60 font-mono text-[10px] uppercase tracking-widest">
+            <span>Edition 2026</span>
+            <span>•</span>
+            <span>Savar, Dhaka</span>
+            <span>•</span>
+            <span>Insured COD</span>
           </div>
 
         </div>
-      </div>
+      </motion.div>
+
     </section>
   );
 };
