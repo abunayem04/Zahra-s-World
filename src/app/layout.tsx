@@ -8,6 +8,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CartDrawer } from "@/components/cart/CartDrawer";
 import { QuickViewModal } from "@/components/catalog/QuickViewModal";
+import { SmoothScroll } from "@/components/providers/SmoothScroll";
 
 const cinzel = Cinzel({
   subsets: ["latin"],
@@ -68,16 +69,18 @@ export default function RootLayout({
       className={`${cinzel.variable} ${alexBrush.variable} ${italiana.variable} ${cormorant.variable} ${outfit.variable}`}
     >
       <body className="antialiased min-h-screen flex flex-col selection:bg-roseBlossom selection:text-noir">
-        <AmbienceProvider>
-          <CartProvider>
-            <AnnouncementBar />
-            <Header />
-            <main className="flex-1">{children}</main>
-            <Footer />
-            <CartDrawer />
-            <QuickViewModal />
-          </CartProvider>
-        </AmbienceProvider>
+        <SmoothScroll>
+          <AmbienceProvider>
+            <CartProvider>
+              <AnnouncementBar />
+              <Header />
+              <main className="flex-1">{children}</main>
+              <Footer />
+              <CartDrawer />
+              <QuickViewModal />
+            </CartProvider>
+          </AmbienceProvider>
+        </SmoothScroll>
       </body>
     </html>
   );

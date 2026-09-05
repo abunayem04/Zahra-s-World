@@ -4,7 +4,7 @@
 ### HAUTE CELESTIAL DECOR & THOUGHTFUL KEEPSAKES BOUTIQUE
 *Digital Flagship Atelier • 2026 Next.js 14 Haute Architecture Edition*
 
-[![Release](https://img.shields.io/badge/Release-v3.9.0--Login_Signup_Buttons-0D132C?style=for-the-badge&logoColor=FFD3F6)](#changelog--release-log)
+[![Release](https://img.shields.io/badge/Release-v3.10.0--Lenis_Smooth_Scroll-0D132C?style=for-the-badge&logoColor=FFD3F6)](#changelog--release-log)
 [![Framework](https://img.shields.io/badge/Stack-Next.js_14_%E2%80%A2_React_18_%E2%80%A2_TypeScript-426B69?style=for-the-badge)](#technical-architecture--stack)
 [![Animation](https://img.shields.io/badge/Motion-Framer_Motion-FFD3F6?style=for-the-badge&labelColor=0D132C)](#signature-interactive-features)
 [![Design-System](https://img.shields.io/badge/Design_System-Haute_Minimalism-426B69?style=for-the-badge)](#brand-visual-identity--color-system)
@@ -208,6 +208,13 @@ Open your browser at:
 ---
 
 ## 📜 Changelog & Release Log
+
+### [v3.10.0] — 2026-09-05
+- **Engineered Cinematic Lenis Smooth Scrolling**:
+  - **Lenis Core Engine Integration**: Installed and configured `lenis` across the entire Next.js 14 App Router codebase.
+  - **Fluid Boutique Inertia Provider (`SmoothScroll.tsx`)**: Calibrated exponential deceleration curve (`duration: 1.25s`, `wheelMultiplier: 1.05`, `touchMultiplier: 1.6`) giving visitors a frictionless, high-fashion browsing experience.
+  - **Anchor Link Interception**: Internal hash links (`#collection`, `#crystal-showcase`, `#cassette-showcase`, `#dispatch-proof`) now glide smoothly with exact offset compensation (`offset: -76px`).
+  - **Hardware Acceleration & CSS Integration**: Imported `lenis/dist/lenis.css` and added hardware-accelerated scroll rules to `globals.css` ensuring fluid 60fps rendering without layout thrashing.
 
 ### [v3.9.0] — 2026-09-05
 - **Redesigned Login & Sign Up Button Duo & Removed Concierge Header Button**:
