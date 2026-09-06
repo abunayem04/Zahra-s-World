@@ -174,6 +174,13 @@ export const Header: React.FC = () => {
             3D Crystal Lamps
           </Link>
           <Link
+            href="#shop-by-occasion"
+            onClick={() => setMobileMenuOpen(false)}
+            className="py-2.5 border-b border-black/[0.04] text-noir"
+          >
+            Shop by Occasion
+          </Link>
+          <Link
             href="#about-us"
             onClick={() => setMobileMenuOpen(false)}
             className="py-2.5 border-b border-black/[0.04] text-noir"
