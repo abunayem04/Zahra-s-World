@@ -68,6 +68,9 @@ interface CartContextType {
   loginAsGuest: () => void;
   loginWithEmail: (name: string, email: string) => void;
   logout: () => void;
+  authModalMode: "login" | "signup" | null;
+  openAuthModal: (mode?: "login" | "signup") => void;
+  closeAuthModal: () => void;
   lastOrder: OrderRecord | null;
   setLastOrder: (order: OrderRecord) => void;
 }
@@ -84,6 +87,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [quickViewProduct, setQuickViewProduct] = useState<Product | null>(null);
   const [wishlist, setWishlist] = useState<string[]>([]);
   const [user, setUser] = useState<UserProfile | null>(null);
+  const [authModalMode, setAuthModalMode] = useState<"login" | "signup" | null>(null);
   const [lastOrder, setLastOrderState] = useState<OrderRecord | null>(null);
   const [mounted, setMounted] = useState(false);
 
@@ -276,6 +280,14 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     setUser(null);
   };
 
+  const openAuthModal = (mode: "login" | "signup" = "login") => {
+    setAuthModalMode(mode);
+  };
+
+  const closeAuthModal = () => {
+    setAuthModalMode(null);
+  };
+
   const setLastOrder = (order: OrderRecord) => {
     setLastOrderState(order);
     if (mounted) {
@@ -383,6 +395,9 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
         loginAsGuest,
         loginWithEmail,
         logout,
+        authModalMode,
+        openAuthModal,
+        closeAuthModal,
         lastOrder: mounted ? lastOrder : null,
         setLastOrder,
       }}

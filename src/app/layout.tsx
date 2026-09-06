@@ -7,6 +7,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CartDrawer } from "@/components/cart/CartDrawer";
 import { QuickViewModal } from "@/components/catalog/QuickViewModal";
+import { AuthModal } from "@/components/auth/AuthModal";
 import { SmoothScroll } from "@/components/providers/SmoothScroll";
 
 const cinzel = Cinzel({
@@ -84,6 +85,7 @@ export default function RootLayout({
               <Footer />
               <CartDrawer />
               <QuickViewModal />
+              <AuthModal />
             </CartProvider>
           </AmbienceProvider>
         </SmoothScroll>

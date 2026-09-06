@@ -19,11 +19,10 @@ import { AuthModal } from "@/components/auth/AuthModal";
 
 export const Header: React.FC = () => {
   const router = useRouter();
-  const { totalCount, openDrawer, wishlistCount, user, logout } = useCart();
+  const { totalCount, openDrawer, wishlistCount, user, logout, openAuthModal } = useCart();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-  const [authMode, setAuthMode] = useState<"login" | "signup" | null>(null);
   const [userDropdownOpen, setUserDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -194,13 +193,13 @@ export const Header: React.FC = () => {
           ) : (
             <div className="hidden sm:flex items-center gap-2">
               <button
-                onClick={() => setAuthMode("login")}
+                onClick={() => openAuthModal("login")}
                 className="inline-flex items-center justify-center px-4 py-2 rounded-[10px] border-[1.5px] border-[#3D0C24] bg-white hover:bg-rose-50/70 text-[#3D0C24] font-sans font-semibold text-xs tracking-tight shadow-sm hover:shadow transition-all duration-200 active:scale-95 select-none"
               >
                 Login
               </button>
               <button
-                onClick={() => setAuthMode("signup")}
+                onClick={() => openAuthModal("signup")}
                 className="inline-flex items-center justify-center px-4 py-2 rounded-[10px] bg-gradient-to-r from-[#D81B60] to-[#C2185B] hover:from-[#E91E63] hover:to-[#D81B60] text-white font-sans font-semibold text-xs tracking-tight shadow-[0_2px_12px_rgba(216,27,96,0.3)] hover:shadow-[0_4px_18px_rgba(216,27,96,0.4)] transition-all duration-200 active:scale-95 select-none"
               >
                 Sign Up
@@ -283,7 +282,7 @@ export const Header: React.FC = () => {
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);
-                  setAuthMode("login");
+                  openAuthModal("login");
                 }}
                 className="flex-1 py-2.5 rounded-[10px] bg-white border-[1.5px] border-[#3D0C24] text-[#3D0C24] text-xs font-sans font-semibold tracking-tight text-center shadow-sm active:scale-95"
               >
@@ -292,7 +291,7 @@ export const Header: React.FC = () => {
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);
-                  setAuthMode("signup");
+                  openAuthModal("signup");
                 }}
                 className="flex-1 py-2.5 rounded-[10px] bg-gradient-to-r from-[#D81B60] to-[#C2185B] text-white text-xs font-sans font-semibold tracking-tight text-center shadow-md active:scale-95"
               >
@@ -315,13 +314,6 @@ export const Header: React.FC = () => {
           )}
         </div>
       )}
-
-      {/* Client Atelier Auth Modal */}
-      <AuthModal
-        isOpen={authMode !== null}
-        initialMode={authMode || "login"}
-        onClose={() => setAuthMode(null)}
-      />
     </header>
   );
 };
