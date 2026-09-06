@@ -5,6 +5,34 @@ import { CartItem, Product } from "@/types";
 import { PRODUCTS } from "@/data/products";
 import confetti from "canvas-confetti";
 
+export interface UserProfile {
+  name: string;
+  email?: string;
+  phone?: string;
+  isGuest?: boolean;
+  avatar?: string;
+}
+
+export interface OrderRecord {
+  orderId: string;
+  items: CartItem[];
+  subtotal: number;
+  deliveryFee: number;
+  giftWrapFee: number;
+  discount: number;
+  total: number;
+  deliveryZone: "dhaka" | "outside";
+  paymentMethod: string;
+  customer: {
+    name: string;
+    phone: string;
+    city: string;
+    address: string;
+    notes?: string;
+  };
+  createdAt: string;
+}
+
 interface CartContextType {
   items: CartItem[];
   isOpen: boolean;
@@ -13,10 +41,15 @@ interface CartContextType {
   addItem: (productId: string, variantId?: string, quantity?: number) => void;
   removeItem: (productId: string, variantId: string) => void;
   updateQuantity: (productId: string, variantId: string, delta: number) => void;
+  clearCart: () => void;
   selectedDelivery: "dhaka" | "outside";
   setSelectedDelivery: (zone: "dhaka" | "outside") => void;
   isGiftWrapped: boolean;
   setIsGiftWrapped: (wrapped: boolean) => void;
+  couponCode: string;
+  discountAmount: number;
+  applyCoupon: (code: string) => { success: boolean; message: string };
+  removeCoupon: () => void;
   subtotal: number;
   deliveryFee: number;
   giftWrapFee: number;
@@ -30,6 +63,13 @@ interface CartContextType {
   toggleWishlist: (productId: string) => void;
   isWishlisted: (productId: string) => boolean;
   wishlistCount: number;
+  user: UserProfile | null;
+  loginWithGoogle: () => void;
+  loginAsGuest: () => void;
+  loginWithEmail: (name: string, email: string) => void;
+  logout: () => void;
+  lastOrder: OrderRecord | null;
+  setLastOrder: (order: OrderRecord) => void;
 }
 
 const CartContext = createContext<CartContextType | null>(null);
@@ -39,16 +79,20 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [isOpen, setIsOpen] = useState(false);
   const [selectedDelivery, setSelectedDelivery] = useState<"dhaka" | "outside">("dhaka");
   const [isGiftWrapped, setIsGiftWrapped] = useState(false);
+  const [couponCode, setCouponCode] = useState("");
+  const [discountAmount, setDiscountAmount] = useState(0);
   const [quickViewProduct, setQuickViewProduct] = useState<Product | null>(null);
   const [wishlist, setWishlist] = useState<string[]>([]);
+  const [user, setUser] = useState<UserProfile | null>(null);
+  const [lastOrder, setLastOrderState] = useState<OrderRecord | null>(null);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
-    const saved = localStorage.getItem("zahra_cart_items");
-    if (saved) {
+    const savedCart = localStorage.getItem("zahra_cart_items");
+    if (savedCart) {
       try {
-        setItems(JSON.parse(saved));
+        setItems(JSON.parse(savedCart));
       } catch {
         // ignore
       }
@@ -57,6 +101,22 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     if (savedWish) {
       try {
         setWishlist(JSON.parse(savedWish));
+      } catch {
+        // ignore
+      }
+    }
+    const savedUser = localStorage.getItem("zahra_user");
+    if (savedUser) {
+      try {
+        setUser(JSON.parse(savedUser));
+      } catch {
+        // ignore
+      }
+    }
+    const savedOrder = localStorage.getItem("zahra_last_order");
+    if (savedOrder) {
+      try {
+        setLastOrderState(JSON.parse(savedOrder));
       } catch {
         // ignore
       }
@@ -74,6 +134,16 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
       localStorage.setItem("zahra_wishlist", JSON.stringify(wishlist));
     }
   }, [wishlist, mounted]);
+
+  useEffect(() => {
+    if (mounted) {
+      if (user) {
+        localStorage.setItem("zahra_user", JSON.stringify(user));
+      } else {
+        localStorage.removeItem("zahra_user");
+      }
+    }
+  }, [user, mounted]);
 
   const toggleWishlist = (productId: string) => {
     setWishlist((prev) =>
@@ -135,11 +205,83 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     });
   };
 
+  const clearCart = () => {
+    setItems([]);
+    setCouponCode("");
+    setDiscountAmount(0);
+    if (mounted) {
+      localStorage.removeItem("zahra_cart_items");
+    }
+  };
+
+  const applyCoupon = (code: string) => {
+    const cleanCode = code.trim().toUpperCase();
+    if (cleanCode === "ZAHRA100") {
+      setCouponCode("ZAHRA100");
+      setDiscountAmount(100);
+      return { success: true, message: "Tk 100 discount applied!" };
+    }
+    if (cleanCode === "WELCOME50") {
+      setCouponCode("WELCOME50");
+      setDiscountAmount(50);
+      return { success: true, message: "Tk 50 discount applied!" };
+    }
+    if (cleanCode === "VIP10") {
+      const disc = Math.round(subtotal * 0.1);
+      setCouponCode("VIP10");
+      setDiscountAmount(disc);
+      return { success: true, message: "10% VIP discount applied!" };
+    }
+    return { success: false, message: "Invalid promo code. Try ZAHRA100 or WELCOME50" };
+  };
+
+  const removeCoupon = () => {
+    setCouponCode("");
+    setDiscountAmount(0);
+  };
+
   const subtotal = items.reduce((acc, it) => acc + it.product.price * it.quantity, 0);
   const deliveryFee = items.length > 0 ? (selectedDelivery === "dhaka" ? 70 : 130) : 0;
   const giftWrapFee = isGiftWrapped && items.length > 0 ? 50 : 0;
-  const total = subtotal + deliveryFee + giftWrapFee;
+  const total = Math.max(0, subtotal + deliveryFee + giftWrapFee - discountAmount);
   const totalCount = items.reduce((acc, it) => acc + it.quantity, 0);
+
+  // Authentication Handlers
+  const loginWithGoogle = () => {
+    const mockGoogleUser: UserProfile = {
+      name: "Zahra Client",
+      email: "zahra.client@gmail.com",
+      isGuest: false,
+    };
+    setUser(mockGoogleUser);
+  };
+
+  const loginAsGuest = () => {
+    const guestUser: UserProfile = {
+      name: "Valued Guest",
+      isGuest: true,
+    };
+    setUser(guestUser);
+  };
+
+  const loginWithEmail = (name: string, email: string) => {
+    setUser({
+      name: name || "Valued Customer",
+      email: email,
+      isGuest: false,
+    });
+  };
+
+  const logout = () => {
+    setUser(null);
+  };
+
+  const setLastOrder = (order: OrderRecord) => {
+    setLastOrderState(order);
+    if (mounted) {
+      localStorage.setItem("zahra_last_order", JSON.stringify(order));
+    }
+  };
 
   const checkoutWhatsApp = (customerDetails?: {
     name: string;
@@ -179,7 +321,10 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
       selectedDelivery === "dhaka" ? "Inside Dhaka" : "Nationwide Outside Dhaka"
     }):* Tk ${deliveryFee}\n`;
     if (isGiftWrapped) {
-      msg += `*Luxury Gift Box Presentation:* Tk 50\n`;
+      msg += `*Gift Box Wrapping:* Tk 50\n`;
+    }
+    if (discountAmount > 0) {
+      msg += `*Promo Discount (${couponCode}):* -Tk ${discountAmount}\n`;
     }
     msg += `*Total Order Value:* Tk ${total} (Cash on Delivery)\n`;
 
@@ -211,10 +356,15 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
         addItem,
         removeItem,
         updateQuantity,
+        clearCart,
         selectedDelivery,
         setSelectedDelivery,
         isGiftWrapped,
         setIsGiftWrapped,
+        couponCode,
+        discountAmount,
+        applyCoupon,
+        removeCoupon,
         subtotal,
         deliveryFee,
         giftWrapFee,
@@ -228,6 +378,13 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
         toggleWishlist,
         isWishlisted,
         wishlistCount: mounted ? wishlistCount : 0,
+        user: mounted ? user : null,
+        loginWithGoogle,
+        loginAsGuest,
+        loginWithEmail,
+        logout,
+        lastOrder: mounted ? lastOrder : null,
+        setLastOrder,
       }}
     >
       {children}

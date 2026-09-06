@@ -220,7 +220,7 @@ export const HeroSection: React.FC = () => {
             {/* Tactile Action Buttons with Magnetic Feel & Glow Sheen */}
             <motion.div variants={itemRevealVariants} className="flex flex-wrap items-center gap-4">
               <Link
-                href="#collection"
+                href="/products"
                 className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-[10px] bg-noir text-white font-mono text-xs sm:text-[13px] font-bold uppercase tracking-[0.16em] shadow-xl overflow-hidden transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.03] active:scale-[0.98] hover:shadow-[0_12px_32px_rgba(168,12,66,0.45)] hover:bg-gradient-to-r hover:from-[#A80C42] hover:via-[#C2185B] hover:to-[#880E4F]"
               >
                 {/* Shimmer sweep effect */}

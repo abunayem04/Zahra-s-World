@@ -76,7 +76,7 @@ export const OccasionGateway: React.FC = () => {
             return (
               <Link
                 key={item.id}
-                href="#collection"
+                href="/products"
                 className="group relative bg-white rounded-[14px] sm:rounded-[16px] border border-noir/[0.08] p-5 sm:p-6 flex flex-col items-center justify-center gap-3.5 shadow-[0_2px_10px_rgba(0,0,0,0.02)] hover:shadow-[0_12px_28px_-6px_rgba(216,27,96,0.18)] hover:border-[#D81B60]/40 hover:-translate-y-1 transition-all duration-300 select-none cursor-pointer"
               >
                 {/* Icon Box */}
