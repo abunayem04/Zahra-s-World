@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { PRODUCTS } from "@/data/products";
@@ -13,9 +13,10 @@ import {
   Star, 
   Check, 
   Sparkles,
-  ArrowRight,
   ShieldCheck,
-  Truck
+  Truck,
+  ChevronLeft,
+  ChevronRight
 } from "lucide-react";
 
 const CATEGORIES = [
@@ -27,12 +28,20 @@ const CATEGORIES = [
   { id: "ambient-dioramas", name: "Tabletop Dioramas" },
 ];
 
+const PRODUCTS_PER_PAGE = 12;
+
 export default function ProductsPage() {
   const { addItem, toggleWishlist, isWishlisted } = useCart();
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
   const [sortBy, setSortBy] = useState<"featured" | "price-asc" | "price-desc" | "rating">("featured");
+  const [currentPage, setCurrentPage] = useState(1);
   const [addedId, setAddedId] = useState<string | null>(null);
+
+  // Reset page to 1 on category/search/sort change
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [selectedCategory, searchQuery, sortBy]);
 
   const filteredProducts = useMemo(() => {
     return PRODUCTS.filter((product) => {
@@ -51,6 +60,26 @@ export default function ProductsPage() {
     });
   }, [selectedCategory, searchQuery, sortBy]);
 
+  const totalPages = Math.ceil(filteredProducts.length / PRODUCTS_PER_PAGE);
+
+  const paginatedProducts = useMemo(() => {
+    const startIndex = (currentPage - 1) * PRODUCTS_PER_PAGE;
+    return filteredProducts.slice(startIndex, startIndex + PRODUCTS_PER_PAGE);
+  }, [filteredProducts, currentPage]);
+
+  const handlePageChange = (newPage: number) => {
+    if (newPage < 1 || newPage > totalPages) return;
+    setCurrentPage(newPage);
+    if (typeof window !== "undefined") {
+      const targetEl = document.getElementById("catalog-grid-top");
+      if (targetEl) {
+        targetEl.scrollIntoView({ behavior: "smooth" });
+      } else {
+        window.scrollTo({ top: 220, behavior: "smooth" });
+      }
+    }
+  };
+
   const handleAddToCart = (e: React.MouseEvent, productId: string) => {
     e.preventDefault();
     e.stopPropagation();
@@ -58,6 +87,9 @@ export default function ProductsPage() {
     setAddedId(productId);
     setTimeout(() => setAddedId(null), 1800);
   };
+
+  const startItemNumber = filteredProducts.length === 0 ? 0 : (currentPage - 1) * PRODUCTS_PER_PAGE + 1;
+  const endItemNumber = Math.min(currentPage * PRODUCTS_PER_PAGE, filteredProducts.length);
 
   return (
     <div className="min-h-screen bg-[#FAF6F8] pb-24">
@@ -101,7 +133,8 @@ export default function ProductsPage() {
       </div>
 
       {/* Main Catalog Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+      <div id="catalog-grid-top" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+        
         {/* Controls Toolbar: Search & Sort */}
         <div className="flex flex-col sm:flex-row gap-4 items-center justify-between mb-8">
           {/* Search Input */}
@@ -116,22 +149,28 @@ export default function ProductsPage() {
             />
           </div>
 
-          {/* Sort Selector */}
-          <div className="flex items-center gap-3 w-full sm:w-auto justify-between sm:justify-end">
-            <div className="flex items-center gap-2 text-xs font-mono text-noir/60">
-              <SlidersHorizontal className="w-3.5 h-3.5 text-[#D81B60]" />
-              <span>Sort by:</span>
+          {/* Result Count and Sort Selector */}
+          <div className="flex items-center gap-4 w-full sm:w-auto justify-between sm:justify-end">
+            <span className="font-mono text-xs text-noir/50 hidden md:inline">
+              Showing {startItemNumber}–{endItemNumber} of {filteredProducts.length} items
+            </span>
+
+            <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1.5 text-xs font-mono text-noir/60">
+                <SlidersHorizontal className="w-3.5 h-3.5 text-[#D81B60]" />
+                <span>Sort:</span>
+              </div>
+              <select
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value as any)}
+                className="px-3.5 py-2 rounded-xl bg-white border border-black/[0.08] text-xs font-sans font-medium text-noir outline-none focus:border-[#D81B60] shadow-sm cursor-pointer"
+              >
+                <option value="featured">Featured / Best Sellers</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+                <option value="rating">Highest Rated</option>
+              </select>
             </div>
-            <select
-              value={sortBy}
-              onChange={(e) => setSortBy(e.target.value as any)}
-              className="px-3.5 py-2 rounded-xl bg-white border border-black/[0.08] text-xs font-sans font-medium text-noir outline-none focus:border-[#D81B60] shadow-sm cursor-pointer"
-            >
-              <option value="featured">Featured / Best Sellers</option>
-              <option value="price-asc">Price: Low to High</option>
-              <option value="price-desc">Price: High to Low</option>
-              <option value="rating">Highest Rated</option>
-            </select>
           </div>
         </div>
 
@@ -155,7 +194,7 @@ export default function ProductsPage() {
           })}
         </div>
 
-        {/* Product Grid */}
+        {/* Product Grid (12 items per page) */}
         {filteredProducts.length === 0 ? (
           <div className="text-center py-20 bg-white rounded-2xl border border-black/[0.06] p-8">
             <Sparkles className="w-10 h-10 text-[#D81B60] mx-auto mb-3 opacity-60" />
@@ -175,7 +214,7 @@ export default function ProductsPage() {
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {filteredProducts.map((product) => {
+            {paginatedProducts.map((product) => {
               const wishlisted = isWishlisted(product.id);
               const isAdded = addedId === product.id;
 
@@ -304,6 +343,57 @@ export default function ProductsPage() {
             })}
           </div>
         )}
+
+        {/* Numbered Pagination Controls */}
+        {totalPages > 1 && (
+          <div className="mt-14 pt-8 border-t border-black/[0.08] flex flex-col sm:flex-row items-center justify-between gap-4">
+            <span className="font-mono text-xs text-noir/50 order-2 sm:order-1">
+              Page {currentPage} of {totalPages} ({filteredProducts.length} Total Products)
+            </span>
+
+            {/* Page Buttons Cluster */}
+            <div className="flex items-center gap-1.5 order-1 sm:order-2">
+              {/* Previous Button */}
+              <button
+                onClick={() => handlePageChange(currentPage - 1)}
+                disabled={currentPage === 1}
+                aria-label="Previous Page"
+                className="w-9 h-9 rounded-xl bg-white border border-black/10 text-noir flex items-center justify-center hover:border-[#D81B60] hover:text-[#D81B60] disabled:opacity-30 disabled:pointer-events-none transition-all shadow-sm active:scale-95"
+              >
+                <ChevronLeft className="w-4 h-4" />
+              </button>
+
+              {/* Numbered Buttons */}
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNum) => {
+                const isActive = pageNum === currentPage;
+                return (
+                  <button
+                    key={pageNum}
+                    onClick={() => handlePageChange(pageNum)}
+                    className={`min-w-[36px] h-9 px-3 rounded-xl font-mono text-xs font-bold transition-all duration-200 shadow-sm ${
+                      isActive
+                        ? "bg-gradient-to-r from-[#D81B60] to-[#C2185B] text-white border border-[#D81B60] scale-105"
+                        : "bg-white text-noir/70 border border-black/10 hover:border-[#D81B60]/40 hover:text-noir"
+                    }`}
+                  >
+                    {pageNum}
+                  </button>
+                );
+              })}
+
+              {/* Next Button */}
+              <button
+                onClick={() => handlePageChange(currentPage + 1)}
+                disabled={currentPage === totalPages}
+                aria-label="Next Page"
+                className="w-9 h-9 rounded-xl bg-white border border-black/10 text-noir flex items-center justify-center hover:border-[#D81B60] hover:text-[#D81B60] disabled:opacity-30 disabled:pointer-events-none transition-all shadow-sm active:scale-95"
+              >
+                <ChevronRight className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+        )}
+
       </div>
     </div>
   );
