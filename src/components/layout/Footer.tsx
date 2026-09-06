@@ -3,38 +3,30 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { 
-  Gem, 
-  Phone, 
-  MapPin, 
+  Truck, 
+  RotateCcw, 
   ShieldCheck, 
-  ArrowUpRight, 
-  ArrowUp, 
-  Heart, 
-  ShoppingBag, 
-  Sparkles, 
-  Clock, 
+  Headphones, 
+  ArrowRight, 
+  ArrowUp,
   Mail, 
   Check, 
-  Send,
-  Truck,
-  RotateCcw,
-  BadgeCheck,
-  MessageCircle
+  MapPin, 
+  Phone, 
+  Clock,
+  ExternalLink
 } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 
 export const Footer: React.FC = () => {
-  const [emailInput, setEmailInput] = useState("");
-  const [subscribed, setSubscribed] = useState(false);
+  const [email, setEmail] = useState("");
+  const [isSubscribed, setIsSubscribed] = useState(false);
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!emailInput.trim() || !emailInput.includes("@")) return;
-    setSubscribed(true);
-    setEmailInput("");
-    setTimeout(() => {
-      setSubscribed(false);
-    }, 5000);
+    if (!email || !email.includes("@")) return;
+    setIsSubscribed(true);
+    setEmail("");
+    setTimeout(() => setIsSubscribed(false), 4500);
   };
 
   const scrollToTop = () => {
@@ -44,269 +36,298 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="relative bg-[#0A0E24] text-white overflow-hidden border-t border-white/[0.08]">
-      {/* Ambient Lighting Gradient Accents */}
-      <div className="absolute top-0 left-1/4 -translate-x-1/2 w-[600px] h-[350px] bg-[#D81B60]/10 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 translate-x-1/2 w-[550px] h-[350px] bg-[#426B69]/15 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#D81B60]/50 to-transparent" />
-
+    <footer className="bg-[#090C1A] text-[#D1D5DB] border-t border-white/[0.08] font-sans antialiased selection:bg-[#D81B60] selection:text-white">
+      
       {/* =========================================================================
-          TOP SECTION: VIP NEWSLETTER & PRIVATE CLUB
+          1. VALUE PROPOSITIONS STRIP (Human, Clean, Authentic E-Commerce Trust)
           ========================================================================= */}
-      <div className="relative border-b border-white/[0.08] py-14 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="relative rounded-[22px] bg-gradient-to-r from-white/[0.06] via-white/[0.03] to-white/[0.06] border border-white/10 p-8 sm:p-12 backdrop-blur-xl overflow-hidden shadow-2xl">
-            {/* Subtle glow orb */}
-            <div className="absolute -top-24 -right-24 w-60 h-60 bg-[#FFD3F6]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="border-b border-white/[0.06] bg-[#070914]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
             
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
-              <div className="lg:col-span-6">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#D81B60]/20 border border-[#D81B60]/40 text-[#FFD3F6] font-mono text-[11px] uppercase tracking-widest font-semibold mb-3">
-                  <Sparkles className="w-3.5 h-3.5" />
-                  <span>Zahra&apos;s VIP Circle</span>
-                </div>
-                <h3 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-white mb-2">
-                  Receive Private Drops &amp; Exclusive Vouchers
-                </h3>
-                <p className="text-xs sm:text-sm text-white/70 font-sans leading-relaxed max-w-lg">
-                  Subscribe to get instant coupon codes (like <span className="font-mono text-[#FFD3F6] font-bold">ZAHRA100</span>), personalized gift ideas, and new product announcements.
+            {/* Value 1: Cash on Delivery */}
+            <div className="flex items-start gap-4">
+              <div className="w-11 h-11 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center shrink-0 text-[#FFD3F6]">
+                <Truck className="w-5 h-5" strokeWidth={1.5} />
+              </div>
+              <div>
+                <h4 className="font-sans text-sm font-semibold text-white tracking-tight">
+                  Doorstep Cash on Delivery
+                </h4>
+                <p className="text-xs text-white/55 mt-1 leading-relaxed">
+                  Inside Dhaka in 24–48 hours (Tk 70) and all 64 districts in 48–72 hours (Tk 130).
                 </p>
               </div>
+            </div>
 
-              <div className="lg:col-span-6">
-                <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3">
-                  <div className="relative flex-1">
-                    <Mail className="w-4 h-4 text-white/40 absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none" />
-                    <input
-                      type="email"
-                      value={emailInput}
-                      onChange={(e) => setEmailInput(e.target.value)}
-                      placeholder="Enter your email address..."
-                      required
-                      className="w-full pl-11 pr-4 py-3.5 rounded-[12px] bg-black/40 border border-white/15 focus:border-[#D81B60] text-sm text-white placeholder:text-white/40 outline-none backdrop-blur-md transition-all shadow-inner font-sans"
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-[12px] bg-gradient-to-r from-[#D81B60] via-[#C2185B] to-[#AD1457] hover:from-[#E91E63] hover:to-[#C2185B] text-white font-mono text-xs font-bold uppercase tracking-wider shadow-lg hover:shadow-pink-500/25 transition-all duration-300 hover:scale-[1.02] active:scale-95 shrink-0 select-none"
-                  >
-                    {subscribed ? (
-                      <>
-                        <Check className="w-4 h-4" />
-                        <span>Subscribed!</span>
-                      </>
-                    ) : (
-                      <>
-                        <span>Join VIP Club</span>
-                        <Send className="w-3.5 h-3.5" />
-                      </>
-                    )}
-                  </button>
-                </form>
-
-                <AnimatePresence>
-                  {subscribed && (
-                    <motion.div
-                      initial={{ opacity: 0, y: -8 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0 }}
-                      className="mt-3 text-xs text-emerald-400 font-mono flex items-center gap-1.5"
-                    >
-                      <Check className="w-3.5 h-3.5" />
-                      <span>Welcome to the circle! Check your email for your Tk 100 gift voucher.</span>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-
-                <div className="mt-3 flex items-center gap-4 text-[11px] font-mono text-white/45">
-                  <span>✓ 100% Privacy Protected</span>
-                  <span>✓ No Spam Ever</span>
-                  <span>✓ Instant Access</span>
-                </div>
+            {/* Value 2: 7-Day Replacement */}
+            <div className="flex items-start gap-4">
+              <div className="w-11 h-11 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center shrink-0 text-[#C0E6DE]">
+                <RotateCcw className="w-5 h-5" strokeWidth={1.5} />
+              </div>
+              <div>
+                <h4 className="font-sans text-sm font-semibold text-white tracking-tight">
+                  7-Day Replacement Policy
+                </h4>
+                <p className="text-xs text-white/55 mt-1 leading-relaxed">
+                  Instant free replacement if your parcel encounters transit damage or mechanical defects.
+                </p>
               </div>
             </div>
+
+            {/* Value 3: Inspected Quality */}
+            <div className="flex items-start gap-4">
+              <div className="w-11 h-11 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center shrink-0 text-[#FFD3F6]">
+                <ShieldCheck className="w-5 h-5" strokeWidth={1.5} />
+              </div>
+              <div>
+                <h4 className="font-sans text-sm font-semibold text-white tracking-tight">
+                  Laser Inspected Quality
+                </h4>
+                <p className="text-xs text-white/55 mt-1 leading-relaxed">
+                  High-density K9 optical crystal, natural solid wood bases, and shockproof mailer boxes.
+                </p>
+              </div>
+            </div>
+
+            {/* Value 4: WhatsApp Support */}
+            <div className="flex items-start gap-4">
+              <div className="w-11 h-11 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center shrink-0 text-emerald-400">
+                <Headphones className="w-5 h-5" strokeWidth={1.5} />
+              </div>
+              <div>
+                <h4 className="font-sans text-sm font-semibold text-white tracking-tight">
+                  Dedicated Concierge
+                </h4>
+                <p className="text-xs text-white/55 mt-1 leading-relaxed">
+                  Personal assistance on WhatsApp (+880 1320-829916) every day from 9:00 AM to 11:00 PM.
+                </p>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
 
       {/* =========================================================================
-          MAIN MULTI-COLUMN NAVIGATION GRID
+          2. NEWSLETTER & ATELIER CLUB (Refined, Editorial, Non-Gimmicky)
           ========================================================================= */}
-      <div className="relative py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8">
+      <div className="border-b border-white/[0.06] bg-[#090C1A]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+            
+            <div className="max-w-xl">
+              <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-[#FFD3F6] font-semibold block mb-1">
+                Atelier Updates &amp; Private Offers
+              </span>
+              <h3 className="font-playfair text-2xl sm:text-3xl font-bold text-white tracking-tight">
+                Join the Zahra&apos;s World Circle
+              </h3>
+              <p className="text-xs sm:text-sm text-white/60 mt-1.5 leading-relaxed font-sans">
+                Subscribe for private invitations to limited seasonal batches, new keepsake releases, and voucher codes.
+              </p>
+            </div>
+
+            <div className="w-full lg:max-w-md">
+              <form onSubmit={handleSubscribe} className="flex items-center gap-2">
+                <div className="relative flex-1">
+                  <Mail className="w-4 h-4 text-white/40 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Enter your email address"
+                    required
+                    className="w-full pl-10 pr-3.5 py-3 rounded-lg bg-white/[0.04] border border-white/15 focus:border-[#D81B60] text-xs sm:text-sm text-white placeholder:text-white/40 outline-none transition-colors font-sans"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="px-5 py-3 rounded-lg bg-[#A80C42] hover:bg-[#C2185B] text-white text-xs font-semibold uppercase tracking-wider transition-colors shrink-0 flex items-center gap-1.5 shadow-sm active:scale-95"
+                >
+                  {isSubscribed ? (
+                    <>
+                      <Check className="w-3.5 h-3.5 text-emerald-300" />
+                      <span>Joined</span>
+                    </>
+                  ) : (
+                    <>
+                      <span>Subscribe</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </>
+                  )}
+                </button>
+              </form>
+
+              {isSubscribed && (
+                <p className="text-xs text-emerald-400 font-sans mt-2 flex items-center gap-1.5">
+                  <Check className="w-3.5 h-3.5" />
+                  <span>Thank you for subscribing. We respect your inbox and never send spam.</span>
+                </p>
+              )}
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      {/* =========================================================================
+          3. MAIN NAVIGATION (Professional 4-Column Luxury Architecture)
+          ========================================================================= */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8">
           
-          {/* -------------------------------------------------------------
-              COLUMN 1: BRAND ATELIER & IDENTITY (4 cols)
-              ------------------------------------------------------------- */}
-          <div className="lg:col-span-4 flex flex-col items-start">
-            <Link href="/" className="inline-block group mb-3">
-              <span className="font-signature text-5xl sm:text-[54px] text-[#FFD3F6] group-hover:text-white transition-colors duration-300 drop-shadow-[0_2px_12px_rgba(255,211,246,0.3)] block leading-none">
+          {/* Column 1: Brand & Atelier Story (4 cols) */}
+          <div className="lg:col-span-4">
+            <Link href="/" className="inline-block mb-3">
+              <span className="font-playfair text-2xl sm:text-[26px] font-bold tracking-tight text-white block">
                 Zahra&apos;s World
               </span>
             </Link>
-
-            <p className="font-couture text-sm italic text-white/80 tracking-wide mb-4">
-              Where Memories Glow Forever
+            
+            <p className="text-xs text-white/50 leading-relaxed font-sans mb-6 max-w-sm">
+              An artisanal gifting studio based in Dhaka, crafting customized 3D crystal lights, personalized audio cassettes, and serene home ambient decor for meaningful celebrations.
             </p>
 
-            <p className="text-xs text-white/65 font-sans leading-relaxed mb-6 max-w-sm">
-              Bangladesh&apos;s premier boutique atelier for 3D laser engraved crystal lamps, custom voice-recording cassette keepsakes, and celestial room decor.
-            </p>
+            {/* Quick Contact Micro-Cards */}
+            <div className="space-y-2.5 text-xs text-white/70">
+              <a 
+                href="https://wa.me/8801320829916" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-2.5 hover:text-white transition-colors"
+              >
+                <Phone className="w-4 h-4 text-emerald-400 shrink-0" />
+                <span>WhatsApp Hotline: +880 1320-829916</span>
+              </a>
 
-            {/* Trust Badges Cluster */}
-            <div className="flex flex-col gap-2.5 w-full">
-              <div className="inline-flex items-center gap-2.5 px-3.5 py-2 rounded-[10px] bg-white/[0.04] border border-white/[0.08] text-xs font-mono text-white/80">
-                <ShieldCheck className="w-4 h-4 text-[#FFD3F6]" />
-                <span>100% Quality Checked &amp; Inspected</span>
+              <div className="flex items-center gap-2.5 text-white/60">
+                <MapPin className="w-4 h-4 text-[#FFD3F6] shrink-0" />
+                <span>Atelier: Savar, Dhaka - 1340, Bangladesh</span>
               </div>
-              <div className="inline-flex items-center gap-2.5 px-3.5 py-2 rounded-[10px] bg-white/[0.04] border border-white/[0.08] text-xs font-mono text-white/80">
-                <Truck className="w-4 h-4 text-[#C0E6DE]" />
-                <span>Doorstep Cash on Delivery Across BD</span>
+
+              <div className="flex items-center gap-2.5 text-white/60">
+                <Clock className="w-4 h-4 text-[#C0E6DE] shrink-0" />
+                <span>Studio Hours: 9:00 AM – 11:00 PM (Daily)</span>
               </div>
             </div>
           </div>
 
-          {/* -------------------------------------------------------------
-              COLUMN 2: CURATED COLLECTIONS (3 cols)
-              ------------------------------------------------------------- */}
+          {/* Column 2: Curated Collections (3 cols) */}
           <div className="lg:col-span-3">
-            <h4 className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-[#FFD3F6] mb-5 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#D81B60]" />
-              <span>Curated Collections</span>
-            </h4>
-            <ul className="space-y-2.5 text-xs font-sans text-white/70">
+            <h3 className="text-xs font-semibold uppercase tracking-wider text-white mb-5">
+              Collections
+            </h3>
+            <ul className="space-y-3 text-xs text-white/65">
               <li>
-                <Link href="/products?category=crystal-lamps" className="hover:text-white hover:translate-x-1 transition-all inline-flex items-center gap-1.5">
-                  <span className="text-white/30">›</span> 3D Glowing Crystal Lamps
+                <Link href="/products?category=crystal-lamps" className="hover:text-white transition-colors block">
+                  3D Glowing Crystal Ball Lamps
                 </Link>
               </li>
               <li>
-                <Link href="/products?category=retro-gadgets" className="hover:text-white hover:translate-x-1 transition-all inline-flex items-center gap-1.5">
-                  <span className="text-white/30">›</span> Voice Recorder Cassettes
+                <Link href="/products?category=retro-gadgets" className="hover:text-white transition-colors block">
+                  Mini Voice Recorder Cassettes
                 </Link>
               </li>
               <li>
-                <Link href="/products?category=sand-art" className="hover:text-white hover:translate-x-1 transition-all inline-flex items-center gap-1.5">
-                  <span className="text-white/30">›</span> 360° Moving Sand Art Lamps
+                <Link href="/products?category=sand-art" className="hover:text-white transition-colors block">
+                  360° Moving Sand Art Tabletop Lamps
                 </Link>
               </li>
               <li>
-                <Link href="/products?category=romantic-gifts" className="hover:text-white hover:translate-x-1 transition-all inline-flex items-center gap-1.5">
-                  <span className="text-white/30">›</span> Tulip Mirror Cube &amp; Flowers
+                <Link href="/products?category=romantic-gifts" className="hover:text-white transition-colors block">
+                  Infinite Tulip Mirror Cube
                 </Link>
               </li>
               <li>
-                <Link href="/products?category=ambient-dioramas" className="hover:text-white hover:translate-x-1 transition-all inline-flex items-center gap-1.5">
-                  <span className="text-white/30">›</span> Astronaut Star Projectors
+                <Link href="/products?category=crystal-lamps" className="hover:text-white transition-colors block">
+                  Astronaut Starry Galaxy Projector
                 </Link>
               </li>
               <li>
-                <Link href="/products" className="text-[#FFD3F6] font-semibold hover:underline inline-flex items-center gap-1 mt-2">
+                <Link href="/products?category=retro-gadgets" className="hover:text-white transition-colors block">
+                  Laser Carved Hand-Crank Music Boxes
+                </Link>
+              </li>
+              <li>
+                <Link href="/products" className="text-[#FFD3F6] font-semibold hover:text-white transition-colors inline-flex items-center gap-1 pt-1">
                   <span>Browse All 15 Products</span>
-                  <ArrowUpRight className="w-3.5 h-3.5" />
+                  <ArrowRight className="w-3 h-3" />
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* -------------------------------------------------------------
-              COLUMN 3: QUICK LINKS & CUSTOMER CARE (2 cols)
-              ------------------------------------------------------------- */}
-          <div className="lg:col-span-2">
-            <h4 className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-[#FFD3F6] mb-5 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#426B69]" />
-              <span>Customer Care</span>
-            </h4>
-            <ul className="space-y-2.5 text-xs font-sans text-white/70">
+          {/* Column 3: Customer Care & Services (3 cols) */}
+          <div className="lg:col-span-3">
+            <h3 className="text-xs font-semibold uppercase tracking-wider text-white mb-5">
+              Customer Care
+            </h3>
+            <ul className="space-y-3 text-xs text-white/65">
               <li>
-                <Link href="/wishlist" className="hover:text-white hover:translate-x-1 transition-all inline-flex items-center gap-1.5">
-                  <Heart className="w-3 h-3 text-[#D81B60]" />
-                  <span>My Wishlist</span>
+                <Link href="/cart" className="hover:text-white transition-colors block">
+                  Shopping Bag &amp; Checkout
                 </Link>
               </li>
               <li>
-                <Link href="/cart" className="hover:text-white hover:translate-x-1 transition-all inline-flex items-center gap-1.5">
-                  <ShoppingBag className="w-3 h-3 text-slateTeal" />
-                  <span>Shopping Bag</span>
+                <Link href="/wishlist" className="hover:text-white transition-colors block">
+                  Saved Wishlist Items
                 </Link>
               </li>
               <li>
-                <Link href="/#shop-by-occasion" className="hover:text-white hover:translate-x-1 transition-all inline-flex items-center gap-1.5">
-                  <span className="text-white/30">›</span> Shop by Occasion
+                <Link href="/#reviews" className="hover:text-white transition-colors block">
+                  Client Reviews &amp; Photos
                 </Link>
               </li>
               <li>
-                <Link href="/#reviews" className="hover:text-white hover:translate-x-1 transition-all inline-flex items-center gap-1.5">
-                  <span className="text-white/30">›</span> Verified Client Reviews
+                <Link href="/#why-choose-us" className="hover:text-white transition-colors block">
+                  7-Day Replacement Policy
                 </Link>
               </li>
               <li>
-                <Link href="/#why-choose-us" className="hover:text-white hover:translate-x-1 transition-all inline-flex items-center gap-1.5">
-                  <RotateCcw className="w-3 h-3 text-emerald-400" />
-                  <span>7-Day Replacement</span>
+                <Link href="/#shop-by-occasion" className="hover:text-white transition-colors block">
+                  Gifting by Occasion
                 </Link>
               </li>
               <li>
-                <a 
+                <a
                   href="https://wa.me/8801320829916?text=Hi%20Zahra%27s%20World!%20I%20would%20like%20to%20track%20my%20order."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-white hover:translate-x-1 transition-all inline-flex items-center gap-1.5 text-emerald-400 font-semibold"
+                  className="text-emerald-400 hover:text-emerald-300 transition-colors inline-flex items-center gap-1 font-medium"
                 >
-                  <span className="text-white/30">›</span> Track Order on WhatsApp
+                  <span>Track Order via WhatsApp</span>
+                  <ExternalLink className="w-3 h-3" />
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* -------------------------------------------------------------
-              COLUMN 4: DHAKA CONCIERGE & WORKSHOP (3 cols)
-              ------------------------------------------------------------- */}
-          <div className="lg:col-span-3 flex flex-col">
-            <h4 className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-[#FFD3F6] mb-5 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-              <span>Dhaka Concierge</span>
-            </h4>
-
-            {/* Direct WhatsApp Callout Card */}
-            <a
-              href="https://wa.me/8801320829916?text=Hi%20Zahra%27s%20World!%20I%20have%20an%20inquiry%20about%20your%20products."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group p-4 rounded-[14px] bg-gradient-to-br from-white/[0.08] to-white/[0.02] hover:from-white/[0.12] hover:to-white/[0.05] border border-white/10 hover:border-[#25D366]/50 transition-all duration-300 shadow-lg mb-4 block"
-            >
-              <div className="flex items-center justify-between mb-2">
-                <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-[#25D366] animate-pulse" />
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-[#25D366] font-bold">
-                    Online • Instant Support
-                  </span>
-                </div>
-                <ArrowUpRight className="w-4 h-4 text-white/50 group-hover:text-[#25D366] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+          {/* Column 4: WhatsApp Concierge Support (2 cols) */}
+          <div className="lg:col-span-2">
+            <h3 className="text-xs font-semibold uppercase tracking-wider text-white mb-5">
+              Instant Support
+            </h3>
+            
+            <div className="p-4 rounded-xl bg-white/[0.03] border border-white/[0.08]">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="text-[11px] font-sans text-emerald-400 font-medium">
+                  Active Online
+                </span>
               </div>
-
-              <div className="flex items-center gap-2.5 text-white">
-                <MessageCircle className="w-5 h-5 text-[#25D366] shrink-0" />
-                <div>
-                  <div className="text-[10px] font-mono text-white/60">WhatsApp Hotline</div>
-                  <div className="font-mono text-sm font-bold tracking-wider text-white">
-                    +880 1320-829916
-                  </div>
-                </div>
-              </div>
-            </a>
-
-            {/* Workshop Location & Hours */}
-            <div className="space-y-2 text-xs font-sans text-white/70">
-              <div className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-[#C0E6DE] shrink-0 mt-0.5" />
-                <span>Atelier Location: Savar, Dhaka, Bangladesh</span>
-              </div>
-              <div className="flex items-start gap-2.5">
-                <Clock className="w-4 h-4 text-[#FFD3F6] shrink-0 mt-0.5" />
-                <span>Hours: 7 Days a Week • 9:00 AM – 11:00 PM</span>
-              </div>
+              <p className="text-[11px] text-white/60 leading-relaxed mb-3">
+                Have questions regarding custom voice recordings or bulk gift boxes?
+              </p>
+              <a
+                href="https://wa.me/8801320829916"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-2 px-3 rounded-lg bg-[#25D366]/15 hover:bg-[#25D366]/25 border border-[#25D366]/30 text-white text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors"
+              >
+                <span>Chat on WhatsApp</span>
+                <ArrowRight className="w-3 h-3 text-[#25D366]" />
+              </a>
             </div>
           </div>
 
@@ -314,50 +335,50 @@ export const Footer: React.FC = () => {
       </div>
 
       {/* =========================================================================
-          PAYMENTS & COURIER PARTNERS RIBBON
+          4. PAYMENT METHODS & LOGISTICS (Professional, Subtle Badges)
           ========================================================================= */}
-      <div className="relative border-t border-white/[0.08] py-8 px-4 sm:px-6 lg:px-8 bg-black/30">
+      <div className="border-t border-white/[0.06] bg-[#070914] py-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           
           {/* Payment Methods */}
-          <div className="flex flex-wrap items-center justify-center md:justify-start gap-3">
-            <span className="text-[11px] font-mono uppercase tracking-widest text-white/50 font-semibold mr-2">
-              Payment Options:
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-2.5">
+            <span className="text-xs text-white/40 font-medium mr-2">
+              Payment Methods:
             </span>
-            <span className="px-3 py-1 rounded-[8px] bg-white/[0.06] border border-white/10 text-white font-mono text-xs font-semibold">
-              Cash on Delivery
+            <span className="px-2.5 py-1 rounded bg-white/[0.05] border border-white/[0.08] text-xs text-white/80 font-medium">
+              Cash on Delivery (COD)
             </span>
-            <span className="px-3 py-1 rounded-[8px] bg-[#E2136E]/20 border border-[#E2136E]/40 text-[#FFD3F6] font-mono text-xs font-bold">
+            <span className="px-2.5 py-1 rounded bg-white/[0.05] border border-white/[0.08] text-xs text-white/80 font-medium">
               bKash
             </span>
-            <span className="px-3 py-1 rounded-[8px] bg-[#F7931E]/20 border border-[#F7931E]/40 text-amber-200 font-mono text-xs font-bold">
+            <span className="px-2.5 py-1 rounded bg-white/[0.05] border border-white/[0.08] text-xs text-white/80 font-medium">
               Nagad
             </span>
-            <span className="px-3 py-1 rounded-[8px] bg-[#8C3494]/20 border border-[#8C3494]/40 text-purple-200 font-mono text-xs font-bold">
+            <span className="px-2.5 py-1 rounded bg-white/[0.05] border border-white/[0.08] text-xs text-white/80 font-medium">
               Rocket
+            </span>
+            <span className="px-2.5 py-1 rounded bg-white/[0.05] border border-white/[0.08] text-xs text-white/80 font-medium">
+              Visa / Mastercard
             </span>
           </div>
 
-          {/* Logistics Partners */}
-          <div className="flex flex-wrap items-center justify-center md:justify-end gap-2 text-[11px] font-mono text-white/50">
-            <span className="uppercase tracking-widest font-semibold mr-1">Logistics:</span>
-            <span className="px-2.5 py-0.5 rounded bg-white/[0.04] border border-white/[0.08]">Steadfast</span>
-            <span className="px-2.5 py-0.5 rounded bg-white/[0.04] border border-white/[0.08]">Pathao</span>
-            <span className="px-2.5 py-0.5 rounded bg-white/[0.04] border border-white/[0.08]">RedX</span>
-            <span className="px-2.5 py-0.5 rounded bg-white/[0.04] border border-white/[0.08]">Sundarban</span>
+          {/* Delivery Partners */}
+          <div className="flex items-center gap-2 text-xs text-white/40">
+            <span>Nationwide Couriers:</span>
+            <span className="text-white/70 font-medium">Steadfast • Pathao • RedX • Sundarban</span>
           </div>
 
         </div>
       </div>
 
       {/* =========================================================================
-          BOTTOM COPYRIGHT BAR & BACK TO TOP
+          5. LEGAL & COPYRIGHT BAR
           ========================================================================= */}
-      <div className="relative border-t border-white/[0.08] py-6 px-4 sm:px-6 lg:px-8 bg-black/50">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-white/50">
+      <div className="border-t border-white/[0.04] bg-[#05070F] py-6 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/45">
           
           <div>
-            &copy; {new Date().getFullYear()} <span className="text-white font-semibold">Zahra&apos;s World Atelier</span>. All rights reserved. Handcrafted in Dhaka, Bangladesh.
+            &copy; {new Date().getFullYear()} <span className="text-white/80 font-medium">Zahra&apos;s World</span>. All rights reserved. Handcrafted with care in Dhaka, Bangladesh.
           </div>
 
           <div className="flex items-center gap-6">
@@ -368,17 +389,17 @@ export const Footer: React.FC = () => {
               Wishlist
             </Link>
             <Link href="/cart" className="hover:text-white transition-colors">
-              Bag
+              Cart
             </Link>
             
-            {/* Back To Top Button */}
+            {/* Minimalist Smooth Back to Top Button */}
             <button
               onClick={scrollToTop}
-              aria-label="Back to top of page"
-              className="group inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/[0.06] hover:bg-white text-white/70 hover:text-[#0A0E24] border border-white/10 transition-all duration-300 active:scale-95 ml-2"
+              aria-label="Back to top"
+              className="inline-flex items-center gap-1 px-2.5 py-1 rounded border border-white/10 hover:border-white/30 text-white/60 hover:text-white transition-colors ml-2"
             >
-              <span className="text-[10px] uppercase tracking-wider font-bold">Top</span>
-              <ArrowUp className="w-3 h-3 group-hover:-translate-y-0.5 transition-transform" />
+              <span>Top</span>
+              <ArrowUp className="w-3 h-3" />
             </button>
           </div>
 
