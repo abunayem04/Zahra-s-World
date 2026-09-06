@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Cinzel, Italiana, Cormorant_Garamond, Outfit, Alex_Brush } from "next/font/google";
 import "./globals.css";
-import { AmbienceProvider } from "@/context/AmbienceContext";
 import { CartProvider } from "@/context/CartContext";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -79,17 +78,15 @@ export default function RootLayout({
       </head>
       <body className="antialiased min-h-screen flex flex-col selection:bg-roseBlossom selection:text-noir">
         <SmoothScroll>
-          <AmbienceProvider>
-            <CartProvider>
-              <Header />
-              <main className="flex-1">{children}</main>
-              <Footer />
-              <CartDrawer />
-              <CartToastNotification />
-              <QuickViewModal />
-              <AuthModal />
-            </CartProvider>
-          </AmbienceProvider>
+          <CartProvider>
+            <Header />
+            <main className="flex-1">{children}</main>
+            <Footer />
+            <CartDrawer />
+            <CartToastNotification />
+            <QuickViewModal />
+            <AuthModal />
+          </CartProvider>
         </SmoothScroll>
       </body>
     </html>

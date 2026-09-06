@@ -141,43 +141,41 @@ A bespoke pairing of classical Roman epigraphy, Milanese editorial couture, and 
 Zahra-s-World/
 ├── src/
 │   ├── app/
+│   │   ├── cart/                    # Shopping bag page
+│   │   ├── checkout/                # Direct checkout & COD order placement page
+│   │   ├── order-success/           # Order confirmation & receipt summary page
+│   │   ├── products/                # Product catalog & dynamic [slug] detail pages
+│   │   ├── wishlist/                # Saved wishlist items page
 │   │   ├── globals.css              # Custom Tailwind CSS + color palette tokens
-│   │   ├── layout.tsx               # Next.js RootLayout with zero-CLS font loaders & contexts
+│   │   ├── layout.tsx               # Next.js RootLayout with zero-CLS font loaders & providers
 │   │   └── page.tsx                 # Storefront assemblage & section orchestration
 │   ├── components/
-│   │   ├── about/
-│   │   │   └── AboutSection.tsx     # The Atelier Story, vision, and 3 core value pillars
 │   │   ├── auth/
 │   │   │   └── AuthModal.tsx        # Client login & sign up modal
 │   │   ├── cart/
-│   │   │   └── CartDrawer.tsx       # Slide-out shopping bag & WhatsApp invoice generator
+│   │   │   ├── CartDrawer.tsx       # Slide-out shopping bag & WhatsApp invoice generator
+│   │   │   └── CartToastNotification.tsx # Reactive toast notification on cart addition
 │   │   ├── catalog/
-│   │   │   ├── CatalogSection.tsx   # Category filtering & product grid
-│   │   │   ├── CategoryGateway.tsx  # Asymmetric bento category navigation
+│   │   │   ├── OccasionGateway.tsx  # Curated gift occasion navigation
 │   │   │   ├── ProductCard.tsx      # Standalone product card with quick view
 │   │   │   ├── QuickViewModal.tsx   # Framer Motion quick view modal with variant selector
 │   │   │   └── TrendingShowcase.tsx # Infinite-loop horizontal auto-crawling showcase
-│   │   ├── dispatch/
-│   │   │   └── DispatchGallery.tsx  # Packaging & courier dispatch proof gallery
 │   │   ├── gallery/
 │   │   │   └── UnboxingGallery.tsx  # Asymmetric 7+5 bento gallery with lightbox modal
 │   │   ├── hero/
 │   │   │   └── HeroSection.tsx      # 3D fanned card deck & staggered text reveal hero
-│   │   ├── interactive/
-│   │   │   ├── CassetteAudioPlayer.tsx # Web Audio API cassette player & synthesizer
-│   │   │   └── CrystalVisualizer.tsx   # 6-motif optical preview stage
 │   │   ├── layout/
-│   │   │   ├── Footer.tsx           # Atelier brand footer & concierge direct links
+│   │   │   ├── Footer.tsx           # Atelier brand footer & payment/logistics ribbons
 │   │   │   └── Header.tsx           # Sticky frosted navigation, search, wishlist & cart
 │   │   ├── providers/
 │   │   │   └── SmoothScroll.tsx     # Lenis smooth scroll provider
+│   │   ├── reviews/
+│   │   │   └── ClientReviews.tsx    # Customer reviews, ratings, and testimonials
 │   │   └── trust/
-│   │       ├── TrustLedger.tsx      # Alternative 01-05 editorial ledger
 │   │       ├── TrustRibbon.tsx      # 5-pillar dark satin trust ribbon
 │   │       └── WhyChooseUs.tsx      # Interactive Bézier light beam tree
 │   ├── context/
-│   │   ├── AmbienceContext.tsx      # Daytime boutique lighting context
-│   │   └── CartContext.tsx          # Global cart state, item management, and WhatsApp builder
+│   │   └── CartContext.tsx          # Global cart state, item management & WhatsApp builder
 │   ├── data/
 │   │   └── products.ts              # Verified TypeScript product catalog & specs
 │   └── types/
@@ -221,6 +219,12 @@ Open your browser at:
 ## 📜 Changelog & Release Log
 
 ### [v4.2.0] — 2026-09-07
+- **Codebase Optimization & Dead File Purge**:
+  - Removed all obsolete, unreferenced components and legacy contexts:
+    - `CassetteAudioPlayer.tsx`, `CrystalVisualizer.tsx`, `AboutSection.tsx`, `CategoryGateway.tsx`, `CatalogSection.tsx`, `DispatchGallery.tsx`, `TrustLedger.tsx`.
+    - Removed inactive `AmbienceContext.tsx` and cleaned up `RootLayout`.
+  - Purged redundant, unused raster images (~2MB freed in `public/assets/`):
+    - `steadfast.png`, `pathao.png`, `redx.png`, `sundarban.png`, `sundarban.svg`, `bkash.png`, `nagad.png`, `rocket.png`.
 - **Official Payment & Courier Logistics Ribbon Refactor**:
   - Engineered uniform `h-8 sm:h-9` white pill badges with subtle border and `object-contain` scaling for all payment methods and delivery partner logos.
   - Eliminated layout overlap, line-wrapping clashes, and image clipping on mobile and desktop viewports.
