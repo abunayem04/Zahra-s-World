@@ -15,6 +15,8 @@ import {
   ShieldCheck
 } from "lucide-react";
 
+import Image from "next/image";
+
 export const Footer: React.FC = () => {
   const [email, setEmail] = useState("");
   const [isSubscribed, setIsSubscribed] = useState(false);
@@ -283,36 +285,56 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Payments & Logistics Ribbon */}
-        <div className="border-t border-white/[0.06] bg-[#070914] py-8 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+        {/* Payments & Logistics Ribbon with Official Brand Logos */}
+        <div className="border-t border-white/[0.08] bg-[#060813] py-10 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto flex flex-col xl:flex-row items-center justify-between gap-8">
             
-            {/* Payment Methods */}
-            <div className="flex flex-wrap items-center justify-center md:justify-start gap-2.5">
-              <span className="text-xs text-white/40 font-medium mr-2">
-                Payment Methods:
+            {/* Official Payment Methods */}
+            <div className="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
+              <span className="text-xs font-mono uppercase tracking-[0.14em] text-white/50 font-semibold shrink-0">
+                Accepted Payment Methods:
               </span>
-              <span className="px-2.5 py-1 rounded bg-white/[0.05] border border-white/[0.08] text-xs text-white/80 font-medium">
-                Cash on Delivery (COD)
-              </span>
-              <span className="px-2.5 py-1 rounded bg-white/[0.05] border border-white/[0.08] text-xs text-white/80 font-medium">
-                bKash
-              </span>
-              <span className="px-2.5 py-1 rounded bg-white/[0.05] border border-white/[0.08] text-xs text-white/80 font-medium">
-                Nagad
-              </span>
-              <span className="px-2.5 py-1 rounded bg-white/[0.05] border border-white/[0.08] text-xs text-white/80 font-medium">
-                Rocket
-              </span>
-              <span className="px-2.5 py-1 rounded bg-white/[0.05] border border-white/[0.08] text-xs text-white/80 font-medium">
-                Visa / Mastercard
-              </span>
+              <div className="flex flex-wrap items-center justify-center gap-2.5">
+                <div className="relative h-9 w-[105px] rounded-lg bg-white overflow-hidden shadow-sm hover:scale-105 transition-transform duration-200 border border-white/20" title="Cash on Delivery">
+                  <Image src="/assets/payments/cod.svg" alt="Cash on Delivery" fill className="object-contain p-1" />
+                </div>
+                <div className="relative h-9 w-[95px] rounded-lg bg-white overflow-hidden shadow-sm hover:scale-105 transition-transform duration-200 border border-white/20" title="bKash">
+                  <Image src="/assets/payments/bkash.svg" alt="bKash" fill className="object-contain p-1" />
+                </div>
+                <div className="relative h-9 w-[95px] rounded-lg bg-white overflow-hidden shadow-sm hover:scale-105 transition-transform duration-200 border border-white/20" title="Nagad">
+                  <Image src="/assets/payments/nagad.svg" alt="Nagad" fill className="object-contain p-1" />
+                </div>
+                <div className="relative h-9 w-[95px] rounded-lg bg-white overflow-hidden shadow-sm hover:scale-105 transition-transform duration-200 border border-white/20" title="Rocket DBBL">
+                  <Image src="/assets/payments/rocket.svg" alt="Rocket DBBL" fill className="object-contain p-1" />
+                </div>
+                <div className="relative h-9 w-[75px] rounded-lg bg-white overflow-hidden shadow-sm hover:scale-105 transition-transform duration-200 border border-white/20" title="Visa">
+                  <Image src="/assets/payments/visa.svg" alt="Visa" fill className="object-contain p-1" />
+                </div>
+                <div className="relative h-9 w-[75px] rounded-lg bg-white overflow-hidden shadow-sm hover:scale-105 transition-transform duration-200 border border-white/20" title="Mastercard">
+                  <Image src="/assets/payments/mastercard.svg" alt="Mastercard" fill className="object-contain p-1" />
+                </div>
+              </div>
             </div>
 
-            {/* Delivery Partners */}
-            <div className="flex items-center gap-2 text-xs text-white/40">
-              <span>Nationwide Couriers:</span>
-              <span className="text-white/70 font-medium">Steadfast • Pathao • RedX • Sundarban</span>
+            {/* Official Courier Delivery Partners */}
+            <div className="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
+              <span className="text-xs font-mono uppercase tracking-[0.14em] text-white/50 font-semibold shrink-0">
+                Nationwide Logistics By:
+              </span>
+              <div className="flex flex-wrap items-center justify-center gap-2.5">
+                <div className="relative h-9 w-[115px] rounded-lg bg-white overflow-hidden shadow-sm hover:scale-105 transition-transform duration-200 border border-white/20" title="Steadfast Courier">
+                  <Image src="/assets/couriers/steadfast.svg" alt="Steadfast Courier" fill className="object-contain p-1" />
+                </div>
+                <div className="relative h-9 w-[95px] rounded-lg bg-white overflow-hidden shadow-sm hover:scale-105 transition-transform duration-200 border border-white/20" title="Pathao Logistics">
+                  <Image src="/assets/couriers/pathao.svg" alt="Pathao Logistics" fill className="object-contain p-1" />
+                </div>
+                <div className="relative h-9 w-[95px] rounded-lg bg-white overflow-hidden shadow-sm hover:scale-105 transition-transform duration-200 border border-white/20" title="RedX Delivery">
+                  <Image src="/assets/couriers/redx.svg" alt="RedX Delivery" fill className="object-contain p-1" />
+                </div>
+                <div className="relative h-9 w-[125px] rounded-lg bg-white overflow-hidden shadow-sm hover:scale-105 transition-transform duration-200 border border-white/20" title="Sundarban Courier Service">
+                  <Image src="/assets/couriers/sundarban.svg" alt="Sundarban Courier Service" fill className="object-contain p-1" />
+                </div>
+              </div>
             </div>
 
           </div>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 44" width="140" height="44" fill="none">
+  <rect width="140" height="44" rx="8" fill="#FFFFFF"/>
+  <g transform="translate(10, 7)">
+    <!-- Nagad Flame Symbol -->
+    <path d="M14.5 1.5C12.8 5.2 11.2 8.5 13.8 12.2C15.8 15 16.5 17.8 15.2 21.2C14.2 23.8 12 25.5 9.2 26.2C5.5 27.2 2 25.5 0.5 22.2C-0.8 19.2 0.2 15.8 2.8 13.5C3.2 13.2 3.8 12.8 4 13.2C4.2 13.8 3.8 14.5 3.5 15C1.8 17.8 2 21 4.2 23.2C6.8 25.8 11 25.5 13 22.5C14.8 19.8 14.2 17.2 12.2 14.8C10.2 12.2 9.5 9.2 10.8 6C11.5 4.2 12.8 2.8 14.2 1.2C14.5 0.8 14.8 0.5 15 0.8C15.2 1 14.8 1.2 14.5 1.5Z" fill="#F7931E"/>
+    <path d="M11.5 7.5C10.2 10.2 9.8 12.8 11.2 15.5C12.5 18 12.2 20.5 10.5 22.5C8.8 24.5 6.2 25 3.8 24C6.5 24.5 9.2 23.5 10.5 21C11.8 18.5 11.2 16.2 9.5 14C8.2 12 8 9.8 9.2 7.5C9.8 6.2 10.8 5 11.8 3.8C12 3.5 12.2 3.8 12 4C11.8 5 11.8 6.2 11.5 7.5Z" fill="#ED1C24"/>
+    
+    <!-- Nagad Typography -->
+    <g transform="translate(24, 7)">
+      <text x="0" y="15" font-family="'Outfit', 'Segoe UI', sans-serif" font-size="16" font-weight="800" fill="#E84824" letter-spacing="-0.3">Nagad</text>
+      <text x="56" y="15" font-family="'Hind Siliguri', 'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#F7931E">নগদ</text>
+    </g>
+  </g>
+</svg>

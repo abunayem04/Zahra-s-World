@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 44" width="140" height="44" fill="none">
+  <rect width="140" height="44" rx="8" fill="#FFFFFF"/>
+  <g transform="translate(10, 7)">
+    <!-- bKash Origami Bird -->
+    <path d="M19.8 0L9.4 10.4L18.6 14.8L19.8 0Z" fill="#DF146E"/>
+    <path d="M9.4 10.4L0 12.2L12.6 19.8L9.4 10.4Z" fill="#C40E5E"/>
+    <path d="M18.6 14.8L12.6 19.8L28.2 27.2L18.6 14.8Z" fill="#E2136E"/>
+    <path d="M12.6 19.8L5.4 28.6L28.2 27.2L12.6 19.8Z" fill="#A8094E"/>
+    <path d="M5.4 28.6L16.2 30L28.2 27.2L5.4 28.6Z" fill="#DF146E"/>
+    
+    <!-- bKash Typography -->
+    <g transform="translate(36, 6)">
+      <text x="0" y="16" font-family="'Outfit', 'Segoe UI', sans-serif" font-size="17" font-weight="800" fill="#DF146E" letter-spacing="-0.5">bKash</text>
+    </g>
+  </g>
+</svg>

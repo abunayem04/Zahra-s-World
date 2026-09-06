@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 44" width="140" height="44" fill="none">
+  <rect width="140" height="44" rx="8" fill="#FFFFFF"/>
+  <g transform="translate(10, 8)">
+    <!-- Cash on Delivery Emblem -->
+    <rect x="0" y="3" width="26" height="18" rx="3" fill="#0D132C" stroke="#426B69" stroke-width="1.5"/>
+    <circle cx="13" cy="12" r="4" fill="#FFD3F6"/>
+    <text x="13" y="14.5" font-family="'Outfit', sans-serif" font-size="7" font-weight="900" fill="#0D132C" text-anchor="middle">৳</text>
+    
+    <!-- COD Typography -->
+    <g transform="translate(32, 2)">
+      <text x="0" y="11" font-family="'Outfit', 'Segoe UI', sans-serif" font-size="11" font-weight="800" fill="#0D132C" letter-spacing="0.5">CASH ON</text>
+      <text x="0" y="21" font-family="'Outfit', 'Segoe UI', sans-serif" font-size="10" font-weight="700" fill="#A80C42" letter-spacing="0.8">DELIVERY</text>
+    </g>
+  </g>
+</svg>

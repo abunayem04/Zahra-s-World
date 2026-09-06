@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 44" width="140" height="44" fill="none">
+  <rect width="140" height="44" rx="8" fill="#FFFFFF"/>
+  <g transform="translate(14, 8)">
+    <!-- Pathao Wing/Helmet Crest -->
+    <path d="M14 0C6.3 0 0 6.3 0 14C0 21.7 6.3 28 14 28C21.7 28 28 21.7 28 14C28 6.3 21.7 0 14 0Z" fill="#E21A22"/>
+    <path d="M8 15L13 9H19L14 15H19L11 23L13 16H8L8 15Z" fill="#FFFFFF"/>
+    
+    <!-- Pathao Typography -->
+    <g transform="translate(34, 6)">
+      <text x="0" y="15" font-family="'Outfit', 'Segoe UI', sans-serif" font-size="16" font-weight="900" fill="#E21A22" letter-spacing="-0.5">pathao</text>
+    </g>
+  </g>
+</svg>

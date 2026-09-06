@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 44" width="140" height="44" fill="none">
+  <rect width="140" height="44" rx="8" fill="#FFFFFF"/>
+  <g transform="translate(18, 10)">
+    <!-- RedX Typography & Emblem -->
+    <text x="0" y="18" font-family="'Outfit', 'Segoe UI', sans-serif" font-size="18" font-weight="900" fill="#141414" letter-spacing="-0.5">RED</text>
+    <path d="M43 0L52 12L43 24H49L55 16L61 24H67L58 12L67 0H61L55 8L49 0H43Z" fill="#E02020"/>
+    <g transform="translate(68, 4)">
+      <text x="0" y="14" font-family="'Outfit', sans-serif" font-size="7" font-weight="800" fill="#E02020" letter-spacing="1">LOGISTICS</text>
+    </g>
+  </g>
+</svg>

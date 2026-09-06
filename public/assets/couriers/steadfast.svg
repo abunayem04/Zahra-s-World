@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 44" width="150" height="44" fill="none">
+  <rect width="150" height="44" rx="8" fill="#FFFFFF"/>
+  <g transform="translate(10, 8)">
+    <!-- Steadfast Wing/Arrow Symbol -->
+    <path d="M0 6L14 0L24 14L10 20L0 6Z" fill="#0072CE"/>
+    <path d="M10 20L24 14L20 28L6 26L10 20Z" fill="#FF6A13"/>
+    
+    <!-- Steadfast Typography -->
+    <g transform="translate(28, 2)">
+      <text x="0" y="12" font-family="'Outfit', 'Segoe UI', sans-serif" font-size="12" font-weight="900" fill="#0072CE" letter-spacing="0.5">STEADFAST</text>
+      <text x="0" y="22" font-family="'Outfit', 'Segoe UI', sans-serif" font-size="9" font-weight="700" fill="#FF6A13" letter-spacing="1">COURIER</text>
+    </g>
+  </g>
+</svg>
