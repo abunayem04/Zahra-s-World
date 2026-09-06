@@ -171,7 +171,7 @@ export const TrendingShowcase: React.FC = () => {
 
             {/* Statuesque Headline */}
             <h2 className="font-playfair text-2xl sm:text-3xl lg:text-4xl font-bold text-noir tracking-tight">
-              The Season&apos;s Cherished Icons
+              Our Most Demanded Products
             </h2>
           </div>
 
