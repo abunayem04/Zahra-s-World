@@ -4,7 +4,7 @@ import React, { useRef, useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { PRODUCTS } from "@/data/products";
 import { useCart } from "@/context/CartContext";
-import { Heart, ShoppingBag, ChevronLeft, ChevronRight } from "lucide-react";
+import { Heart, ShoppingBag, ChevronLeft, ChevronRight, Check } from "lucide-react";
 
 // Triple list for completely seamless infinite loop wrapping
 const DISPLAY_PRODUCTS = [...PRODUCTS, ...PRODUCTS, ...PRODUCTS];
@@ -21,6 +21,7 @@ export const TrendingShowcase: React.FC = () => {
   const [startX, setStartX] = useState(0);
   const [scrollLeftPos, setScrollLeftPos] = useState(0);
   const [hasMoved, setHasMoved] = useState(false);
+  const [addedId, setAddedId] = useState<string | null>(null);
   const interactionTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   // Pause auto-movement momentarily during manual navigation
@@ -285,17 +286,34 @@ export const TrendingShowcase: React.FC = () => {
                       )}
                     </div>
 
-                    {/* Add to Bag Button */}
+                    {/* Add to Bag Button with Morphing Animation */}
                     <button
                       onClick={(e) => {
                         e.stopPropagation();
-                        if (!hasMoved) addItem(product.id);
+                        if (!hasMoved) {
+                          addItem(product.id);
+                          setAddedId(product.id);
+                          setTimeout(() => setAddedId(null), 1800);
+                        }
                       }}
-                      className="w-full py-2.5 px-4 rounded-[10px] bg-gradient-to-r from-[#D81B60] via-[#C2185B] to-[#AD1457] hover:from-[#E91E63] hover:to-[#C2185B] text-white font-mono text-xs font-bold uppercase tracking-[0.14em] flex items-center justify-center gap-2 shadow-[0_3px_12px_rgba(216,27,96,0.25)] hover:shadow-[0_4px_18px_rgba(216,27,96,0.4)] transition-all duration-200 hover:scale-[1.01] active:scale-[0.98]"
+                      className={`w-full py-2.5 px-4 rounded-[10px] font-mono text-xs font-bold uppercase tracking-[0.14em] flex items-center justify-center gap-2 transition-all duration-200 shadow-[0_3px_12px_rgba(216,27,96,0.25)] hover:shadow-[0_4px_18px_rgba(216,27,96,0.4)] active:scale-[0.98] ${
+                        addedId === product.id
+                          ? "bg-emerald-600 text-white scale-[1.02]"
+                          : "bg-gradient-to-r from-[#D81B60] via-[#C2185B] to-[#AD1457] hover:from-[#E91E63] hover:to-[#C2185B] text-white hover:scale-[1.01]"
+                      }`}
                       aria-label={`Add ${product.nameEn} to bag`}
                     >
-                      <ShoppingBag className="w-3.5 h-3.5" />
-                      <span>Add to Bag</span>
+                      {addedId === product.id ? (
+                        <>
+                          <Check className="w-3.5 h-3.5 stroke-[3]" />
+                          <span>Added!</span>
+                        </>
+                      ) : (
+                        <>
+                          <ShoppingBag className="w-3.5 h-3.5" />
+                          <span>Add to Bag</span>
+                        </>
+                      )}
                     </button>
                   </div>
                 </div>

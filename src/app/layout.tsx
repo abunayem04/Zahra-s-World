@@ -6,6 +6,7 @@ import { CartProvider } from "@/context/CartContext";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CartDrawer } from "@/components/cart/CartDrawer";
+import { CartToastNotification } from "@/components/cart/CartToastNotification";
 import { QuickViewModal } from "@/components/catalog/QuickViewModal";
 import { AuthModal } from "@/components/auth/AuthModal";
 import { SmoothScroll } from "@/components/providers/SmoothScroll";
@@ -84,6 +85,7 @@ export default function RootLayout({
               <main className="flex-1">{children}</main>
               <Footer />
               <CartDrawer />
+              <CartToastNotification />
               <QuickViewModal />
               <AuthModal />
             </CartProvider>

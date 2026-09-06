@@ -19,12 +19,21 @@ import { AuthModal } from "@/components/auth/AuthModal";
 
 export const Header: React.FC = () => {
   const router = useRouter();
-  const { totalCount, openDrawer, wishlistCount, user, logout, openAuthModal } = useCart();
+  const { totalCount, openDrawer, wishlistCount, user, logout, openAuthModal, cartBounceTrigger } = useCart();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [userDropdownOpen, setUserDropdownOpen] = useState(false);
+  const [cartBouncing, setCartBouncing] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (cartBounceTrigger > 0) {
+      setCartBouncing(true);
+      const timer = setTimeout(() => setCartBouncing(false), 900);
+      return () => clearTimeout(timer);
+    }
+  }, [cartBounceTrigger]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -120,15 +129,19 @@ export const Header: React.FC = () => {
             )}
           </Link>
 
-          {/* Cart Bag Button with Counter */}
+          {/* Cart Bag Button with Counter & Micro-Bounce Animation */}
           <button
             onClick={openDrawer}
             aria-label="View Shopping Bag"
-            className="relative w-9 h-9 rounded-[10px] bg-white/70 backdrop-blur-md border border-black/[0.08] hover:border-pink-300 hover:bg-white flex items-center justify-center text-noir hover:text-[#D81B60] transition-all shadow-[0_1px_3px_rgba(0,0,0,0.02)] active:scale-95"
+            className={`relative w-9 h-9 rounded-[10px] bg-white/70 backdrop-blur-md border border-black/[0.08] hover:border-pink-300 hover:bg-white flex items-center justify-center text-noir hover:text-[#D81B60] transition-all duration-300 shadow-[0_1px_3px_rgba(0,0,0,0.02)] active:scale-95 ${
+              cartBouncing
+                ? "scale-125 bg-rose-50 border-[#D81B60] text-[#D81B60] ring-4 ring-[#D81B60]/20 shadow-lg"
+                : ""
+            }`}
           >
-            <ShoppingBag className="w-4 h-4 transition-transform duration-200 hover:scale-110" />
+            <ShoppingBag className={`w-4 h-4 transition-transform duration-200 ${cartBouncing ? "scale-110 text-[#D81B60]" : "hover:scale-110"}`} />
             {totalCount > 0 && (
-              <span className="absolute -top-1.5 -right-1.5 min-w-[18px] h-[18px] px-1 rounded-full bg-gradient-to-r from-[#D81B60] to-[#AD1457] text-white font-mono text-[9px] font-bold flex items-center justify-center ring-2 ring-white shadow-sm animate-bounce">
+              <span className={`absolute -top-1.5 -right-1.5 min-w-[18px] h-[18px] px-1 rounded-full bg-gradient-to-r from-[#D81B60] to-[#AD1457] text-white font-mono text-[9px] font-bold flex items-center justify-center ring-2 ring-white shadow-sm ${cartBouncing ? "scale-125 animate-bounce" : ""}`}>
                 {totalCount}
               </span>
             )}

@@ -71,6 +71,9 @@ interface CartContextType {
   authModalMode: "login" | "signup" | null;
   openAuthModal: (mode?: "login" | "signup") => void;
   closeAuthModal: () => void;
+  lastAddedProduct: { product: Product; variantName?: string; quantity: number; image: string } | null;
+  clearLastAddedProduct: () => void;
+  cartBounceTrigger: number;
   lastOrder: OrderRecord | null;
   setLastOrder: (order: OrderRecord) => void;
 }
@@ -88,6 +91,8 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [wishlist, setWishlist] = useState<string[]>([]);
   const [user, setUser] = useState<UserProfile | null>(null);
   const [authModalMode, setAuthModalMode] = useState<"login" | "signup" | null>(null);
+  const [lastAddedProduct, setLastAddedProduct] = useState<{ product: Product; variantName?: string; quantity: number; image: string } | null>(null);
+  const [cartBounceTrigger, setCartBounceTrigger] = useState(0);
   const [lastOrder, setLastOrderState] = useState<OrderRecord | null>(null);
   const [mounted, setMounted] = useState(false);
 
@@ -172,6 +177,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     if (!product) return;
 
     const chosenVariant = variantId || product.variants[0]?.id || "default";
+    const variantObj = product.variants.find((v) => v.id === chosenVariant);
 
     setItems((prev) => {
       const idx = prev.findIndex(
@@ -186,7 +192,18 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
       }
     });
 
-    setIsOpen(true);
+    // Trigger micro-animation feedback (no disruptive drawer popup)
+    setLastAddedProduct({
+      product,
+      variantName: variantObj?.name,
+      quantity,
+      image: variantObj?.image || product.image,
+    });
+    setCartBounceTrigger((prev) => prev + 1);
+  };
+
+  const clearLastAddedProduct = () => {
+    setLastAddedProduct(null);
   };
 
   const removeItem = (productId: string, variantId: string) => {
@@ -398,6 +415,9 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
         authModalMode,
         openAuthModal,
         closeAuthModal,
+        lastAddedProduct: mounted ? lastAddedProduct : null,
+        clearLastAddedProduct,
+        cartBounceTrigger: mounted ? cartBounceTrigger : 0,
         lastOrder: mounted ? lastOrder : null,
         setLastOrder,
       }}
