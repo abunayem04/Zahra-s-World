@@ -61,6 +61,7 @@ interface CartContextType {
   closeQuickView: () => void;
   wishlist: string[];
   toggleWishlist: (productId: string) => void;
+  clearWishlist: () => void;
   isWishlisted: (productId: string) => boolean;
   wishlistCount: number;
   user: UserProfile | null;
@@ -158,6 +159,10 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     setWishlist((prev) =>
       prev.includes(productId) ? prev.filter((id) => id !== productId) : [...prev, productId]
     );
+  };
+
+  const clearWishlist = () => {
+    setWishlist([]);
   };
 
   const isWishlisted = (productId: string) => wishlist.includes(productId);
@@ -405,6 +410,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
         closeQuickView,
         wishlist: mounted ? wishlist : [],
         toggleWishlist,
+        clearWishlist,
         isWishlisted,
         wishlistCount: mounted ? wishlistCount : 0,
         user: mounted ? user : null,

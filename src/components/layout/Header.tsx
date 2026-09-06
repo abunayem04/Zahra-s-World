@@ -117,7 +117,7 @@ export const Header: React.FC = () => {
 
           {/* Wishlist Button */}
           <Link
-            href="/products"
+            href="/wishlist"
             aria-label="Wishlist"
             className="relative w-9 h-9 rounded-[10px] bg-white/70 backdrop-blur-md border border-black/[0.08] hover:border-pink-300 hover:bg-white flex items-center justify-center text-noir hover:text-[#D81B60] transition-all shadow-[0_1px_3px_rgba(0,0,0,0.02)] active:scale-95"
           >
@@ -171,6 +171,15 @@ export const Header: React.FC = () => {
                       {user.email || (user.isGuest ? "Guest Account" : "Signed in")}
                     </div>
                   </div>
+
+                  <Link
+                    href="/wishlist"
+                    onClick={() => setUserDropdownOpen(false)}
+                    className="flex items-center gap-2.5 px-4 py-2.5 text-xs font-sans text-noir hover:bg-rose-50 hover:text-[#D81B60] transition-colors"
+                  >
+                    <Heart className="w-3.5 h-3.5 text-[#D81B60]" />
+                    <span>My Wishlist ({wishlistCount})</span>
+                  </Link>
 
                   <Link
                     href="/cart"
@@ -252,6 +261,15 @@ export const Header: React.FC = () => {
           >
             <span>All Products Catalog</span>
             <Sparkles className="w-4 h-4 text-[#D81B60]" />
+          </Link>
+
+          <Link
+            href="/wishlist"
+            onClick={() => setMobileMenuOpen(false)}
+            className="py-2.5 border-b border-black/[0.04] flex items-center justify-between text-noir"
+          >
+            <span>Saved Wishlist ({wishlistCount})</span>
+            <Heart className="w-4 h-4 text-[#D81B60] fill-[#D81B60]" />
           </Link>
 
           <Link
