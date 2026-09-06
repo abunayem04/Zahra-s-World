@@ -6,7 +6,6 @@ import { TrendingShowcase } from "@/components/catalog/TrendingShowcase";
 import { UnboxingGallery } from "@/components/gallery/UnboxingGallery";
 import { WhyChooseUs } from "@/components/trust/WhyChooseUs";
 import { ClientReviews } from "@/components/reviews/ClientReviews";
-import { DispatchGallery } from "@/components/dispatch/DispatchGallery";
 
 export default function Home() {
   return (
@@ -18,7 +17,6 @@ export default function Home() {
       <UnboxingGallery />
       <WhyChooseUs />
       <ClientReviews />
-      <DispatchGallery />
     </div>
   );
 }
