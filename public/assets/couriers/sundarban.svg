@@ -1,14 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 44" width="160" height="44" fill="none">
-  <rect width="160" height="44" rx="8" fill="#FFFFFF"/>
-  <g transform="translate(10, 8)">
-    <!-- Sundarban Green Circle / Deer Emblem -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 40" width="150" height="40">
+  <rect width="150" height="40" rx="8" fill="#FFFFFF"/>
+  <g transform="translate(10, 6)">
+    <!-- Sundarban Green Circle Emblem -->
     <circle cx="14" cy="14" r="13" fill="#00843D"/>
-    <path d="M7 16L14 7L21 16H16V22H12V16H7Z" fill="#FFB81C"/>
+    <!-- Deer / Tree silhouette in Gold -->
+    <path d="M8 17L14 7L20 17H16V22H12V17H8Z" fill="#FFB81C"/>
     
     <!-- Sundarban Typography -->
-    <g transform="translate(32, 2)">
-      <text x="0" y="11" font-family="'Outfit', 'Segoe UI', sans-serif" font-size="11" font-weight="900" fill="#00843D" letter-spacing="0.2">SUNDARBAN</text>
-      <text x="0" y="21" font-family="'Outfit', 'Segoe UI', sans-serif" font-size="9" font-weight="700" fill="#FFB81C" letter-spacing="0.5">COURIER SERVICE</text>
-    </g>
+    <text x="32" y="12" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="900" fill="#00843D" letter-spacing="0.2">SUNDARBAN</text>
+    <text x="32" y="22" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="8.5" font-weight="800" fill="#C68A00" letter-spacing="0.5">COURIER SERVICE</text>
   </g>
 </svg>

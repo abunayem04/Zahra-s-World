@@ -287,31 +287,31 @@ export const Footer: React.FC = () => {
 
         {/* Payments & Logistics Ribbon with Official Brand Logos */}
         <div className="border-t border-white/[0.08] bg-[#060813] py-10 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8">
+          <div className="max-w-7xl mx-auto flex flex-col xl:flex-row items-center justify-between gap-8">
             
             {/* Official Payment Methods */}
             <div className="flex flex-col sm:flex-row items-center gap-3.5 text-center sm:text-left">
               <span className="text-[11px] font-mono uppercase tracking-[0.16em] text-white/50 font-semibold shrink-0">
                 Payment Methods:
               </span>
-              <div className="flex flex-wrap items-center justify-center gap-2">
-                <div className="relative h-8 w-20 rounded-[8px] bg-white overflow-hidden shadow-xs hover:scale-105 transition-transform duration-200 border border-white/20 p-1" title="Cash on Delivery">
-                  <Image src="/assets/payments/cod.svg" alt="Cash on Delivery" fill className="object-contain p-1" />
+              <div className="flex flex-wrap items-center justify-center gap-2.5">
+                <div className="relative h-[34px] w-[96px] rounded-[8px] overflow-hidden shadow-sm hover:scale-105 transition-transform duration-200" title="Cash on Delivery">
+                  <Image src="/assets/payments/cod.svg" alt="Cash on Delivery" fill className="object-cover" />
                 </div>
-                <div className="relative h-8 w-20 rounded-[8px] bg-white overflow-hidden shadow-xs hover:scale-105 transition-transform duration-200 border border-white/20 p-1" title="bKash">
-                  <Image src="/assets/payments/bkash.png" alt="bKash" fill className="object-contain p-0.5" />
+                <div className="relative h-[34px] w-[96px] rounded-[8px] overflow-hidden shadow-sm hover:scale-105 transition-transform duration-200" title="bKash">
+                  <Image src="/assets/payments/bkash.svg" alt="bKash" fill className="object-cover" />
                 </div>
-                <div className="relative h-8 w-20 rounded-[8px] bg-white overflow-hidden shadow-xs hover:scale-105 transition-transform duration-200 border border-white/20 p-1" title="Nagad">
-                  <Image src="/assets/payments/nagad.png" alt="Nagad" fill className="object-contain p-0.5" />
+                <div className="relative h-[34px] w-[96px] rounded-[8px] overflow-hidden shadow-sm hover:scale-105 transition-transform duration-200" title="Nagad">
+                  <Image src="/assets/payments/nagad.svg" alt="Nagad" fill className="object-cover" />
                 </div>
-                <div className="relative h-8 w-20 rounded-[8px] bg-white overflow-hidden shadow-xs hover:scale-105 transition-transform duration-200 border border-white/20 p-1" title="Rocket DBBL">
-                  <Image src="/assets/payments/rocket.png" alt="Rocket DBBL" fill className="object-contain p-0.5" />
+                <div className="relative h-[34px] w-[96px] rounded-[8px] overflow-hidden shadow-sm hover:scale-105 transition-transform duration-200" title="Rocket DBBL">
+                  <Image src="/assets/payments/rocket.svg" alt="Rocket DBBL" fill className="object-cover" />
                 </div>
-                <div className="relative h-8 w-16 rounded-[8px] bg-white overflow-hidden shadow-xs hover:scale-105 transition-transform duration-200 border border-white/20 p-1" title="Visa">
-                  <Image src="/assets/payments/visa.svg" alt="Visa" fill className="object-contain p-1" />
+                <div className="relative h-[34px] w-[80px] rounded-[8px] overflow-hidden shadow-sm hover:scale-105 transition-transform duration-200" title="Visa">
+                  <Image src="/assets/payments/visa.svg" alt="Visa" fill className="object-cover" />
                 </div>
-                <div className="relative h-8 w-16 rounded-[8px] bg-white overflow-hidden shadow-xs hover:scale-105 transition-transform duration-200 border border-white/20 p-1" title="Mastercard">
-                  <Image src="/assets/payments/mastercard.svg" alt="Mastercard" fill className="object-contain p-1" />
+                <div className="relative h-[34px] w-[80px] rounded-[8px] overflow-hidden shadow-sm hover:scale-105 transition-transform duration-200" title="Mastercard">
+                  <Image src="/assets/payments/mastercard.svg" alt="Mastercard" fill className="object-cover" />
                 </div>
               </div>
             </div>
@@ -321,18 +321,18 @@ export const Footer: React.FC = () => {
               <span className="text-[11px] font-mono uppercase tracking-[0.16em] text-white/50 font-semibold shrink-0">
                 Logistics Partners:
               </span>
-              <div className="flex flex-wrap items-center justify-center gap-2">
-                <div className="relative h-8 w-24 rounded-[8px] bg-white overflow-hidden shadow-xs hover:scale-105 transition-transform duration-200 border border-white/20 p-1" title="Steadfast Courier">
-                  <Image src="/assets/couriers/steadfast.png" alt="Steadfast Courier" fill className="object-contain p-0.5" />
+              <div className="flex flex-wrap items-center justify-center gap-2.5">
+                <div className="relative h-[34px] w-[110px] rounded-[8px] overflow-hidden shadow-sm hover:scale-105 transition-transform duration-200" title="Steadfast Courier">
+                  <Image src="/assets/couriers/steadfast.svg" alt="Steadfast Courier" fill className="object-cover" />
                 </div>
-                <div className="relative h-8 w-20 rounded-[8px] bg-white overflow-hidden shadow-xs hover:scale-105 transition-transform duration-200 border border-white/20 p-1" title="Pathao Logistics">
-                  <Image src="/assets/couriers/pathao.png" alt="Pathao Logistics" fill className="object-contain p-0.5" />
+                <div className="relative h-[34px] w-[96px] rounded-[8px] overflow-hidden shadow-sm hover:scale-105 transition-transform duration-200" title="Pathao Logistics">
+                  <Image src="/assets/couriers/pathao.svg" alt="Pathao Logistics" fill className="object-cover" />
                 </div>
-                <div className="relative h-8 w-20 rounded-[8px] bg-white overflow-hidden shadow-xs hover:scale-105 transition-transform duration-200 border border-white/20 p-1" title="RedX Delivery">
-                  <Image src="/assets/couriers/redx.png" alt="RedX Delivery" fill className="object-contain p-0.5" />
+                <div className="relative h-[34px] w-[96px] rounded-[8px] overflow-hidden shadow-sm hover:scale-105 transition-transform duration-200" title="RedX Delivery">
+                  <Image src="/assets/couriers/redx.svg" alt="RedX Delivery" fill className="object-cover" />
                 </div>
-                <div className="relative h-8 w-24 rounded-[8px] bg-white overflow-hidden shadow-xs hover:scale-105 transition-transform duration-200 border border-white/20 p-1" title="Sundarban Courier Service">
-                  <Image src="/assets/couriers/sundarban.png" alt="Sundarban Courier Service" fill className="object-contain p-0.5" />
+                <div className="relative h-[34px] w-[115px] rounded-[8px] overflow-hidden shadow-sm hover:scale-105 transition-transform duration-200" title="Sundarban Courier Service">
+                  <Image src="/assets/couriers/sundarban.svg" alt="Sundarban Courier Service" fill className="object-cover" />
                 </div>
               </div>
             </div>

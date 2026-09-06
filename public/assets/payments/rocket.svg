@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40" width="120" height="40">
+  <rect width="120" height="40" rx="8" fill="#8C3494"/>
+  <g transform="translate(10, 6)">
+    <!-- Rocket Icon -->
+    <path d="M12 0C10 4.5 9 9 9.5 13C6.8 12.5 4.2 13 1.8 14.5C0.8 15.2 0.3 16.4 0.3 17.6C0.3 19.8 2.2 21.4 4.4 21.2L6.5 21L5 25.5C4.5 27 6 28.5 7.5 28L12 26.2L12.5 28.5C13 30 15 30.5 16 29.2L19.5 23.8C22.6 19 23.6 13 22.6 7L23.2 1.2C23.2 0.4 22.2 -0.2 21.2 0.2L16 1.4C14.5 1 13.3 0.5 12 0Z" fill="#FFFFFF"/>
+    <circle cx="16" cy="8" r="2.5" fill="#8C3494"/>
+    <path d="M6.5 22.5L9.5 20L12 24L6.5 22.5Z" fill="#F7941D"/>
+
+    <!-- Rocket Typography -->
+    <text x="30" y="20" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="900" fill="#FFFFFF" letter-spacing="-0.2">Rocket</text>
+    <text x="84" y="13" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" font-weight="800" fill="#E1BEE7">DBBL</text>
+  </g>
+</svg>

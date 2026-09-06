@@ -1,11 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 44" width="140" height="44" fill="none">
-  <rect width="140" height="44" rx="8" fill="#FFFFFF"/>
-  <g transform="translate(18, 10)">
-    <!-- RedX Typography & Emblem -->
-    <text x="0" y="18" font-family="'Outfit', 'Segoe UI', sans-serif" font-size="18" font-weight="900" fill="#141414" letter-spacing="-0.5">RED</text>
-    <path d="M43 0L52 12L43 24H49L55 16L61 24H67L58 12L67 0H61L55 8L49 0H43Z" fill="#E02020"/>
-    <g transform="translate(68, 4)">
-      <text x="0" y="14" font-family="'Outfit', sans-serif" font-size="7" font-weight="800" fill="#E02020" letter-spacing="1">LOGISTICS</text>
-    </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 40" width="130" height="40">
+  <rect width="130" height="40" rx="8" fill="#FFFFFF"/>
+  <g transform="translate(14, 9)">
+    <!-- RED -->
+    <text x="0" y="17" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="900" fill="#141414" letter-spacing="-0.5">RED</text>
+    <!-- X Origami -->
+    <path d="M42 0L51 11L42 22H47.5L53.5 14.5L59.5 22H65L56 11L65 0H59.5L53.5 7.5L47.5 0H42Z" fill="#E02020"/>
+    <!-- LOGISTICS -->
+    <text x="68" y="14" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="7.5" font-weight="800" fill="#E02020" letter-spacing="0.8">LOGISTICS</text>
   </g>
 </svg>
