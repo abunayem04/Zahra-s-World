@@ -70,12 +70,25 @@ const itemRevealVariants = {
   },
 };
 
+// Top 5 Most Demanded & Flagship Products for the Hero 3D Deck Swiper
+const FEATURED_HERO_IDS = [
+  "crystal-ball-night-light",
+  "retro-cassette-voice-recorder",
+  "hello-kitty-silver-necklace-set",
+  "tulip-mirror-cube-lamp",
+  "astronaut-galaxy-star-projector",
+];
+
+const DEMANDED_HERO_PRODUCTS = FEATURED_HERO_IDS
+  .map((id) => PRODUCTS.find((p) => p.id === id))
+  .filter((p): p is typeof PRODUCTS[0] => Boolean(p));
+
 export const HeroSection: React.FC = () => {
   const { openQuickView } = useCart();
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
-  const totalProducts = PRODUCTS.length;
+  const totalProducts = DEMANDED_HERO_PRODUCTS.length;
 
   const nextCard = useCallback(() => {
     setActiveIndex((prev) => (prev + 1) % totalProducts);
@@ -257,7 +270,7 @@ export const HeroSection: React.FC = () => {
               className="relative w-full max-w-[420px] sm:max-w-[480px] lg:max-w-[500px] h-[490px] sm:h-[530px] lg:h-[550px] flex items-center justify-center"
               style={{ perspective: "1200px" }}
             >
-              {PRODUCTS.map((product, idx) => {
+              {DEMANDED_HERO_PRODUCTS.map((product, idx) => {
                 // Calculate position offset relative to active card
                 let offset = (idx - activeIndex + totalProducts) % totalProducts;
                 if (offset > totalProducts / 2) {
@@ -422,7 +435,7 @@ export const HeroSection: React.FC = () => {
 
               {/* Glowing Interactive Progress Dots Indicator */}
               <div className="flex items-center gap-2 bg-black/20 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/15">
-                {PRODUCTS.map((_, idx) => (
+                {DEMANDED_HERO_PRODUCTS.map((_, idx) => (
                   <button
                     key={idx}
                     onClick={() => setActiveIndex(idx)}
