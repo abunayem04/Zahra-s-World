@@ -128,4 +128,34 @@ body {
   scrollbar-width: none !important;
 }
 
+/* Continuous Infinite Marquee Animations */
+@keyframes marqueeLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-33.333333%);
+  }
+}
+
+@keyframes marqueeRight {
+  0% {
+    transform: translateX(-33.333333%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-marquee-left {
+  animation: marqueeLeft 35s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-right {
+  animation: marqueeRight 35s linear infinite;
+  will-change: transform;
+}
+
+
 

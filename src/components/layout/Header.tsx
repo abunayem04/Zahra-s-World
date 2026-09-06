@@ -181,11 +181,11 @@ export const Header: React.FC = () => {
             Shop by Occasion
           </Link>
           <Link
-            href="#about-us"
+            href="#reviews"
             onClick={() => setMobileMenuOpen(false)}
             className="py-2.5 border-b border-black/[0.04] text-noir"
           >
-            About Us
+            Client Reviews
           </Link>
           <Link
             href="#why-choose-us"

@@ -5,7 +5,7 @@ import { OccasionGateway } from "@/components/catalog/OccasionGateway";
 import { TrendingShowcase } from "@/components/catalog/TrendingShowcase";
 import { UnboxingGallery } from "@/components/gallery/UnboxingGallery";
 import { WhyChooseUs } from "@/components/trust/WhyChooseUs";
-import { AboutSection } from "@/components/about/AboutSection";
+import { ClientReviews } from "@/components/reviews/ClientReviews";
 import { DispatchGallery } from "@/components/dispatch/DispatchGallery";
 
 export default function Home() {
@@ -17,7 +17,7 @@ export default function Home() {
       <TrendingShowcase />
       <UnboxingGallery />
       <WhyChooseUs />
-      <AboutSection />
+      <ClientReviews />
       <DispatchGallery />
     </div>
   );
