@@ -14,11 +14,10 @@ import {
 import { AuthModal } from "@/components/auth/AuthModal";
 
 export const Header: React.FC = () => {
-  const { totalCount, openDrawer } = useCart();
+  const { totalCount, openDrawer, wishlistCount } = useCart();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-  const [wishlistCount, setWishlistCount] = useState(0);
   const [authMode, setAuthMode] = useState<"login" | "signup" | null>(null);
 
   useEffect(() => {
@@ -92,11 +91,15 @@ export const Header: React.FC = () => {
 
           {/* Wishlist Frosted Glass Button */}
           <button
-            onClick={() => setWishlistCount((prev) => (prev === 0 ? 1 : 0))}
             aria-label="Wishlist"
             className="relative w-9 h-9 rounded-[10px] bg-white/70 backdrop-blur-md border border-black/[0.08] hover:border-pink-300 hover:bg-white flex items-center justify-center text-noir hover:text-[#D81B60] transition-all shadow-[0_1px_3px_rgba(0,0,0,0.02)] active:scale-95"
           >
             <Heart className={`w-4 h-4 transition-transform duration-200 ${wishlistCount > 0 ? "fill-[#D81B60] text-[#D81B60] scale-110" : "hover:scale-110"}`} />
+            {wishlistCount > 0 && (
+              <span className="absolute -top-1.5 -right-1.5 min-w-[18px] h-[18px] px-1 rounded-full bg-gradient-to-r from-[#D81B60] to-[#AD1457] text-white font-mono text-[9px] font-bold flex items-center justify-center ring-2 ring-white shadow-sm">
+                {wishlistCount}
+              </span>
+            )}
           </button>
 
           {/* Cart Bag Frosted Button with Count Badge */}
@@ -171,11 +174,11 @@ export const Header: React.FC = () => {
             3D Crystal Lamps
           </Link>
           <Link
-            href="#cassette-showcase"
+            href="#about-us"
             onClick={() => setMobileMenuOpen(false)}
             className="py-2.5 border-b border-black/[0.04] text-noir"
           >
-            Voice Memorabilia
+            About Atelier
           </Link>
           <Link
             href="#dispatch-proof"

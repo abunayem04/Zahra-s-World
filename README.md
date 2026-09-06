@@ -2,11 +2,11 @@
 
 # ZAHRA'S WORLD
 ### HAUTE CELESTIAL DECOR & THOUGHTFUL KEEPSAKES BOUTIQUE
-*Digital Flagship Atelier • 2026 Next.js 14 Haute Architecture Edition*
+*Digital Flagship Atelier • Next.js 16 Haute Architecture Edition*
 
-[![Release](https://img.shields.io/badge/Release-v3.11.0--Haute_Hero_Glassmorphic_Deck-0D132C?style=for-the-badge&logoColor=FFD3F6)](#changelog--release-log)
-[![Framework](https://img.shields.io/badge/Stack-Next.js_14_%E2%80%A2_React_18_%E2%80%A2_TypeScript-426B69?style=for-the-badge)](#technical-architecture--stack)
-[![Animation](https://img.shields.io/badge/Motion-Framer_Motion-FFD3F6?style=for-the-badge&labelColor=0D132C)](#signature-interactive-features)
+[![Release](https://img.shields.io/badge/Release-v4.0.0--Haute_Atelier_Masterpiece-0D132C?style=for-the-badge&logoColor=FFD3F6)](#changelog--release-log)
+[![Framework](https://img.shields.io/badge/Stack-Next.js_16_%E2%80%A2_React_19_%E2%80%A2_TypeScript-426B69?style=for-the-badge)](#technical-architecture--stack)
+[![Motion](https://img.shields.io/badge/Motion-Framer_Motion_11_%E2%80%A2_Lenis-A80C42?style=for-the-badge&labelColor=0D132C)](#signature-interactive-features)
 [![Design-System](https://img.shields.io/badge/Design_System-Haute_Minimalism-426B69?style=for-the-badge)](#brand-visual-identity--color-system)
 [![Typography](https://img.shields.io/badge/Typography-Playfair_Display_%E2%80%A2_Alex_Brush_%E2%80%A2_Outfit-0D132C?style=for-the-badge)](#typography-hierarchy)
 [![Palette](https://img.shields.io/badge/Palette-5_Color_Coolors-C0E6DE?style=for-the-badge&labelColor=0D132C)](#brand-visual-identity--color-system)
@@ -16,7 +16,7 @@
 <br/>
 
 > **"Crafted to turn fleeting feelings into permanent light."**  
-> An international digital flagship engineered with Next.js 14 App Router, React 18, Framer Motion, and TypeScript for curated 3D laser celestial crystal spheres, analog cassette voice keepsakes, 360° dynamic sandscapes, and ambient room dioramas.
+> An international digital flagship engineered with Next.js 16 App Router, React 19, Framer Motion, Lenis Smooth Scroll, and TypeScript for curated 3D laser celestial crystal spheres, analog voice keepsakes, 360° dynamic sandscapes, and ambient room dioramas.
 
 </div>
 
@@ -24,7 +24,7 @@
 
 ## 🏛️ Brand Essence & Architectural Philosophy
 
-**Zahra's World** is not a conventional e-commerce storefront. Designed with the aesthetic discipline of high-fashion European maisons (The Row, Loewe, Celine, Aesop) and rebuilt from the ground up as a modern React 18 & Next.js 14 application, every viewport is sculpted with generous negative space, masked editorial typography, and disciplined tactile interactions.
+**Zahra's World** is an exclusive digital flagship designed with the aesthetic discipline of high-fashion European maisons (The Row, Loewe, Celine, Aesop). Every viewport is sculpted with generous negative space, masked editorial typography, smooth kinetic transitions, and disciplined tactile interactions.
 
 - **Origin**: Savar, Dhaka, Bangladesh
 - **Fulfillment**: Insured Nationwide Door-to-Door Delivery with Cash on Delivery (COD)
@@ -36,13 +36,12 @@
 
 ```
 ┌────────────────────────────────────────────────────────────────────────┐
-│ CORE FRAMEWORK      Next.js 14 (App Router, Server & Client Components) │
+│ CORE FRAMEWORK      Next.js 16 (App Router, Server & Client Components) │
 │ LANGUAGE            TypeScript 5.0+ (Strict Type-Safety)               │
-│ COMPONENT ENGINE    React 18 (Hooks, Context Providers, Transitions)   │
-│ KINETIC MOTION      Framer Motion (Masked reveals, spring drawer)      │
+│ COMPONENT ENGINE    React 19 (Hooks, Context Providers, Transitions)   │
+│ KINETIC MOTION      Framer Motion 11 (Stagger reveals, spring physics) │
 │ SCROLL ENGINE       Lenis Smooth Scroll (Fluid Boutique Deceleration)  │
 │ STYLING             Tailwind CSS + Haute Couture Design Token System    │
-│ AUDIO ENGINE        Web Audio API Real-time Polyphonic Synthesizer     │
 │ CELEBRATION FX      Canvas Confetti Micro-interactions                 │
 │ VECTOR SYSTEM       Lucide React (1.5px Hairline stroke icons)         │
 └────────────────────────────────────────────────────────────────────────┘
@@ -52,16 +51,17 @@
 
 ## 🎨 Brand Visual Identity & Color System
 
-The entire visual experience is strictly grounded in an exclusive **5-color palette** curated from Coolors. No arbitrary or unapproved accent colors are used.
+The entire visual experience is strictly grounded in an exclusive **5-color palette** curated from Coolors, enriched with luxury velvet ruby accents.
 
 <div align="center">
 
 | Swatch | Color Name | Hex Code | RGB | Design System Implementation |
 | :---: | :--- | :---: | :---: | :--- |
-| <img src="https://via.placeholder.com/28/FFD3F6/000000?text=+" width="28" height="28" /> | **Blossom Pink** | `"#FFD3F6"` | `255, 211, 246` | **Romantic Couture Accent**: Hero title highlighter (`.highlight-couture`), cart badge indicator, ambient halo glows, wishlist triggers |
+| <img src="https://via.placeholder.com/28/FFD3F6/000000?text=+" width="28" height="28" /> | **Blossom Pink** | `"#FFD3F6"` | `255, 211, 246` | **Romantic Couture Accent**: Hero title highlighter, cart badge indicator, ambient halo glows, wishlist triggers |
 | <img src="https://via.placeholder.com/28/C0E6DE/000000?text=+" width="28" height="28" /> | **Mint Frost** | `"#C0E6DE"` | `192, 230, 222` | **Fresh Atmospheric Tint**: Express shipping tags, secondary badge glows, light mist gradients |
-| <img src="https://via.placeholder.com/28/0D132C/FFFFFF?text=+" width="28" height="28" /> | **Midnight Obsidian Navy** | `"#0D132C"` | `13, 19, 44` | **Primary Anchor Dark**: Headings, primary `.btn-noir` buttons, brand crest, footer surface, cozy night mode |
+| <img src="https://via.placeholder.com/28/0D132C/FFFFFF?text=+" width="28" height="28" /> | **Midnight Obsidian Navy** | `"#0D132C"` | `13, 19, 44` | **Primary Anchor Dark**: Headings, primary `.btn-noir` buttons, brand crest, footer surface |
 | <img src="https://via.placeholder.com/28/426B69/FFFFFF?text=+" width="28" height="28" /> | **Slate Teal** | `"#426B69"` | `66, 107, 105` | **Editorial Mid Accent**: Trust ledger index numbers (`01`–`05`), verified checkmark seals, hairline borders, star ratings |
+| <img src="https://via.placeholder.com/28/A80C42/FFFFFF?text=+" width="28" height="28" /> | **Velvet Ruby / Deep Magenta** | `"#A80C42"` | `168, 12, 66` | **Haute Couture Active Accent**: Why Choose Us tree illuminated cards, laser beams, quick view buttons |
 | <img src="https://via.placeholder.com/28/F4F4F8/000000?text=+" width="28" height="28" /> | **Clean Porcelain Canvas** | `"#F4F4F8"` | `244, 244, 248` | **Architectural Foundation**: Background canvas (`--color-bg-canvas`) supporting layered crisp `#FFFFFF` cards |
 
 </div>
@@ -70,61 +70,56 @@ The entire visual experience is strictly grounded in an exclusive **5-color pale
 
 ## ✒️ Typography Hierarchy
 
-A bespoke pairing of classical Roman epigraphy, Milanese editorial couture, and clean Swiss geometry loaded with zero layout shift (CLS):
+A bespoke pairing of classical Roman epigraphy, Milanese editorial couture, and clean Swiss geometry:
 
 ```
 ┌────────────────────────────────────────────────────────────────────────┐
 │ DISPLAY HEADLINES    Playfair Display • Luxury High-Fashion Serif      │
-│ SIGNATURE SCRIPT     Alex Brush (Sweet Milanese Atelier Calligraphy)   │
+│ SIGNATURE SCRIPT     Alex Brush • Sweet Milanese Atelier Calligraphy   │
 │ COUTURE ACCENTS      Italiana & Cormorant Garamond (Editorial Italics) │
 │ USER INTERFACE       Outfit (Light, Regular, Medium, Semi-Bold)        │
 │ MONOSPACE LEDGER     ui-monospace / SFMono-Regular / Menlo             │
 └────────────────────────────────────────────────────────────────────────┘
 ```
 
-- **Display Headlines (`h1`)**: `Playfair Display` bold (`font-playfair`), tightened letter-spacing (`-0.02em`), luxury editorial tone with a vibrant cursive ampersand (`&`).
-- **Signature Kicker**: `Alex Brush` (`font-signature`) sweet flowing script for the `Zahra's World` couture crest.
-- **Headings (`h2`, `h3`)**: `Cinzel` uppercase with architectural line-height (`1.08`).
-- **Hero Highlighter**: `Italiana` italic with a Blossom Pink (`#FFD3F6`) hairline marker accent.
-- **Micro-Data**: Monospace tags with expanded tracking (`0.08em` - `0.14em`) for serial numbers and product specifications.
-
 ---
 
 ## ⚡ Signature Interactive Features
 
-### 1. Haute Couture Hero Stage & Crystalline Product Deck
-- **Full-Bleed Viewport Canvas**: Engineered with `min-h-[calc(100vh-80px)]` to cover 100% of the visible viewport beneath the fixed header, preventing underlying page seams from peeking through.
-- **20-Slab Gradient Horizon**: Authentic horizontal gradient step slabs progressing smoothly from luminous rose porcelain down to deep nocturnal obsidian with caustic light diffusion.
-- **Fanned Auto-Cycling 3D Product Deck**: 350×480px luxury cards arranged in an interactive fanned perspective deck with smooth auto-cycling, pause-on-hover, and manual prev/next navigation.
-- **Pure Crystalline Glassmorphism**: High-transparency frosted glass footer bar (`rgba(255,255,255,0.16)`, `backdrop-filter: blur(20px)`) with subtle specular bevel and zero harsh border glare.
-- **Satin Magenta Quick View Pill**: Vibrant full-width satin rose action button (`#D81B60` to `#AD1457`) triggering instant modal inspection.
+### 1. Haute Couture Hero Stage & 3D Fanned Product Deck
+- **Cinematic Staggered Text Reveal**: Smooth upward blur-to-focus fade in (`y: 28 -> 0`, `blur(6px) -> blur(0px)`) across provenance badge, signature logo, headline, subtitle, and action buttons.
+- **3D Fanned Auto-Cycling Deck**: Spring-physics fanned card carousel with depth-of-field blur on background cards, auto-cycling with hover pause, and tactile tilt interactions.
+- **Pure Crystalline Glassmorphism**: Ultra-clear frosted glass bottom bar (`backdrop-filter: blur(22px)`) with direct Quick View modal trigger.
+- **20-Slab Gradient Horizon**: Seamless horizontal gradient steps with floating ambient breathing caustic light halos.
 
+### 2. Trust Ribbon
+- **5-Pillar Dark Satin Trust Banner**: Optical K9 Crystal, Atelier QA, Insured Nationwide COD, 7-Day Transit Promise, and WhatsApp VIP Concierge.
 
-### 2. Cozy Room Photometric Ambience Simulator
-- **Interactive Light Dimmer**: Real-time transition between Daylight and Bedside Night Warmth via `AmbienceContext`.
-- **Dual Halo Glow**: Dynamic diffuse radial gradients blending Blossom Pink and Mint Frost softly behind translucent crystal spheres.
-- **Persistent State**: User ambience preference preserved across sessions.
+### 3. Trending Icons Infinite Showcase
+- **Infinite Looping Track**: Continuous, fluid horizontal auto-crawling carousel with mouse drag, touch pan, and arrow navigation.
+- **Quick Bag & Wishlist Actions**: Instant 1-tap cart addition and wishlist heart toggle.
 
-### 3. Interactive 3D Crystal Motif Visualizer
-- **Optical Preview Stage**: Allows visitors to audition 6 internal laser motifs:
-  - *Milky Way Galaxy & Solar System*
-  - *Blooming Rose with 'Love You' Ribbon*
-  - *Saturn Planetary Rings*
-  - *Detailed Crater Moon*
-  - *Smile Day Teddy Bear*
-  - *Angelic Glowing Heart*
-- **Real-Time Stage Swap**: Instant image and description update with zero layout shift.
+### 4. Asymmetrical Bento Unboxing Gallery
+- **Pure Photographic Canvas**: 7+5 / 5+7 asymmetric bento layout celebrating genuine unboxing reactions.
+- **Full-Screen Lightbox Modal**: High-resolution zoom view with fluid backdrop blur.
 
-### 4. Retro Cassette Audio Synthesizer
-- **Analog Web Audio API Engine**: Physical polyphonic synthesizer producing warm lo-fi tape chords in real time.
-- **Kinetic Spools**: Mechanical dual-wheel rotation while audio is playing.
-- **Dynamic VU Equalizer**: Live multi-bar level meter reacting to chord progression (strictly Pink, Teal & Navy).
-- **Physical Shell Swapping**: Instant casing color change between Blossom Pink, Mint Frost, Clean Porcelain, and Obsidian Navy.
+### 5. "Why Choose Us" Interactive Bézier Light Tree
+- **De Casteljau Bézier Laser Beams**: 60fps mathematical cubic curve light propagation linking the central rotating hub to 6 value cards.
+- **Deep Velvet Ruby Illumination**: Cards ignite with a rich ruby-magenta gradient, retaining their active color even when hovering over individual items.
 
-### 5. Slide-Out Cart & WhatsApp Concierge Checkout
+### 6. The Atelier Story (About Us Section)
+- **Brand Vision & Heritage**: Editorial narrative explaining the craftsmanship behind light, memory, and tactile objects.
+- **Floating QA Provenance Card**: Glassmorphism badge detailing 2700K warm amber LED calibration.
+- **Core Value Pillars**: Optical K9 Precision, Crafted with Intention, Insured Nationwide Care.
+
+### 7. Insured Logistics & Nationwide Dispatch Proof
+- **Courier Packaging Proof**: Shockproof custom foam and double-wall corrugated mailer specifications.
+- **Real-Time Logistics Rates**: Flat Tk 70 (Dhaka 24-48h) & Flat Tk 130 (Nationwide 48-72h).
+
+### 8. Slide-Out Cart & WhatsApp Concierge Checkout
 - **Instant Drawer**: Smooth off-canvas drawer with quantity controllers, thumbnail cards, and gift-wrapping toggles.
-- **Autonomous Shipping Calculation**: Automated delivery fee assignment (Dhaka: `Tk 70` • Nationwide: `Tk 130`).
-- **One-Tap WhatsApp Dispatch**: Formats and encodes an executive invoice sent directly to the concierge team with celebration confetti.
+- **Autonomous Shipping Calculation**: Automated delivery fee assignment (Dhaka vs Nationwide).
+- **One-Tap WhatsApp Order**: Formats and encodes an executive invoice sent directly to the concierge team with celebration confetti.
 
 ---
 
@@ -133,8 +128,8 @@ A bespoke pairing of classical Roman epigraphy, Milanese editorial couture, and 
 ```
 ✓ RULE 01: STRICT ZERO EMOJIS    Exclusively 1.5px custom Lucide SVG vectors. Zero unicode emoji glyphs.
 ✓ RULE 02: 100% PURE ENGLISH     Zero non-Latin characters. Currency formatted as standard 'Tk'.
-✓ RULE 03: HARD RADIUS 10PX      Strict 10px corner radius on all buttons, cards, badges, and modals.
-✓ RULE 04: NO GENERIC COLORS     100% locked to the 5-color Coolors palette. Strictly zero green.
+✓ RULE 03: HARD RADIUS 10PX      Strict 10px corner radius on buttons, badges, and modals.
+✓ RULE 04: NO GENERIC COLORS     100% locked to curated Coolors & Velvet Ruby luxury palette.
 ✓ RULE 05: ARCHITECTURAL COPY    Poetic, concise, confident language. Zero sales hype.
 ```
 
@@ -146,33 +141,43 @@ A bespoke pairing of classical Roman epigraphy, Milanese editorial couture, and 
 Zahra-s-World/
 ├── src/
 │   ├── app/
-│   │   ├── globals.css              # Custom Tailwind CSS + 5-color palette tokens
+│   │   ├── globals.css              # Custom Tailwind CSS + color palette tokens
 │   │   ├── layout.tsx               # Next.js RootLayout with zero-CLS font loaders & contexts
-│   │   └── page.tsx                 # Full storefront assemblage & orchestration
+│   │   └── page.tsx                 # Storefront assemblage & section orchestration
 │   ├── components/
+│   │   ├── about/
+│   │   │   └── AboutSection.tsx     # The Atelier Story, vision, and 3 core value pillars
+│   │   ├── auth/
+│   │   │   └── AuthModal.tsx        # Client login & sign up modal
 │   │   ├── cart/
 │   │   │   └── CartDrawer.tsx       # Slide-out shopping bag & WhatsApp invoice generator
 │   │   ├── catalog/
 │   │   │   ├── CatalogSection.tsx   # Category filtering & product grid
-│   │   │   ├── ProductCard.tsx      # Individual product card with hover zoom & quick view
-│   │   │   └── QuickViewModal.tsx   # Framer Motion quick view modal with variant selector
+│   │   │   ├── CategoryGateway.tsx  # Asymmetric bento category navigation
+│   │   │   ├── ProductCard.tsx      # Standalone product card with quick view
+│   │   │   ├── QuickViewModal.tsx   # Framer Motion quick view modal with variant selector
+│   │   │   └── TrendingShowcase.tsx # Infinite-loop horizontal auto-crawling showcase
 │   │   ├── dispatch/
 │   │   │   └── DispatchGallery.tsx  # Packaging & courier dispatch proof gallery
+│   │   ├── gallery/
+│   │   │   └── UnboxingGallery.tsx  # Asymmetric 7+5 bento gallery with lightbox modal
 │   │   ├── hero/
-│   │   │   └── HeroSection.tsx      # Statuesque minimal hero with masked kinetic typography
+│   │   │   └── HeroSection.tsx      # 3D fanned card deck & staggered text reveal hero
 │   │   ├── interactive/
-│   │   │   ├── AmbienceBanner.tsx   # Bedside night light simulator
-│   │   │   ├── CassetteAudioPlayer.tsx # Web Audio API cassette player & VU meter
-│   │   │   └── CrystalVisualizer.tsx # 6-motif optical preview stage
+│   │   │   ├── CassetteAudioPlayer.tsx # Web Audio API cassette player & synthesizer
+│   │   │   └── CrystalVisualizer.tsx   # 6-motif optical preview stage
 │   │   ├── layout/
-│   │   │   ├── AnnouncementBar.tsx  # Top ticker with insured delivery information
-│   │   │   ├── Footer.tsx           # Atelier brand footer & WhatsApp link
-│   │   │   └── Header.tsx           # Sticky navigation, search, wishlist & cart counter
+│   │   │   ├── Footer.tsx           # Atelier brand footer & concierge direct links
+│   │   │   └── Header.tsx           # Sticky frosted navigation, search, wishlist & cart
+│   │   ├── providers/
+│   │   │   └── SmoothScroll.tsx     # Lenis smooth scroll provider
 │   │   └── trust/
-│   │       └── TrustLedger.tsx      # 01-05 editorial ledger with slate teal indices
+│   │       ├── TrustLedger.tsx      # Alternative 01-05 editorial ledger
+│   │       ├── TrustRibbon.tsx      # 5-pillar dark satin trust ribbon
+│   │       └── WhyChooseUs.tsx      # Interactive Bézier light beam tree
 │   ├── context/
-│   │   ├── AmbienceContext.tsx      # Photometric daylight vs night lighting state
-│   │   └── CartContext.tsx          # Global cart state, item management, and drawer controls
+│   │   ├── AmbienceContext.tsx      # Daytime boutique lighting context
+│   │   └── CartContext.tsx          # Global cart state, item management, and WhatsApp builder
 │   ├── data/
 │   │   └── products.ts              # Verified TypeScript product catalog & specs
 │   └── types/
@@ -180,7 +185,7 @@ Zahra-s-World/
 ├── public/
 │   └── assets/                      # Curated high-resolution photography & brand seals
 ├── next.config.mjs                  # Next.js configuration (unoptimized images for static ease)
-├── tailwind.config.ts               # Custom Tailwind theme matching 5-color palette
+├── tailwind.config.ts               # Custom Tailwind theme matching luxury palette
 ├── tsconfig.json                    # Strict TypeScript configuration
 ├── package.json                     # Project dependencies & build scripts
 └── README.md                        # Haute luxury digital documentation & changelog
@@ -215,137 +220,18 @@ Open your browser at:
 
 ## 📜 Changelog & Release Log
 
-### [v3.11.0] — 2026-09-06
-- **Haute Hero Redesign & Crystalline Glassmorphic Product Deck**:
-  - **Full-Bleed 100vh Viewport Coverage**: Calibrated hero height to `min-h-[calc(100vh-80px)]` so that the hero section completely blankets the initial viewport below the 80px header with zero white gaps or exposed lower section borders.
-  - **Playfair Display Luxury Typography**: Integrated `Playfair Display` Google font for the main headline (`Celestial Elegance & Keepsakes`), pairing it with a sweet magenta italic ampersand (`&`) and the `Alex Brush` signature script.
-  - **20 Seamless Color Slabs Architecture**: Ensured horizontal gradient slabs render without vertical collapsing across all screen sizes inside an unconstrained layout container (`w-full h-full flex flex-col`) with radial caustic light highlights.
-  - **Scaled Hero Proportions**: Expanded typography, provenance badge, spec ledger, and CTAs (`px-8 py-4`) for commanding presence on modern wide screens.
-  - **Fanned Auto-Cycling Product Deck**: Built a tactile 3D card fan (`w-[350px] h-[480px]`) displaying signature creations with smooth rotation, slide transitions, and dot indicators.
-  - **Pure Crystalline Glassmorphism**: Redesigned the card overlay bar with ultra-clear frosted glassmorphism (`rgba(255,255,255,0.16)` + `blur(20px)`), removing milky opacities, inner glare bevels, and border glow lines.
-  - **Clean Product Presentation**: Purged all cluttered price tags (both inside the glass bar and the top-right card badge), focusing user attention entirely on high-resolution imagery, product identity, and a luxury satin magenta Quick View button.
-  - **Next.js & Build Optimization**: Upgraded Next.js to `14.2.35`, silenced outdated version dev overlays, and maintained 100% strict TypeScript compliance.
-
-### [v3.10.0] — 2026-09-05
-- **Engineered Cinematic Lenis Smooth Scrolling**:
-  - **Lenis Core Engine Integration**: Installed and configured `lenis` across the entire Next.js 14 App Router codebase.
-  - **Fluid Boutique Inertia Provider (`SmoothScroll.tsx`)**: Calibrated exponential deceleration curve (`duration: 1.25s`, `wheelMultiplier: 1.05`, `touchMultiplier: 1.6`) giving visitors a frictionless, high-fashion browsing experience.
-  - **Anchor Link Interception**: Internal hash links (`#collection`, `#crystal-showcase`, `#cassette-showcase`, `#dispatch-proof`) now glide smoothly with exact offset compensation (`offset: -76px`).
-  - **Hardware Acceleration & CSS Integration**: Imported `lenis/dist/lenis.css` and added hardware-accelerated scroll rules to `globals.css` ensuring fluid 60fps rendering without layout thrashing.
-
-### [v3.9.0] — 2026-09-05
-- **Redesigned Login & Sign Up Button Duo & Removed Concierge Header Button**:
-  - **Login Button**: Formatted as a boutique rounded outline pill (`border-[1.5px] border-[#3D0C24] bg-white text-[#3D0C24] font-sans font-semibold`) mirroring the user's reference image with subtle hover depth.
-  - **Sign Up Button**: Rendered in lush vibrant hot pink / magenta (`bg-gradient-to-r from-[#D81B60] to-[#C2185B] text-white font-sans font-semibold`) with soft ambient drop-glow.
-  - **Removed Concierge Header Button**: Purged the adjacent WhatsApp Concierge button from the top navigation bar per user directive, keeping the right-hand action cluster focused, clean, and balanced.
-  - **Synchronized Mobile Menu**: Mobile drawer updated with the same distinct outline `Login` and filled `Sign Up` buttons.
-
-### [v3.8.0] — 2026-09-05
-- **Integrated Client Login & Sign Up Actions & Purged Dark Mode**:
-  - **Login & Sign Up Actions in Header**:
-    - Embedded sleek, luxury frosted "Log In" button and obsidian noir "Sign Up" button directly in the main header navigation cluster.
-    - Integrated mobile auth actions in the responsive drawer.
-  - **Client Atelier Auth Modal (`AuthModal.tsx`)**:
-    - Interactive modal with smooth tabs for member login and new client registration.
-    - Captures customer phone number for insured courier updates and COD dispatch.
-    - Features strict 10px radius, 100% pure English copy, and zero unicode emojis.
-  - **Dark Mode Completely Deprecated**:
-    - Removed Daylight / Cozy Mode toggle button from the header navigation.
-    - Removed `AmbienceBanner` from the home page.
-    - Hardened `AmbienceContext` to permanently purge any dark classes from `document.documentElement`, locking the application into a luminous, pristine daylight aesthetic.
-
-### [v3.7.0] — 2026-09-05
-- **Brand Identity Calligraphy & Ultra-Premium Frosted Glass Navbar**:
-  - **Logo Icon Purged**: Removed the circular emblem and diamond icon from the navigation header per user directive, allowing the brand name to breathe with pure typographic confidence.
-  - **Sweet Signature Font Typography**: Styled `Zahra's World` using the sweet, flowing luxury cursive script `Alex_Brush` (`font-signature`, `text-3xl sm:text-[38px]`) with delicate hover luster, echoing high-fashion Parisian couture ateliers.
-  - **Ultra-Premium Frosted Glass Navigation Bar**:
-    - **Backdrop**: Translucent Apple-grade frosted glass (`bg-white/85 dark:bg-noir/85 backdrop-blur-2xl border-b border-black/[0.06] shadow-[0_4px_24px_-4px_rgba(0,0,0,0.06)]`).
-    - **Luxury Search Capsule**: Sleek inset frosted input with subtle border transition, delicate 1.5px search stroke, and `⌘K` keyboard shortcut badge.
-    - **"All Creations" Satin Rose CTA**: Polished multi-stop satin rose gradient pill button (`#D81B60` to `#AD1457`) with subtle ambient glow and animated sparkles.
-    - **Frosted Wishlist & Bag Quick-Actions**: Frosted glass capsules (`bg-white/70 backdrop-blur-md border border-black/[0.08]`) with smooth micro-interactions and glowing count pill.
-    - **Photometric Ambience & Live VIP Concierge**: Upgraded Daylight/Cozy Mode toggle and added live WhatsApp VIP Concierge pill with animated emerald status pulse dot.
-
-### [v3.6.0] — 2026-09-05
-- **Purged Horizontal Divider Lines & Refined Seamless Glassmorphism**:
-  - Removed all white top bevel borders, bottom depth lines, and inset divider shadows between horizontal rows.
-  - Rendered seamless, continuous color transitions across the 20 stepped swatches with zero divider artifacts.
-  - Refined Apple VisionOS-level frosted glassmorphism:
-    - Added an overall frosted liquid glass diffusion layer (`backdrop-blur-4px` with radial caustic light glow) over the stepped backdrop.
-    - Upgraded floating center tablet with `backdrop-blur-36px`, `saturate(190%)`, and luminous specular glass edge bevels.
-
-### [v3.5.0] — 2026-09-05
-- **Straight Horizontal Frosted Glass Louvers & Caustic Optical Glassmorphism Hero**:
-  - Re-aligned the 20 exact palette color steps horizontally ("sojasuji") across the full viewport, exactly matching the orientation of the reference image.
-  - Engineered genuine optical glassmorphism physics: placed high-intensity luminous caustic light orbs behind the translucent glass louvers, producing authentic light dispersion and refraction through the glass thickness.
-  - Detailed each horizontal glass slab with:
-    - `1.2px` specular top bevel highlight (`box-shadow: inset 0 1.2px 0 0 rgba(255, 255, 255, 0.65)`).
-    - `1px` bottom depth refraction shadow line (`rgba(0, 0, 0, 0.18)`).
-    - Prismatic diagonal surface light sheen.
-  - Floating Apple-grade frosted glass monolith (`backdrop-blur-28px`, multi-layered specular borders and depth shadows, strict 10px hard radius).
-
-### [v3.4.0] — 2026-09-05
-- **Exact Diagonal Stepped Palette & Apple-Grade Frosted Glassmorphism Hero**:
-  - Sampled the exact 20 stepped color bands from the user's uploaded reference image (progressing from `#FFFFFF`, `#FFF0F9`, `#FFD4F0` through `#FA41C3`, `#D405A3`, down to deep obsidian `#220017`).
-  - Rendered the stepped bands diagonally angled at `-14deg` ("aktu tera vabe") with full viewport coverage.
-  - Implemented Apple-level glassmorphism details: specular light top bevels, inner translucent reflections, and subtle depth separation lines.
-  - Decluttered the hero foreground completely ("hero page a kisu e rakha lagbe na"): centered floating Apple frosted glassmorphism card (`backdrop-blur-2xl`) with statuesque typography and 10px radius buttons.
-
-### [v3.3.0] — 2026-09-05
-- **Bento Hero Grid & Luscious Pink Radiant Gradient Architecture**:
-  - Implemented the asymmetrical Bento hero grid requested by the user:
-    - **Left / Main Banner (72% Width)**: Wide landscape auto-slider stage with category kicker, bold typography, product staging, pricing pill, and dashed/pill pagination indicators (`— — — —`).
-    - **Right Column (28% Width)**: Two vertically stacked promotional cards (`DELIVERY ALL OVER BANGLADESH` with courier rates and `EASY EXCHANGE AVAILABLE` with 7-day inspection guarantee).
-  - **Luscious Pink Gradient Background**: Built a rich, multi-stop vertical radiant gradient (`#FFF4FA` through `#FFD3F6`, `#F8BBE5`, `#F299D6`, into deep obsidian `#0D132C`) inspired by the user's reference palette.
-  - **Header Evolution**: Added a centered search input (`Search for crystal lamps, cassette keychains, sand art, SKU...`), `All Creations` pill button, wishlist heart toggle, and shopping bag counter.
-  - Enforced strict 10px hard radius, 100% pure English copy, Latin `Tk` currency, and zero emojis.
-
-### [v3.2.0] — 2026-09-05
-- **Purged Legacy Static Files (100% Pure React/Next.js Codebase)**:
-  - Removed all legacy static files (`index.html`, `/css/`, `/js/`, `/assets/`).
-  - Elevated the repository into a pure, clean Next.js 14 App Router application.
-  - All public imagery and media assets exclusively consolidated in `/public/assets/`.
-  - Streamlined build and runtime environment with zero redundant static assets.
-
-### [v3.1.0] — 2026-09-05
-- **Grand Maison Architectural Hero Pavilion Redesign**:
-  - Replaced the basic two-column split with an architectural exhibition pavilion layout spanning full visual breadth with balanced spatial presence.
-  - **Top Architectural Provenance Strip**: Added delicate hairline frame tracking `EDITION 2026 // COLLECTION N° 01` • `SAVAR ATELIER LATITUDE 23.8583° N` • `OPTICAL K9 GRADE` • `INSURED NATIONWIDE COD`.
-  - **Statuesque Typography Re-orchestration**: Elevated headline to `SANCTUARIES OF PURE LIGHT & Timeless Keepsakes`, balancing uppercase `Cinzel` Roman epigraphy with Milanese `Italiana` italic, removing clumsy underlines.
-  - **Interactive 4-Flagship Audition Carousel**: Built an interactive switcher allowing visitors to audition 4 signature creations directly in the hero stage (`01 Galaxy Sphere`, `02 Cassette Memo`, `03 Sandscape Lamp`, `04 Snowing Streetlamp`) with synchronized specs, pricing, and image crossfades.
-  - **Tactile Light Spectrum Switcher**: Integrated an ambient Kelvin control right on the hero stage (`2700K Warm Amber` vs `4000K Lunar Glow`).
-  - **Dual-Surface Synchronization**: Updated both Next.js App Router (`src/components/hero/HeroSection.tsx`) and static assets (`index.html`, `css/components.css`, `js/app.js`) simultaneously.
-
-### [v3.0.0] — 2026-09-05
-- **Next.js 14 App Router Migration**: Converted the entire project architecture from static HTML/CSS/JS to a state-of-the-art **React 18 & Next.js 14 (App Router)** application.
-- **TypeScript & Type Safety**: Established strict TypeScript definitions (`Product`, `ProductVariant`, `CartItem`, `AmbienceState`) ensuring zero runtime errors.
-- **Framer Motion Kinetic Transitions**: Built fluid, orchestrated micro-interactions for the minimal Hero text reveal, Quick View modal, and Cart slide-out drawer.
-- **Web Audio API Cassette Synthesizer**: Componentized the retro cassette player into a modular React component with real-time polyphonic chord generation and dynamic VU equalizer meters.
-- **Photometric Ambience Context**: React Context API managing daylight vs cozy room night ambience across the entire application with dynamic halo glows.
-- **Zero-CLS Typography**: Integrated Next.js font loaders (`next/font/google`) for `Cinzel`, `Italiana`, `Cormorant Garamond`, and `Outfit`.
-- **Production Build Validation**: Fully compiled with `next build` passing with 0 errors (`Route / 12.2 kB First Load JS`).
-
-### [v2.4.0] — 2026-09-05
-- **Hero Decluttering**: Completely removed the 4-item checklist under buttons, condensed subtitle to a single striking sentence, and simplified the pre-badge to `HAUTE CELESTIAL ATELIER`.
-- **Minimal CTA Hierarchy**: Transitioned to 1 dominant Obsidian Noir primary button + 1 quiet monospace link (`Concierge Order ↗`).
-- **Product Stage Refinement**: Replaced heavy black image bar with a sleek, minimalist floating glass corner pill (`01 / Milky Way Sphere · Tk 890`).
-- **GitHub Remote Initialized**: Git repository established and pushed to `https://github.com/abunayem04/Zahra-s-World.git` on branch `main`.
-
-### [v2.3.0] — 2026-09-05
-- **Exact Coolors Palette Integration**: Adopted the 5 user swatches (`#FFD3F6`, `#C0E6DE`, `#0D132C`, `#426B69`, `#F4F4F8`).
-- **Photometric Ambient Glow**: Dual radial backdrop blending Blossom Pink and Mint Frost over Clean Porcelain canvas.
-- **Interactive Cassette Color Update**: Cassette shell selector now renders the exact 5 palette tones.
-
-### [v2.2.0] — 2026-09-05
-- **100% Pure English Purge**: Completely eliminated all Bengali strings, language toggles, and data attributes.
-- **Latin Currency Conversion**: Converted all instances of Bengali currency symbol (`৳`) to Latin `Tk ` across all HTML, JS, and CSS files.
-- **Codebase Regex Scan**: Validated 0 occurrences of non-Latin characters and 0 emojis.
-
-### [v2.1.0] — 2026-09-05
-- **Disciplined 10px Hard Radius (Rule 06)**: Standardized all interactive elements, modals, cards, and buttons to 10px.
-- **Zero-Emoji Vector System**: Replaced all unicode emoji icons with 1.5px custom SVG line vectors.
-
-### [v2.0.0] — 2026-09-05
-- **Initial Digital Flagship Architecture**: Built 3D Crystal visualizer, Web Audio analog cassette player, and WhatsApp concierge order generator.
+### [v4.0.0] — 2026-09-06
+- **Atelier Story (About Us) Section Integration**:
+  - Replaced the interactive cassette synthesizer on the homepage with an editorial **About Us Section** (`AboutSection.tsx`).
+  - Highlights brand vision, K9 optical craftsmanship, 2700K lighting QA, and 3 core value pillars.
+- **Why Choose Us Interactive Polish**:
+  - Refined Bézier curve laser line animation to a sleek, pure stroke without intrusive circle heads.
+  - Darkened active color palette to rich **Velvet Ruby / Deep Magenta** (`#A80C42`).
+  - Fixed card hover logic so illuminated cards permanently keep their color when the user hovers over any card.
+- **Hero Section Cinematic Upgrade**:
+  - Added Framer Motion staggered blur-to-focus text reveal animations for all brand typography.
+  - Upgraded the 3D fanned product card deck with perspective physics, depth-of-field blur, and subtle ambient breathing caustics.
+  - Cleaned up the bottom spec ledger to maintain an uncluttered editorial composition.
 
 ---
 

@@ -26,6 +26,10 @@ interface CartContextType {
   quickViewProduct: Product | null;
   openQuickView: (productId: string) => void;
   closeQuickView: () => void;
+  wishlist: string[];
+  toggleWishlist: (productId: string) => void;
+  isWishlisted: (productId: string) => boolean;
+  wishlistCount: number;
 }
 
 const CartContext = createContext<CartContextType | null>(null);
@@ -36,6 +40,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [selectedDelivery, setSelectedDelivery] = useState<"dhaka" | "outside">("dhaka");
   const [isGiftWrapped, setIsGiftWrapped] = useState(false);
   const [quickViewProduct, setQuickViewProduct] = useState<Product | null>(null);
+  const [wishlist, setWishlist] = useState<string[]>([]);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -48,6 +53,14 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
         // ignore
       }
     }
+    const savedWish = localStorage.getItem("zahra_wishlist");
+    if (savedWish) {
+      try {
+        setWishlist(JSON.parse(savedWish));
+      } catch {
+        // ignore
+      }
+    }
   }, []);
 
   useEffect(() => {
@@ -55,6 +68,21 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
       localStorage.setItem("zahra_cart_items", JSON.stringify(items));
     }
   }, [items, mounted]);
+
+  useEffect(() => {
+    if (mounted) {
+      localStorage.setItem("zahra_wishlist", JSON.stringify(wishlist));
+    }
+  }, [wishlist, mounted]);
+
+  const toggleWishlist = (productId: string) => {
+    setWishlist((prev) =>
+      prev.includes(productId) ? prev.filter((id) => id !== productId) : [...prev, productId]
+    );
+  };
+
+  const isWishlisted = (productId: string) => wishlist.includes(productId);
+  const wishlistCount = wishlist.length;
 
   const openDrawer = () => setIsOpen(true);
   const closeDrawer = () => setIsOpen(false);
@@ -196,6 +224,10 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
         quickViewProduct,
         openQuickView,
         closeQuickView,
+        wishlist: mounted ? wishlist : [],
+        toggleWishlist,
+        isWishlisted,
+        wishlistCount: mounted ? wishlistCount : 0,
       }}
     >
       {children}
