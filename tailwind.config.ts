@@ -44,8 +44,9 @@ const config: Config = {
         },
       },
       fontFamily: {
-        signature: ["var(--font-signature)", "cursive"],
+        signature: ["'Great Vibes'", "'Parisienne'", "var(--font-signature)", "'Alex Brush'", "'Segoe Script'", "'Brush Script MT'", "cursive"],
         display: ["var(--font-cinzel)", "Georgia", "serif"],
+        playfair: ["'Playfair Display'", "Georgia", "serif"],
         couture: ["var(--font-italiana)", "Georgia", "serif"],
         editorial: ["var(--font-cormorant)", "Georgia", "serif"],
         sans: ["var(--font-outfit)", "-apple-system", "BlinkMacSystemFont", "sans-serif"],

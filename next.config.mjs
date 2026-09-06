@@ -3,6 +3,10 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     unoptimized: true
+  },
+  devIndicators: {
+    appIsrStatus: false,
+    buildActivity: false,
   }
 };
 

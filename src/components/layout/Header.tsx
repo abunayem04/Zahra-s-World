@@ -53,7 +53,7 @@ export const Header: React.FC = () => {
           className="group inline-flex items-center py-1 select-none shrink-0"
           aria-label="Zahra's World Home"
         >
-          <span className="font-signature text-3xl sm:text-[38px] text-noir tracking-wide group-hover:text-[#D81B60] transition-colors duration-300 drop-shadow-sm leading-none">
+          <span className="font-signature text-[32px] sm:text-[40px] text-noir tracking-wide group-hover:text-[#D81B60] transition-colors duration-300 drop-shadow-sm leading-none font-normal">
             Zahra&apos;s World
           </span>
         </Link>

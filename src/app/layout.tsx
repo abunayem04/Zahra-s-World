@@ -3,7 +3,6 @@ import { Cinzel, Italiana, Cormorant_Garamond, Outfit, Alex_Brush } from "next/f
 import "./globals.css";
 import { AmbienceProvider } from "@/context/AmbienceContext";
 import { CartProvider } from "@/context/CartContext";
-import { AnnouncementBar } from "@/components/layout/AnnouncementBar";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CartDrawer } from "@/components/cart/CartDrawer";
@@ -68,11 +67,18 @@ export default function RootLayout({
       lang="en"
       className={`${cinzel.variable} ${alexBrush.variable} ${italiana.variable} ${cormorant.variable} ${outfit.variable}`}
     >
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Parisienne&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body className="antialiased min-h-screen flex flex-col selection:bg-roseBlossom selection:text-noir">
         <SmoothScroll>
           <AmbienceProvider>
             <CartProvider>
-              <AnnouncementBar />
               <Header />
               <main className="flex-1">{children}</main>
               <Footer />

@@ -4,11 +4,11 @@
 ### HAUTE CELESTIAL DECOR & THOUGHTFUL KEEPSAKES BOUTIQUE
 *Digital Flagship Atelier • 2026 Next.js 14 Haute Architecture Edition*
 
-[![Release](https://img.shields.io/badge/Release-v3.10.0--Lenis_Smooth_Scroll-0D132C?style=for-the-badge&logoColor=FFD3F6)](#changelog--release-log)
+[![Release](https://img.shields.io/badge/Release-v3.11.0--Haute_Hero_Glassmorphic_Deck-0D132C?style=for-the-badge&logoColor=FFD3F6)](#changelog--release-log)
 [![Framework](https://img.shields.io/badge/Stack-Next.js_14_%E2%80%A2_React_18_%E2%80%A2_TypeScript-426B69?style=for-the-badge)](#technical-architecture--stack)
 [![Animation](https://img.shields.io/badge/Motion-Framer_Motion-FFD3F6?style=for-the-badge&labelColor=0D132C)](#signature-interactive-features)
 [![Design-System](https://img.shields.io/badge/Design_System-Haute_Minimalism-426B69?style=for-the-badge)](#brand-visual-identity--color-system)
-[![Typography](https://img.shields.io/badge/Typography-Cinzel_%E2%80%A2_Italiana_%E2%80%A2_Cormorant-0D132C?style=for-the-badge)](#typography-hierarchy)
+[![Typography](https://img.shields.io/badge/Typography-Playfair_Display_%E2%80%A2_Alex_Brush_%E2%80%A2_Outfit-0D132C?style=for-the-badge)](#typography-hierarchy)
 [![Palette](https://img.shields.io/badge/Palette-5_Color_Coolors-C0E6DE?style=for-the-badge&labelColor=0D132C)](#brand-visual-identity--color-system)
 [![Icons](https://img.shields.io/badge/Icons-Zero_Emojis_%E2%80%A2_Lucide_Vectors-426B69?style=for-the-badge)](#design-mandates--hard-rules)
 [![Language](https://img.shields.io/badge/Language-100%25_Pure_English-0D132C?style=for-the-badge)](#design-mandates--hard-rules)
@@ -40,6 +40,7 @@
 │ LANGUAGE            TypeScript 5.0+ (Strict Type-Safety)               │
 │ COMPONENT ENGINE    React 18 (Hooks, Context Providers, Transitions)   │
 │ KINETIC MOTION      Framer Motion (Masked reveals, spring drawer)      │
+│ SCROLL ENGINE       Lenis Smooth Scroll (Fluid Boutique Deceleration)  │
 │ STYLING             Tailwind CSS + Haute Couture Design Token System    │
 │ AUDIO ENGINE        Web Audio API Real-time Polyphonic Synthesizer     │
 │ CELEBRATION FX      Canvas Confetti Micro-interactions                 │
@@ -73,14 +74,17 @@ A bespoke pairing of classical Roman epigraphy, Milanese editorial couture, and 
 
 ```
 ┌────────────────────────────────────────────────────────────────────────┐
-│ DISPLAY HEADLINES    Cinzel (Weight 600) • Regal Roman Proportions     │
-│ COUTURE ACCENTS      Italiana & Cormorant Garamond (Italic Editorial)  │
+│ DISPLAY HEADLINES    Playfair Display • Luxury High-Fashion Serif      │
+│ SIGNATURE SCRIPT     Alex Brush (Sweet Milanese Atelier Calligraphy)   │
+│ COUTURE ACCENTS      Italiana & Cormorant Garamond (Editorial Italics) │
 │ USER INTERFACE       Outfit (Light, Regular, Medium, Semi-Bold)        │
 │ MONOSPACE LEDGER     ui-monospace / SFMono-Regular / Menlo             │
 └────────────────────────────────────────────────────────────────────────┘
 ```
 
-- **Headings (`h1`, `h2`, `h3`)**: `Cinzel` uppercase, tightened letter-spacing (`-0.02em`), architectural line-height (`1.08`).
+- **Display Headlines (`h1`)**: `Playfair Display` bold (`font-playfair`), tightened letter-spacing (`-0.02em`), luxury editorial tone with a vibrant cursive ampersand (`&`).
+- **Signature Kicker**: `Alex Brush` (`font-signature`) sweet flowing script for the `Zahra's World` couture crest.
+- **Headings (`h2`, `h3`)**: `Cinzel` uppercase with architectural line-height (`1.08`).
 - **Hero Highlighter**: `Italiana` italic with a Blossom Pink (`#FFD3F6`) hairline marker accent.
 - **Micro-Data**: Monospace tags with expanded tracking (`0.08em` - `0.14em`) for serial numbers and product specifications.
 
@@ -88,11 +92,13 @@ A bespoke pairing of classical Roman epigraphy, Milanese editorial couture, and 
 
 ## ⚡ Signature Interactive Features
 
-### 1. Ultra-Minimal Couture Hero Stage
-- **Masked Upward Kinetic Reveal**: Orchestrated Framer Motion entrance with staggered delays.
-- **Negative Space**: Generous vertical breathing room with zero visual clutter.
-- **Single Dominant CTA**: Obsidian Noir primary action paired with a quiet monospace concierge link.
-- **Floating Glass Corner Pill**: Discreet product attribution (`01 / Milky Way Sphere · Tk 890`).
+### 1. Haute Couture Hero Stage & Crystalline Product Deck
+- **Full-Bleed Viewport Canvas**: Engineered with `min-h-[calc(100vh-80px)]` to cover 100% of the visible viewport beneath the fixed header, preventing underlying page seams from peeking through.
+- **20-Slab Gradient Horizon**: Authentic horizontal gradient step slabs progressing smoothly from luminous rose porcelain down to deep nocturnal obsidian with caustic light diffusion.
+- **Fanned Auto-Cycling 3D Product Deck**: 350×480px luxury cards arranged in an interactive fanned perspective deck with smooth auto-cycling, pause-on-hover, and manual prev/next navigation.
+- **Pure Crystalline Glassmorphism**: High-transparency frosted glass footer bar (`rgba(255,255,255,0.16)`, `backdrop-filter: blur(20px)`) with subtle specular bevel and zero harsh border glare.
+- **Satin Magenta Quick View Pill**: Vibrant full-width satin rose action button (`#D81B60` to `#AD1457`) triggering instant modal inspection.
+
 
 ### 2. Cozy Room Photometric Ambience Simulator
 - **Interactive Light Dimmer**: Real-time transition between Daylight and Bedside Night Warmth via `AmbienceContext`.
@@ -208,6 +214,17 @@ Open your browser at:
 ---
 
 ## 📜 Changelog & Release Log
+
+### [v3.11.0] — 2026-09-06
+- **Haute Hero Redesign & Crystalline Glassmorphic Product Deck**:
+  - **Full-Bleed 100vh Viewport Coverage**: Calibrated hero height to `min-h-[calc(100vh-80px)]` so that the hero section completely blankets the initial viewport below the 80px header with zero white gaps or exposed lower section borders.
+  - **Playfair Display Luxury Typography**: Integrated `Playfair Display` Google font for the main headline (`Celestial Elegance & Keepsakes`), pairing it with a sweet magenta italic ampersand (`&`) and the `Alex Brush` signature script.
+  - **20 Seamless Color Slabs Architecture**: Ensured horizontal gradient slabs render without vertical collapsing across all screen sizes inside an unconstrained layout container (`w-full h-full flex flex-col`) with radial caustic light highlights.
+  - **Scaled Hero Proportions**: Expanded typography, provenance badge, spec ledger, and CTAs (`px-8 py-4`) for commanding presence on modern wide screens.
+  - **Fanned Auto-Cycling Product Deck**: Built a tactile 3D card fan (`w-[350px] h-[480px]`) displaying signature creations with smooth rotation, slide transitions, and dot indicators.
+  - **Pure Crystalline Glassmorphism**: Redesigned the card overlay bar with ultra-clear frosted glassmorphism (`rgba(255,255,255,0.16)` + `blur(20px)`), removing milky opacities, inner glare bevels, and border glow lines.
+  - **Clean Product Presentation**: Purged all cluttered price tags (both inside the glass bar and the top-right card badge), focusing user attention entirely on high-resolution imagery, product identity, and a luxury satin magenta Quick View button.
+  - **Next.js & Build Optimization**: Upgraded Next.js to `14.2.35`, silenced outdated version dev overlays, and maintained 100% strict TypeScript compliance.
 
 ### [v3.10.0] — 2026-09-05
 - **Engineered Cinematic Lenis Smooth Scrolling**:
