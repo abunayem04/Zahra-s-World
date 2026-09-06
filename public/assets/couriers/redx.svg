@@ -1,11 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 40" width="130" height="40">
   <rect width="130" height="40" rx="8" fill="#FFFFFF"/>
-  <g transform="translate(14, 9)">
-    <!-- RED -->
-    <text x="0" y="17" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="900" fill="#141414" letter-spacing="-0.5">RED</text>
-    <!-- X Origami -->
-    <path d="M42 0L51 11L42 22H47.5L53.5 14.5L59.5 22H65L56 11L65 0H59.5L53.5 7.5L47.5 0H42Z" fill="#E02020"/>
-    <!-- LOGISTICS -->
-    <text x="68" y="14" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="7.5" font-weight="800" fill="#E02020" letter-spacing="0.8">LOGISTICS</text>
+  <g transform="translate(14, 6)">
+    <!-- REDX Icon Badge & Typography -->
+    <g transform="translate(0, 0)">
+      <text x="0" y="20" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="900" fill="#111827" letter-spacing="-0.5">RED<tspan fill="#E31B23">X</tspan></text>
+      <!-- Speedy arrow accent -->
+      <path d="M72 10 L78 15 L72 20 Z" fill="#E31B23"/>
+      <!-- Delivery subline -->
+      <text x="0" y="26" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="6.5" font-weight="800" fill="#6B7280" letter-spacing="2.5">DELIVERY</text>
+    </g>
   </g>
 </svg>

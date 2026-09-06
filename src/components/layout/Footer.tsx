@@ -286,53 +286,68 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Payments & Logistics Ribbon with Official Brand Logos */}
-        <div className="border-t border-white/[0.08] bg-[#060813] py-10 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto flex flex-col xl:flex-row items-center justify-between gap-8">
+        <div className="border-t border-white/[0.08] bg-[#060813] py-8 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto flex flex-col xl:flex-row items-center justify-between gap-6 lg:gap-8">
             
             {/* Official Payment Methods */}
-            <div className="flex flex-col sm:flex-row items-center gap-3.5 text-center sm:text-left">
+            <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 text-center sm:text-left">
               <span className="text-[11px] font-mono uppercase tracking-[0.16em] text-white/50 font-semibold shrink-0">
                 Payment Methods:
               </span>
-              <div className="flex flex-wrap items-center justify-center gap-2.5">
-                <div className="relative h-[34px] w-[96px] rounded-[8px] overflow-hidden shadow-sm hover:scale-105 transition-transform duration-200" title="Cash on Delivery">
-                  <Image src="/assets/payments/cod.svg" alt="Cash on Delivery" fill className="object-cover" />
+              <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 sm:gap-2.5">
+                <div className="h-8 sm:h-9 px-2.5 py-1 bg-white rounded-lg border border-black/10 shadow-xs flex items-center justify-center shrink-0 hover:scale-105 hover:shadow-md transition-transform duration-200" title="Cash on Delivery">
+                  <div className="relative h-5 sm:h-6 w-16 sm:w-20">
+                    <Image src="/assets/payments/cod.svg" alt="Cash on Delivery" fill className="object-contain" sizes="(max-width: 768px) 64px, 80px" />
+                  </div>
                 </div>
-                <div className="relative h-[34px] w-[96px] rounded-[8px] overflow-hidden shadow-sm hover:scale-105 transition-transform duration-200" title="bKash">
-                  <Image src="/assets/payments/bkash.svg" alt="bKash" fill className="object-cover" />
+                <div className="h-8 sm:h-9 px-2.5 py-1 bg-white rounded-lg border border-black/10 shadow-xs flex items-center justify-center shrink-0 hover:scale-105 hover:shadow-md transition-transform duration-200" title="bKash">
+                  <div className="relative h-5 sm:h-6 w-14 sm:w-16">
+                    <Image src="/assets/payments/bkash.svg" alt="bKash" fill className="object-contain" sizes="(max-width: 768px) 56px, 64px" />
+                  </div>
                 </div>
-                <div className="relative h-[34px] w-[96px] rounded-[8px] overflow-hidden shadow-sm hover:scale-105 transition-transform duration-200" title="Nagad">
-                  <Image src="/assets/payments/nagad.svg" alt="Nagad" fill className="object-cover" />
+                <div className="h-8 sm:h-9 px-2.5 py-1 bg-white rounded-lg border border-black/10 shadow-xs flex items-center justify-center shrink-0 hover:scale-105 hover:shadow-md transition-transform duration-200" title="Nagad">
+                  <div className="relative h-5 sm:h-6 w-14 sm:w-16">
+                    <Image src="/assets/payments/nagad.svg" alt="Nagad" fill className="object-contain" sizes="(max-width: 768px) 56px, 64px" />
+                  </div>
                 </div>
-                <div className="relative h-[34px] w-[96px] rounded-[8px] overflow-hidden shadow-sm hover:scale-105 transition-transform duration-200" title="Rocket DBBL">
-                  <Image src="/assets/payments/rocket.svg" alt="Rocket DBBL" fill className="object-cover" />
+                <div className="h-8 sm:h-9 px-2.5 py-1 bg-white rounded-lg border border-black/10 shadow-xs flex items-center justify-center shrink-0 hover:scale-105 hover:shadow-md transition-transform duration-200" title="Rocket DBBL">
+                  <div className="relative h-5 sm:h-6 w-14 sm:w-16">
+                    <Image src="/assets/payments/rocket.svg" alt="Rocket DBBL" fill className="object-contain" sizes="(max-width: 768px) 56px, 64px" />
+                  </div>
                 </div>
-                <div className="relative h-[34px] w-[80px] rounded-[8px] overflow-hidden shadow-sm hover:scale-105 transition-transform duration-200" title="Visa">
-                  <Image src="/assets/payments/visa.svg" alt="Visa" fill className="object-cover" />
+                <div className="h-8 sm:h-9 px-2.5 py-1 bg-white rounded-lg border border-black/10 shadow-xs flex items-center justify-center shrink-0 hover:scale-105 hover:shadow-md transition-transform duration-200" title="Visa">
+                  <div className="relative h-5 sm:h-6 w-14 sm:w-16">
+                    <Image src="/assets/payments/visa.svg" alt="Visa" fill className="object-contain" sizes="(max-width: 768px) 56px, 64px" />
+                  </div>
                 </div>
-                <div className="relative h-[34px] w-[80px] rounded-[8px] overflow-hidden shadow-sm hover:scale-105 transition-transform duration-200" title="Mastercard">
-                  <Image src="/assets/payments/mastercard.svg" alt="Mastercard" fill className="object-cover" />
+                <div className="h-8 sm:h-9 px-2.5 py-1 bg-white rounded-lg border border-black/10 shadow-xs flex items-center justify-center shrink-0 hover:scale-105 hover:shadow-md transition-transform duration-200" title="Mastercard">
+                  <div className="relative h-5 sm:h-6 w-12 sm:w-14">
+                    <Image src="/assets/payments/mastercard.svg" alt="Mastercard" fill className="object-contain" sizes="(max-width: 768px) 48px, 56px" />
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Official Courier Delivery Partners */}
-            <div className="flex flex-col sm:flex-row items-center gap-3.5 text-center sm:text-left">
+            <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 text-center sm:text-left">
               <span className="text-[11px] font-mono uppercase tracking-[0.16em] text-white/50 font-semibold shrink-0">
                 Logistics Partners:
               </span>
-              <div className="flex flex-wrap items-center justify-center gap-2.5">
-                <div className="relative h-[34px] w-[110px] rounded-[8px] overflow-hidden shadow-sm hover:scale-105 transition-transform duration-200" title="Steadfast Courier">
-                  <Image src="/assets/couriers/steadfast.svg" alt="Steadfast Courier" fill className="object-cover" />
+              <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 sm:gap-2.5">
+                <div className="h-8 sm:h-9 px-2.5 py-1 bg-white rounded-lg border border-black/10 shadow-xs flex items-center justify-center shrink-0 hover:scale-105 hover:shadow-md transition-transform duration-200" title="Steadfast Courier">
+                  <div className="relative h-5 sm:h-6 w-16 sm:w-20">
+                    <Image src="/assets/couriers/steadfast.svg" alt="Steadfast Courier" fill className="object-contain" sizes="(max-width: 768px) 64px, 80px" />
+                  </div>
                 </div>
-                <div className="relative h-[34px] w-[96px] rounded-[8px] overflow-hidden shadow-sm hover:scale-105 transition-transform duration-200" title="Pathao Logistics">
-                  <Image src="/assets/couriers/pathao.svg" alt="Pathao Logistics" fill className="object-cover" />
+                <div className="h-8 sm:h-9 px-2.5 py-1 bg-white rounded-lg border border-black/10 shadow-xs flex items-center justify-center shrink-0 hover:scale-105 hover:shadow-md transition-transform duration-200" title="Pathao Logistics">
+                  <div className="relative h-5 sm:h-6 w-14 sm:w-16">
+                    <Image src="/assets/couriers/pathao.svg" alt="Pathao Logistics" fill className="object-contain" sizes="(max-width: 768px) 56px, 64px" />
+                  </div>
                 </div>
-                <div className="relative h-[34px] w-[96px] rounded-[8px] overflow-hidden shadow-sm hover:scale-105 transition-transform duration-200" title="RedX Delivery">
-                  <Image src="/assets/couriers/redx.svg" alt="RedX Delivery" fill className="object-cover" />
-                </div>
-                <div className="relative h-[34px] w-[115px] rounded-[8px] overflow-hidden shadow-sm hover:scale-105 transition-transform duration-200" title="Sundarban Courier Service">
-                  <Image src="/assets/couriers/sundarban.svg" alt="Sundarban Courier Service" fill className="object-cover" />
+                <div className="h-8 sm:h-9 px-2.5 py-1 bg-white rounded-lg border border-black/10 shadow-xs flex items-center justify-center shrink-0 hover:scale-105 hover:shadow-md transition-transform duration-200" title="RedX Delivery">
+                  <div className="relative h-5 sm:h-6 w-14 sm:w-16">
+                    <Image src="/assets/couriers/redx.svg" alt="RedX Delivery" fill className="object-contain" sizes="(max-width: 768px) 56px, 64px" />
+                  </div>
                 </div>
               </div>
             </div>
@@ -345,7 +360,16 @@ export const Footer: React.FC = () => {
           <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/45">
             
             <div>
-              &copy; {new Date().getFullYear()} <span className="text-white/80 font-medium">Zahra&apos;s World</span>. All rights reserved. Handcrafted with care in Dhaka, Bangladesh.
+              &copy; {new Date().getFullYear()} <span className="text-white/80 font-medium">Zahra&apos;s World</span>. Copyright by{" "}
+              <a
+                href="https://etarnity.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-pink-400 hover:text-pink-300 font-semibold transition-colors underline-offset-2 hover:underline"
+              >
+                etarnity.com
+              </a>
+              . All rights reserved.
             </div>
 
             <div className="flex items-center gap-6">

@@ -4,7 +4,7 @@
 ### 3D GLOWING CRYSTAL LAMPS & THOUGHTFUL KEEPSAKES BOUTIQUE
 *Modern Boutique Store • Next.js 16 & React 19 Edition*
 
-[![Release](https://img.shields.io/badge/Release-v4.1.0--Accessible_Haute_Storefront-0D132C?style=for-the-badge&logoColor=FFD3F6)](#changelog--release-log)
+[![Release](https://img.shields.io/badge/Release-v4.2.0--Payment_Ribbon_Polish-0D132C?style=for-the-badge&logoColor=FFD3F6)](#changelog--release-log)
 [![Framework](https://img.shields.io/badge/Stack-Next.js_16_%E2%80%A2_React_19_%E2%80%A2_TypeScript-426B69?style=for-the-badge)](#technical-architecture--stack)
 [![Motion](https://img.shields.io/badge/Motion-Framer_Motion_11_%E2%80%A2_Lenis-A80C42?style=for-the-badge&labelColor=0D132C)](#signature-interactive-features)
 [![Design-System](https://img.shields.io/badge/Design_System-Haute_Minimalism-426B69?style=for-the-badge)](#brand-visual-identity--color-system)
@@ -219,6 +219,18 @@ Open your browser at:
 ---
 
 ## 📜 Changelog & Release Log
+
+### [v4.2.0] — 2026-09-07
+- **Official Payment & Courier Logistics Ribbon Refactor**:
+  - Engineered uniform `h-8 sm:h-9` white pill badges with subtle border and `object-contain` scaling for all payment methods and delivery partner logos.
+  - Eliminated layout overlap, line-wrapping clashes, and image clipping on mobile and desktop viewports.
+  - Vector asset precision upgrades:
+    - **Visa**: Reconstructed official two-tone vector geometry with Deep Blue `#1434CB` and Gold `#FAA61A` notch.
+    - **Mastercard**: Streamlined official interlocking circles with white card backing.
+    - **RedX Delivery**: Created crisp vector SVG replacing broken 404 response.
+    - **bKash / Nagad / Rocket / Steadfast / Pathao**: Embedded high-contrast white card layers for perfect visibility against dark footer canvas.
+- **Copyright & Brand Attribution Update**:
+  - Updated legal copyright line to highlight **etarnity.com** with interactive rose/pink styling and secure hyperlink.
 
 ### [v4.0.0] — 2026-09-06
 - **Atelier Story (About Us) Section Integration**:
