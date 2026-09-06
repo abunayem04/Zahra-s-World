@@ -166,7 +166,7 @@ export const TrendingShowcase: React.FC = () => {
           <div>
             {/* Sweet Signature Kicker */}
             <span className="font-signature text-4xl sm:text-5xl lg:text-[50px] text-[#D81B60] leading-none block mb-1.5 select-none drop-shadow-sm">
-              Hand-Selected Atelier Icons
+              Customer Favorites
             </span>
 
             {/* Statuesque Headline */}

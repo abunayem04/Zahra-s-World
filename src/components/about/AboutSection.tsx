@@ -47,13 +47,13 @@ export const AboutSection: React.FC = () => {
         {/* Top Header */}
         <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-20">
           <span className="font-signature text-4xl sm:text-5xl lg:text-[54px] text-[#A80C42] leading-none block mb-2 select-none drop-shadow-sm">
-            The Atelier Story
+            Our Story
           </span>
           <h2 className="font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-noir tracking-tight leading-[1.12] mb-4">
             About Us
           </h2>
           <p className="font-sans text-sm sm:text-base text-noir/70 max-w-2xl mx-auto leading-relaxed">
-            Welcome to Zahra&apos;s World—a specialized boutique atelier dedicated to bringing heartfelt emotions to life through ambient lighting, celestial crystal art, and customized keepsakes.
+            Welcome to Zahra&apos;s World—your trusted boutique for glowing crystal lamps, personalized voice keepsakes, and aesthetic room decor in Bangladesh.
           </p>
         </div>
 
@@ -83,41 +83,41 @@ export const AboutSection: React.FC = () => {
                   <Award className="w-4 h-4" />
                 </div>
                 <span className="font-mono text-xs font-bold uppercase tracking-wider text-noir">
-                  Handcrafted QA
+                  Quality Checked
                 </span>
               </div>
               <p className="text-[11px] font-sans text-noir/75 leading-relaxed">
-                Individually calibrated for 2700K soothing warm amber illumination and optical clarity before dispatch.
+                Individually tested for bright warm amber lighting and flawless glass clarity before dispatch.
               </p>
             </div>
 
             {/* Floating Top Pill */}
             <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-[10px] bg-black/60 backdrop-blur-md border border-white/20 text-white font-mono text-[10px] uppercase tracking-widest font-semibold shadow-sm">
               <Sparkles className="w-3.5 h-3.5 text-[#FFD3F6]" />
-              <span>Celestial Atelier • Est. 2026</span>
+              <span>Handmade Gifts • Est. 2026</span>
             </div>
           </div>
 
           {/* Right Column: Narrative & Philosophy */}
           <div className="lg:col-span-6 flex flex-col items-start text-left pt-6 lg:pt-0">
             <span className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-[#A80C42] mb-2 block">
-              Our Journey &amp; Mission
+              Our Story &amp; Promise
             </span>
             
             <h3 className="font-playfair text-2xl sm:text-3xl lg:text-[34px] font-bold text-noir leading-snug mb-5">
-              Crafting meaningful keepsakes that illuminate your most precious moments.
+              Creating memorable gifts that bring warm light and joy to your life.
             </h3>
 
             <p className="font-sans text-sm sm:text-[15px] text-noir/80 leading-relaxed mb-4">
-              At <strong className="font-semibold text-noir">Zahra&apos;s World</strong>, we curate aesthetic, high-quality home decor and thoughtful gifts designed to make everyday spaces feel magical. From 3D laser-engraved K9 celestial crystal spheres and interactive voice cassette keychains to hypnotic moving sandscapes and ambient room dioramas, every piece in our collection is chosen with emotional depth and aesthetic finesse.
+              At <strong className="font-semibold text-noir">Zahra&apos;s World</strong>, we bring you aesthetic home decor and special gifts that make everyday moments feel magical. Whether it is a 3D glowing crystal ball, a custom voice-recording cassette keychain, or relaxing moving sand art, every item is crafted with love and attention to detail.
             </p>
 
             <p className="font-sans text-sm sm:text-[15px] text-noir/80 leading-relaxed mb-4">
-              Whether you are surprising someone special on their birthday, celebrating an anniversary, or styling your own personal sanctuary, our mission is to deliver unforgettable unboxing experiences with premium quality you can cherish forever.
+              Whether you are celebrating a birthday, anniversary, or simply decorating your bedroom, we make gifting effortless and memorable with gift-ready packaging you will love.
             </p>
 
             <p className="font-sans text-sm sm:text-[15px] text-noir/80 leading-relaxed mb-8">
-              Based in Dhaka, our dedicated team handles every order with bespoke care, offering seamless nationwide Cash on Delivery (COD) across Bangladesh and personal WhatsApp concierge assistance from inquiry to doorstep.
+              Based in Dhaka, we carefully pack every order and offer Cash on Delivery (COD) across all 64 districts in Bangladesh, with friendly WhatsApp support ready to help anytime.
             </p>
 
             {/* Action Link to Collection */}
@@ -125,7 +125,7 @@ export const AboutSection: React.FC = () => {
               href="#collection"
               className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-[10px] bg-noir hover:bg-[#A80C42] text-white font-mono text-xs font-bold uppercase tracking-[0.14em] shadow-lg hover:shadow-[0_10px_26px_rgba(168,12,66,0.35)] transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
             >
-              <span>Explore Curated Creations</span>
+              <span>Shop Our Collection</span>
               <ArrowRight className="w-4 h-4 text-[#FFD3F6]" />
             </Link>
           </div>

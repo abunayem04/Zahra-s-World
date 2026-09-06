@@ -185,7 +185,7 @@ export const HeroSection: React.FC = () => {
               <div className="group relative inline-flex items-center gap-2.5 px-4 py-2 rounded-[10px] bg-white/90 backdrop-blur-md border border-white/95 text-noir font-mono text-xs font-bold uppercase tracking-[0.2em] shadow-sm mb-4 overflow-hidden">
                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/80 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none" />
                 <Gem className="w-4 h-4 text-[#A80C42] animate-pulse" />
-                <span>Haute Celestial Atelier • Est. 2026</span>
+                <span>Handmade Decor &amp; Gifts • Est. 2026</span>
               </div>
             </motion.div>
 
@@ -199,21 +199,21 @@ export const HeroSection: React.FC = () => {
             {/* Statuesque Headline with Line Split Reveal */}
             <motion.div variants={itemRevealVariants}>
               <h1 className="font-playfair text-4xl sm:text-5xl lg:text-[58px] xl:text-[64px] font-bold tracking-tight text-noir leading-[1.08] mb-4 drop-shadow-[0_2px_18px_rgba(255,255,255,0.7)]">
-                Celestial Elegance <span className="font-playfair italic font-normal text-[#A80C42]">&amp;</span> Keepsakes
+                Glowing Crystal Lamps <span className="font-playfair italic font-normal text-[#A80C42]">&amp;</span> Unique Gifts
               </h1>
             </motion.div>
 
             {/* Poetic Italic Subtitle */}
             <motion.div variants={itemRevealVariants}>
               <p className="font-couture text-2xl sm:text-3xl lg:text-[32px] italic font-normal text-white/95 mb-5 tracking-wide drop-shadow-[0_1px_4px_rgba(0,0,0,0.3)]">
-                Poetry in Light &amp; Living Form
+                Turn Special Moments into Beautiful Memories
               </p>
             </motion.div>
 
             {/* Editorial Description */}
             <motion.div variants={itemRevealVariants}>
               <p className="text-sm sm:text-base lg:text-[17px] text-white/95 font-sans leading-relaxed max-w-xl mb-9 drop-shadow-[0_1px_4px_rgba(0,0,0,0.35)]">
-                Bespoke 3D laser-engraved optical crystal spheres, nostalgic analog audio recorder keychains, and ambient bedroom centerpieces designed to turn fleeting moments into permanent light.
+                Discover 3D laser crystal lamps, custom voice-recording cassette keychains, and relaxing moving sand art—made with care and delivered safely to your door.
               </p>
             </motion.div>
 
@@ -225,7 +225,7 @@ export const HeroSection: React.FC = () => {
               >
                 {/* Shimmer sweep effect */}
                 <span className="absolute inset-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-[300%] transition-transform duration-1000 ease-out" />
-                <span className="relative z-10">Explore Collection</span>
+                <span className="relative z-10">Shop Collection</span>
                 <ArrowRight className="w-4 h-4 text-[#FFD3F6] relative z-10 group-hover:translate-x-1.5 group-hover:text-white transition-all duration-300" />
               </Link>
 
@@ -235,7 +235,7 @@ export const HeroSection: React.FC = () => {
                 rel="noopener noreferrer"
                 className="group relative inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-[10px] bg-white/90 text-noir font-mono text-xs sm:text-[13px] font-semibold uppercase tracking-[0.16em] border border-white/90 backdrop-blur-md shadow-md transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.03] active:scale-[0.98] hover:bg-noir hover:text-white hover:border-noir hover:shadow-[0_10px_28px_rgba(13,19,44,0.35)]"
               >
-                <span className="relative z-10">Concierge Order</span>
+                <span className="relative z-10">Order on WhatsApp</span>
                 <ArrowUpRight className="w-4 h-4 text-[#A80C42] relative z-10 group-hover:text-[#FFD3F6] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300" />
               </a>
             </motion.div>

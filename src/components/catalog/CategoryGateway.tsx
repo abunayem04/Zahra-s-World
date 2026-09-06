@@ -22,10 +22,10 @@ export const CategoryGateway: React.FC = () => {
   const categories: CategoryItem[] = [
     {
       id: "crystal-lamps",
-      index: "01 // COSMIC LIGHT",
-      title: "Celestial 3D Crystals",
-      subtitle: "Optical K9 Glass Spheres",
-      desc: "Subsurface 3D holographic nebula & galaxy motifs trapped in bubble-free optical K9 glass with solid beechwood amber illumination.",
+      index: "01 // CRYSTAL LAMPS",
+      title: "3D Crystal Ball Lamps",
+      subtitle: "Glowing Solar System & Moon Spheres",
+      desc: "Laser-engraved 3D planets and galaxies inside high-clarity crystal with a warm wooden LED base for your bedroom or desk.",
       image: "/assets/categories/celestial_crystal.jpg",
       colSpan: "lg:col-span-7",
       icon: Sparkles,
@@ -34,22 +34,22 @@ export const CategoryGateway: React.FC = () => {
     },
     {
       id: "retro-gadgets",
-      index: "02 // TIMELESS VOICE",
-      title: "Playable Audio Keepsakes",
-      subtitle: "Analog Cassette Voice Recorders",
-      desc: "Record heartfelt 30-second messages onto tactile vintage miniature cassettes you can cherish and carry everywhere.",
+      index: "02 // VOICE KEEPSAKES",
+      title: "Voice Recording Cassettes",
+      subtitle: "Miniature Cassette Keychains",
+      desc: "Record a personal 30-second voice message on a mini retro cassette keychain to give to your partner, friend, or family.",
       image: "/assets/categories/retro_audio.jpg",
       colSpan: "lg:col-span-5",
       icon: Radio,
       accentColor: "#C0E6DE",
-      targetHref: "#cassette-showcase",
+      targetHref: "#collection",
     },
     {
       id: "sand-art",
-      index: "03 // LIVING MOTION",
-      title: "Kinetic Sandscapes & Dioramas",
-      subtitle: "360° Rotating Dunes & Snow Lamps",
-      desc: "Ever-shifting mountain horizons and swirling snowy Victorian streetlamps designed for calming visual meditation.",
+      index: "03 // KINETIC ART",
+      title: "Moving Sand Art & Lamps",
+      subtitle: "Relaxing 360° Rotating Sandscapes",
+      desc: "Watch calming sand mountains form with every gentle turn—perfect for stress relief and beautiful home decoration.",
       image: "/assets/categories/kinetic_sand.jpg",
       colSpan: "lg:col-span-5",
       icon: Mountain,
@@ -58,10 +58,10 @@ export const CategoryGateway: React.FC = () => {
     },
     {
       id: "romantic-gifts",
-      index: "04 // TIMELESS ELEGANCE",
-      title: "Deluxe Velvet Gift Sets",
-      subtitle: "Sterling Silver Jewelry & Presentation Cases",
-      desc: "Skin-friendly 925 sterling silver pendants nestled inside luxury plush blush pink presentation boxes with gift ribbons.",
+      index: "04 // SPECIAL GIFTS",
+      title: "Gift Sets & Jewelry",
+      subtitle: "Ready-to-Gift Velvet Presentation Sets",
+      desc: "Complete gift boxes featuring sterling silver necklaces, scented rose soap flowers, and gift bags ready for giving.",
       image: "/assets/categories/romantic_velvet.jpg",
       colSpan: "lg:col-span-7",
       icon: Gift,
@@ -82,16 +82,16 @@ export const CategoryGateway: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           {/* Sweet Signature Kicker */}
           <span className="font-signature text-4xl sm:text-5xl lg:text-[54px] text-[#D81B60] leading-none block mb-2 select-none drop-shadow-sm">
-            Curated Realms of Light
+            Explore Our Collections
           </span>
 
           {/* Statuesque Headline */}
           <h2 className="font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-noir tracking-tight leading-[1.12] mb-4">
-            Shop by Mood &amp; Sensation
+            Shop by Category
           </h2>
 
           <p className="font-sans text-sm sm:text-base text-noir/70 max-w-xl mx-auto leading-relaxed">
-            Each creation is sculpted for a distinct state of being — from cosmic bedside tranquility to tactile voice keepsakes and desktop visual meditation.
+            Find the perfect piece for your room or a special gift for someone you love—from glowing crystal lamps to voice keepsakes.
           </p>
         </div>
 

@@ -9,12 +9,12 @@ export const CatalogSection: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string>("all");
 
   const categories = [
-    { id: "all", label: "All Curated Objects" },
-    { id: "crystal-lamps", label: "3D Crystal Spheres" },
-    { id: "retro-gadgets", label: "Retro Audio Keepsakes" },
-    { id: "romantic-gifts", label: "Romantic Jewelry" },
-    { id: "sand-art", label: "Kinetic Sandscapes" },
-    { id: "ambient-dioramas", label: "Ambient Dioramas" },
+    { id: "all", label: "All Products" },
+    { id: "crystal-lamps", label: "3D Crystal Lamps" },
+    { id: "retro-gadgets", label: "Voice Cassettes" },
+    { id: "romantic-gifts", label: "Jewelry & Gifts" },
+    { id: "sand-art", label: "Moving Sand Art" },
+    { id: "ambient-dioramas", label: "Tabletop Lamps" },
   ];
 
   const filtered =
@@ -27,13 +27,13 @@ export const CatalogSection: React.FC = () => {
       {/* Section Header */}
       <div className="text-center max-w-2xl mx-auto mb-12">
         <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-slateTeal dark:text-mintFrost font-semibold block mb-2">
-          Curated Atelier Collection
+          Explore All Items
         </span>
         <h2 className="font-display text-3xl sm:text-4xl font-semibold uppercase tracking-tight text-noir dark:text-canvas mb-3">
-          Treasures for the Senses
+          Our Full Collection
         </h2>
         <p className="text-xs sm:text-sm text-noir/70 dark:text-canvas/70 font-sans">
-          Bespoke optical glass spheres, tactile keepsakes, and ambient bedroom centerpieces designed for longevity.
+          Discover our complete range of glowing crystal lamps, personalized voice keychains, and aesthetic room decor.
         </p>
       </div>
 

@@ -47,12 +47,12 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://zahrasworld.com"),
-  title: "Zahra's World | Haute Celestial Decor & Thoughtful Keepsakes Boutique",
+  title: "Zahra's World | 3D Crystal Lamps, Voice Keepsakes & Aesthetic Gifts",
   description:
-    "Curated 3D laser celestial crystal lamps, vintage voice recording keepsakes, dynamic sandscapes, and ambient room accents. Insured nationwide delivery.",
+    "Shop 3D glowing crystal ball lamps, custom voice-recording cassette keychains, moving sand art, and romantic gift sets. Cash on Delivery across Bangladesh.",
   openGraph: {
-    title: "Zahra's World — Haute Celestial Decor & Thoughtful Keepsakes",
-    description: "Experience poetry in light. Bespoke 3D laser crystal spheres and ambient room accents.",
+    title: "Zahra's World — 3D Crystal Lamps & Thoughtful Gifts",
+    description: "Shop glowing 3D crystal lamps, voice keepsake cassettes, and aesthetic room decor with Cash on Delivery in Bangladesh.",
     images: ["/assets/products/crystal_galaxy.jpg"],
   },
 };

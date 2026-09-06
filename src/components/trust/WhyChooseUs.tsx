@@ -63,8 +63,8 @@ export const WhyChooseUs: React.FC = () => {
   const features: Feature[] = [
     {
       id: "crystal",
-      title: "100% Optical K9 Crystal Purity",
-      desc: "Flawless 3D laser engraved optical crystal",
+      title: "100% Pure K9 Crystal Glass",
+      desc: "Clear, lead-free crystal with detailed 3D laser art inside",
       icon: Sparkles,
       iconBg: "bg-[#A80C42]/8 border-[#A80C42]/15",
       iconColor: "text-[#A80C42]",
@@ -73,8 +73,8 @@ export const WhyChooseUs: React.FC = () => {
     },
     {
       id: "cod",
-      title: "Zero-Risk Nationwide COD",
-      desc: "Inspect at doorstep before payment",
+      title: "Cash on Delivery Everywhere",
+      desc: "Check your parcel at your doorstep before you pay",
       icon: Truck,
       iconBg: "bg-[#A80C42]/8 border-[#A80C42]/15",
       iconColor: "text-[#A80C42]",
@@ -83,8 +83,8 @@ export const WhyChooseUs: React.FC = () => {
     },
     {
       id: "guarantee",
-      title: "7-Day Damage-Free Guarantee",
-      desc: "Instant brand-new replacement policy",
+      title: "7-Day Easy Replacement",
+      desc: "Get a brand new replacement if damaged during delivery",
       icon: ShieldCheck,
       iconBg: "bg-[#A80C42]/8 border-[#A80C42]/15",
       iconColor: "text-[#A80C42]",
@@ -93,8 +93,8 @@ export const WhyChooseUs: React.FC = () => {
     },
     {
       id: "pedestal",
-      title: "Solid Beechwood LED Bases",
-      desc: "Soothing 2700K warm amber LED uplight",
+      title: "Solid Wooden LED Bases",
+      desc: "Warm glowing LED light with USB cable included",
       icon: SunMedium,
       iconBg: "bg-[#A80C42]/8 border-[#A80C42]/15",
       iconColor: "text-[#A80C42]",
@@ -103,8 +103,8 @@ export const WhyChooseUs: React.FC = () => {
     },
     {
       id: "packaging",
-      title: "Luxury Velvet Gift Packaging",
-      desc: "Deluxe presentation box with satin ribbon",
+      title: "Gift-Ready Packaging",
+      desc: "Beautiful gift box with soft foam protection and ribbons",
       icon: Gift,
       iconBg: "bg-[#A80C42]/8 border-[#A80C42]/15",
       iconColor: "text-[#A80C42]",
@@ -113,8 +113,8 @@ export const WhyChooseUs: React.FC = () => {
     },
     {
       id: "concierge",
-      title: "Dedicated WhatsApp VIP Concierge",
-      desc: "Direct 1-on-1 human care & live tracking",
+      title: "Fast WhatsApp Help & Support",
+      desc: "Chat directly with our team for quick orders and tracking",
       icon: MessageSquare,
       iconBg: "bg-[#A80C42]/8 border-[#A80C42]/15",
       iconColor: "text-[#A80C42]",

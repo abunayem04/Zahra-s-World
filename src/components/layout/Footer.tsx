@@ -20,43 +20,43 @@ export const Footer: React.FC = () => {
               </span>
             </div>
             <p className="text-xs text-canvas/70 leading-relaxed mb-6 font-sans">
-              An intentional edit of bespoke 3D laser celestial crystal lamps, tactile cassette voice keepsakes, and ambient room dioramas. Crafted to turn fleeting feelings into permanent light.
+              Handcrafted 3D laser crystal lamps, custom voice recording cassettes, and aesthetic home decor designed to bring warm light and joy to your special moments.
             </p>
             <div className="inline-flex items-center gap-2 text-xs font-mono text-mintFrost bg-white/5 px-3 py-1.5 rounded-[10px] border border-white/10">
               <ShieldCheck className="w-3.5 h-3.5 text-palette-pink" />
-              <span>Authentic K9 &amp; Insured Dispatch</span>
+              <span>100% Quality Checked &amp; Safe Delivery</span>
             </div>
           </div>
 
           {/* Quick Nav */}
           <div>
             <h4 className="font-display text-xs font-bold uppercase tracking-widest text-mintFrost mb-5">
-              Atelier Collections
+              Categories
             </h4>
             <ul className="space-y-3 text-xs font-mono text-canvas/70">
               <li>
                 <Link href="#collection" className="hover:text-palette-pink transition-colors">
-                  3D Laser Crystal Lamps
+                  3D Crystal Lamps
                 </Link>
               </li>
               <li>
                 <Link href="#collection" className="hover:text-palette-pink transition-colors">
-                  Retro Voice Keepsakes
+                  Voice Cassette Keychains
                 </Link>
               </li>
               <li>
                 <Link href="#collection" className="hover:text-palette-pink transition-colors">
-                  Dynamic Sand Art Hourglasses
+                  Moving Sand Art Lamps
                 </Link>
               </li>
               <li>
                 <Link href="#collection" className="hover:text-palette-pink transition-colors">
-                  Swirling Snow Dioramas
+                  Snowing Night Lights
                 </Link>
               </li>
               <li>
                 <Link href="#collection" className="hover:text-palette-pink transition-colors">
-                  Sterling Silver Pendant Sets
+                  Gift Sets &amp; Jewelry
                 </Link>
               </li>
             </ul>
@@ -65,22 +65,22 @@ export const Footer: React.FC = () => {
           {/* Customer Experience */}
           <div>
             <h4 className="font-display text-xs font-bold uppercase tracking-widest text-mintFrost mb-5">
-              Client Service
+              Customer Help
             </h4>
             <ul className="space-y-3 text-xs font-mono text-canvas/70">
               <li>
-                <Link href="#dispatch-proof" className="hover:text-palette-pink transition-colors">
-                  Nationwide Insured Delivery
+                <Link href="#why-choose-us" className="hover:text-palette-pink transition-colors">
+                  Cash on Delivery in BD
                 </Link>
               </li>
               <li>
-                <Link href="#dispatch-proof" className="hover:text-palette-pink transition-colors">
-                  Damage-Free Guarantee
+                <Link href="#why-choose-us" className="hover:text-palette-pink transition-colors">
+                  7-Day Replacement Policy
                 </Link>
               </li>
               <li>
-                <Link href="#crystal-showcase" className="hover:text-palette-pink transition-colors">
-                  Bespoke Motif Customization
+                <Link href="#about-us" className="hover:text-palette-pink transition-colors">
+                  About Zahra&apos;s World
                 </Link>
               </li>
               <li>
@@ -94,7 +94,7 @@ export const Footer: React.FC = () => {
           {/* Concierge Contact */}
           <div id="contact">
             <h4 className="font-display text-xs font-bold uppercase tracking-widest text-mintFrost mb-5">
-              Concierge Direct
+              Contact &amp; Support
             </h4>
             <div className="space-y-3 text-xs font-mono text-canvas/80">
               <a
@@ -105,7 +105,7 @@ export const Footer: React.FC = () => {
               >
                 <Phone className="w-4 h-4 text-palette-pink" />
                 <div>
-                  <div className="text-[10px] text-canvas/60">WhatsApp Dedicated Line</div>
+                  <div className="text-[10px] text-canvas/60">WhatsApp Direct Line</div>
                   <div className="font-bold">+880 1320-829916</div>
                 </div>
                 <ArrowUpRight className="w-4 h-4 ml-auto text-slateTeal" />
@@ -113,7 +113,7 @@ export const Footer: React.FC = () => {
 
               <div className="flex items-start gap-2.5 text-xs text-canvas/70 pt-2">
                 <MapPin className="w-4 h-4 text-slateTeal shrink-0 mt-0.5" />
-                <span>Atelier Dispatch Base: Savar, Dhaka, Bangladesh</span>
+                <span>Store Location: Savar, Dhaka, Bangladesh</span>
               </div>
             </div>
           </div>
@@ -125,7 +125,7 @@ export const Footer: React.FC = () => {
             &copy; {new Date().getFullYear()} Zahra&apos;s World. All rights reserved.
           </div>
           <div className="flex items-center gap-6">
-            <span>HAUTE COUTURE DIGITAL FLAGSHIP</span>
+            <span>PREMIUM GIFTS &amp; ROOM DECOR</span>
             <span>CASH ON DELIVERY BD</span>
           </div>
         </div>

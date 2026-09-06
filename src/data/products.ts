@@ -5,10 +5,10 @@ export const PRODUCTS: Product[] = [
     id: "crystal-ball-night-light",
     slug: "3d-crystal-ball-night-light",
     category: "crystal-lamps",
-    categoryNameEn: "3D Crystal Spheres",
-    badgeEn: "Trending Viral",
-    nameEn: "3D Laser-Engraved Celestial Crystal Ball Night Light",
-    taglineEn: "Solid Beechwood LED Uplight Pedestal • Optical K9 Glass",
+    categoryNameEn: "3D Crystal Lamps",
+    badgeEn: "Top Best Seller",
+    nameEn: "3D Glowing Crystal Ball Night Light with Wooden Base",
+    taglineEn: "Warm Glowing Wooden LED Base • Pure Crystal Glass",
     price: 890,
     originalPrice: 1250,
     rating: 5.0,
@@ -16,29 +16,29 @@ export const PRODUCTS: Product[] = [
     image: "/assets/products/crystal_galaxy.jpg",
     variants: [
       { id: "galaxy", name: "Milky Way Galaxy & Solar System", image: "/assets/products/crystal_galaxy.jpg" },
-      { id: "rose", name: "Blooming Rose with 'Love You' Ribbon", image: "/assets/products/crystal_rose.jpg" },
-      { id: "saturn", name: "Saturn with Planetary Rings", image: "/assets/products/crystal_galaxy.jpg" },
-      { id: "moon", name: "Detailed Topographic Crater Moon", image: "/assets/products/crystal_galaxy.jpg" },
-      { id: "teddy", name: "Smile Day Teddy Bear", image: "/assets/products/crystal_galaxy.jpg" },
-      { id: "heart", name: "Angelic Glowing Suspended Heart", image: "/assets/products/crystal_galaxy.jpg" }
+      { id: "rose", name: "Glowing Rose with 'Love You' Ribbon", image: "/assets/products/crystal_rose.jpg" },
+      { id: "saturn", name: "Saturn Planet with Rings", image: "/assets/products/crystal_galaxy.jpg" },
+      { id: "moon", name: "Realistic Moon Surface", image: "/assets/products/crystal_galaxy.jpg" },
+      { id: "teddy", name: "Cute Smile Day Teddy Bear", image: "/assets/products/crystal_galaxy.jpg" },
+      { id: "heart", name: "Glowing Suspended Heart", image: "/assets/products/crystal_galaxy.jpg" }
     ],
     featuresEn: [
-      "High-density K9 optical crystal sphere (6cm diameter)",
-      "High-precision permanent internal 3D laser holographic motif",
-      "Natural solid beechwood base with warm amber LED uplight",
-      "USB powered (connects to phone charger, laptop, or power bank)",
-      "Safe low-voltage operation, cool to the touch all night"
+      "Pure K9 crystal ball (6cm size) with crystal-clear transparency",
+      "Detailed 3D laser engraving inside that will never fade or wear off",
+      "Natural solid wooden base with warm, soothing LED night light",
+      "USB powered (works with mobile chargers, power banks, and laptops)",
+      "Safe and stays completely cool to the touch all night"
     ],
-    boxIncludesEn: "1x K9 Crystal Sphere, 1x Solid Beechwood LED Base with USB Cable, 1x Presentation Gift Box"
+    boxIncludesEn: "1x 3D Crystal Ball, 1x Wooden LED Base with USB Cable, 1x Protective Gift Box"
   },
   {
     id: "retro-cassette-voice-recorder",
     slug: "retro-cassette-voice-recorder-keychain",
     category: "retro-gadgets",
-    categoryNameEn: "Retro Audio Keepsakes",
+    categoryNameEn: "Voice Keepsakes",
     badgeEn: "Viral Keepsake",
-    nameEn: "Vintage Cassette Tape Mini Voice Recorder Keychain",
-    taglineEn: "Record Your Own Voice Message • Playable Tactile Audio Keepsake",
+    nameEn: "Mini Voice Recorder Cassette Keychain",
+    taglineEn: "Record Your Own Voice • Mini Playable Cassette Keychain",
     price: 650,
     originalPrice: 950,
     rating: 4.9,
@@ -47,26 +47,26 @@ export const PRODUCTS: Product[] = [
     variants: [
       { id: "pink", name: "Blossom Pink", colorCode: "#FFD3F6", image: "/assets/products/cassette_keychain.jpg" },
       { id: "blue", name: "Mint Frost", colorCode: "#C0E6DE", image: "/assets/products/cassette_keychain.jpg" },
-      { id: "cream", name: "Clean Porcelain", colorCode: "#F4F4F8", image: "/assets/products/cassette_keychain.jpg" },
-      { id: "noir", name: "Obsidian Navy", colorCode: "#0D132C", image: "/assets/products/cassette_keychain.jpg" }
+      { id: "cream", name: "Classic Cream White", colorCode: "#F4F4F8", image: "/assets/products/cassette_keychain.jpg" },
+      { id: "noir", name: "Midnight Black", colorCode: "#0D132C", image: "/assets/products/cassette_keychain.jpg" }
     ],
     featuresEn: [
-      "Records up to 30 seconds of high-clarity voice messages or music",
-      "Dedicated REC button, PLAY button, and built-in microphone & speaker",
-      "Re-recordable anytime or keep your cherished memory preserved",
-      "Miniature vintage cassette casing with rotating reel artwork",
-      "Includes sturdy metal carabiner clip for bags, keys, or backpacks"
+      "Record up to 30 seconds of your voice, a song, or special message",
+      "Simple REC & PLAY buttons with built-in mic and speaker",
+      "Can be re-recorded anytime or saved permanently",
+      "Mini retro cassette design with cute rotating tape reels",
+      "Includes a strong metal keychain clip for your keys or bag"
     ],
-    boxIncludesEn: "1x Retro Voice Recorder Keychain, Pre-installed Battery, 1x Operating Instruction Card"
+    boxIncludesEn: "1x Voice Recorder Keychain, Pre-installed Battery, 1x Simple User Guide"
   },
   {
     id: "hello-kitty-silver-necklace-set",
     slug: "hello-kitty-sterling-silver-necklace-gift-set",
     category: "romantic-gifts",
-    categoryNameEn: "Romantic & Jewelry Gifts",
+    categoryNameEn: "Jewelry & Gifts",
     badgeEn: "Perfect Gift Set",
-    nameEn: "Hello Kitty Sparkling Silver Pendant with Velvet Gift Box",
-    taglineEn: "925 Sterling Silver Plated • Deluxe Pink Velvet Case & Tote",
+    nameEn: "Hello Kitty Silver Pendant Necklace Gift Set",
+    taglineEn: "Sparkling Silver Chain • Velvet Gift Box & Bag Included",
     price: 790,
     originalPrice: 1100,
     rating: 4.9,
@@ -76,65 +76,65 @@ export const PRODUCTS: Product[] = [
       { id: "pink-box", name: "Deluxe Blush Pink Velvet Gift Set", image: "/assets/products/hello_kitty_necklace.jpg" }
     ],
     featuresEn: [
-      "Skin-friendly 925 sterling silver electroplating with cubic zirconia crystals",
-      "Hypoallergenic and tarnish-resistant for sensitive skin",
-      "Includes premium plush velvet presentation jewellery box",
-      "Comes complete with luxury gift ribbon and boutique carry bag",
-      "Ideal romantic surprise for birthdays, anniversaries, and special moments"
+      "Shiny silver plated necklace with sparkling crystals",
+      "Safe for sensitive skin and comfortable for everyday wear",
+      "Includes a premium plush pink velvet jewelry box",
+      "Comes complete with luxury gift ribbon and matching gift bag",
+      "An adorable gift for birthdays, anniversaries, or special surprises"
     ],
-    boxIncludesEn: "1x Hello Kitty Silver Pendant & Chain, 1x Deluxe Velvet Case, 1x Matching Gift Tote Bag"
+    boxIncludesEn: "1x Hello Kitty Silver Pendant & Chain, 1x Velvet Jewelry Box, 1x Gift Bag"
   },
   {
     id: "dynamic-moving-sand-art-lamp",
     slug: "360-rotating-moving-sand-art-hourglass-lamp",
     category: "sand-art",
-    categoryNameEn: "Kinetic Sandscapes",
+    categoryNameEn: "Moving Sand Art",
     badgeEn: "Stress Relief Art",
-    nameEn: "360° Rotating Dynamic Moving Sand Art Hourglass Lamp",
-    taglineEn: "Mesmerizing Falling Sandscapes • 3-Tone Warm LED Ambient Ring",
+    nameEn: "360° Rotating Moving Sand Art Tabletop Lamp",
+    taglineEn: "Relaxing Sand Mountains • 3-Color Warm LED Ring Light",
     price: 1350,
     originalPrice: 1850,
     rating: 4.8,
     reviewCount: 29,
     image: "/assets/products/sand_art_lamp.jpg",
     variants: [
-      { id: "purple", name: "Royal Purple & Golden Glitter Dunes", image: "/assets/products/sand_art_lamp.jpg" },
-      { id: "blue", name: "Deep Ocean Cobalt & White Sand", image: "/assets/products/sand_art_lamp.jpg" },
-      { id: "sunset", name: "Amber Sunset Terracotta Dunes", image: "/assets/products/sand_art_lamp.jpg" }
+      { id: "purple", name: "Royal Purple & Gold Glitter Sand", image: "/assets/products/sand_art_lamp.jpg" },
+      { id: "blue", name: "Deep Ocean Blue & White Sand", image: "/assets/products/sand_art_lamp.jpg" },
+      { id: "sunset", name: "Warm Sunset Orange Sand", image: "/assets/products/sand_art_lamp.jpg" }
     ],
     featuresEn: [
-      "Smooth 360-degree rotatable circular frame creates unique mountain dunes each flip",
-      "High-transparency lead-free glass crystal for vivid layered sand horizons",
-      "3 ambient light tones (Warm White, Natural, Soft Amber) with touch switch",
-      "Non-slip base with USB power connection for bedside or office desk",
-      "Calming visual meditation tool that promotes relaxation and focus"
+      "Smooth 360-degree rotating frame creates a brand new landscape each flip",
+      "Crystal clear glass reveals beautiful layers of colorful sand and glitter",
+      "3 warm LED light modes (Warm, Natural, and Soft) with simple switch",
+      "Sturdy non-slip base with USB power connection for your table or desk",
+      "Helps calm the mind, relieve stress, and relax your eyes"
     ],
-    boxIncludesEn: "1x Rotating Sand Art Glass Disc, 1x LED Halo Base Stand, 1x USB Cable, 1x Air Regulator Syringe"
+    boxIncludesEn: "1x Rotating Sand Art Disc, 1x LED Ring Base Stand, 1x USB Cable, 1x Air Regulator Syringe"
   },
   {
     id: "snowing-streetlamp-ambient-light",
     slug: "swirling-snow-streetlamp-night-light-diorama",
     category: "ambient-dioramas",
-    categoryNameEn: "Ambient Dioramas",
+    categoryNameEn: "Tabletop Lamps",
     badgeEn: "Fairytale Decor",
-    nameEn: "Illuminated Swirling Snow Streetlamp Ambient Diorama",
-    taglineEn: "Automatic Circulating Snowflakes • Melodic Music & Golden Warm Light",
+    nameEn: "Snowing Streetlamp Tabletop Night Light",
+    taglineEn: "Automatic Falling Snow • Warm Glow & Optional Music",
     price: 1190,
     originalPrice: 1650,
     rating: 5.0,
     reviewCount: 21,
     image: "/assets/products/streetlamp_diorama.jpg",
     variants: [
-      { id: "black-lamp", name: "Vintage Midnight Victorian Streetlamp", image: "/assets/products/streetlamp_diorama.jpg" },
-      { id: "red-lamp", name: "Festive Crimson Streetlamp", image: "/assets/products/streetlamp_diorama.jpg" }
+      { id: "black-lamp", name: "Vintage Black Streetlamp", image: "/assets/products/streetlamp_diorama.jpg" },
+      { id: "red-lamp", name: "Festive Red Streetlamp", image: "/assets/products/streetlamp_diorama.jpg" }
     ],
     featuresEn: [
-      "Built-in silent motor continuously circulates iridescent snowflakes within the lantern",
-      "Dual mode operation: Gentle ambient light only OR light with gentle holiday melody",
-      "Sturdy vintage architectural lantern housing with ornate top finial",
-      "Dual power options: Runs on 3x AA batteries or continuous USB connection",
-      "Creates a cozy European winter boulevard atmosphere in any bedroom"
+      "Built-in quiet motor continuously swirls sparkly snowflakes inside the lantern",
+      "Two easy modes: Warm ambient light only OR light with soothing holiday music",
+      "Classic vintage streetlamp design with a warm golden glow",
+      "Dual power options: Works with 3x AA batteries or USB cable",
+      "Adds a cozy, magical winter feel to any bedroom or living space"
     ],
-    boxIncludesEn: "1x Snowing Streetlamp Lantern Diorama, 1x USB Power Cable, 1x User Care Card"
+    boxIncludesEn: "1x Snowing Streetlamp Lantern, 1x USB Power Cable, 1x User Guide"
   }
 ];

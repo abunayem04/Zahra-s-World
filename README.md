@@ -1,10 +1,10 @@
 <div align="center">
 
 # ZAHRA'S WORLD
-### HAUTE CELESTIAL DECOR & THOUGHTFUL KEEPSAKES BOUTIQUE
-*Digital Flagship Atelier • Next.js 16 Haute Architecture Edition*
+### 3D GLOWING CRYSTAL LAMPS & THOUGHTFUL KEEPSAKES BOUTIQUE
+*Modern Boutique Store • Next.js 16 & React 19 Edition*
 
-[![Release](https://img.shields.io/badge/Release-v4.0.0--Haute_Atelier_Masterpiece-0D132C?style=for-the-badge&logoColor=FFD3F6)](#changelog--release-log)
+[![Release](https://img.shields.io/badge/Release-v4.1.0--Accessible_Haute_Storefront-0D132C?style=for-the-badge&logoColor=FFD3F6)](#changelog--release-log)
 [![Framework](https://img.shields.io/badge/Stack-Next.js_16_%E2%80%A2_React_19_%E2%80%A2_TypeScript-426B69?style=for-the-badge)](#technical-architecture--stack)
 [![Motion](https://img.shields.io/badge/Motion-Framer_Motion_11_%E2%80%A2_Lenis-A80C42?style=for-the-badge&labelColor=0D132C)](#signature-interactive-features)
 [![Design-System](https://img.shields.io/badge/Design_System-Haute_Minimalism-426B69?style=for-the-badge)](#brand-visual-identity--color-system)
@@ -15,20 +15,20 @@
 
 <br/>
 
-> **"Crafted to turn fleeting feelings into permanent light."**  
-> An international digital flagship engineered with Next.js 16 App Router, React 19, Framer Motion, Lenis Smooth Scroll, and TypeScript for curated 3D laser celestial crystal spheres, analog voice keepsakes, 360° dynamic sandscapes, and ambient room dioramas.
+> **"Turning special moments into beautiful, glowing memories."**  
+> An elegant online gift boutique built with Next.js 16, React 19, Framer Motion, and TypeScript for 3D laser-engraved crystal ball lamps, custom voice-recording cassette keychains, 360° rotating sand art, and ambient tabletop night lights.
 
 </div>
 
 ---
 
-## 🏛️ Brand Essence & Architectural Philosophy
+## 🏛️ Brand Essence & Overview
 
-**Zahra's World** is an exclusive digital flagship designed with the aesthetic discipline of high-fashion European maisons (The Row, Loewe, Celine, Aesop). Every viewport is sculpted with generous negative space, masked editorial typography, smooth kinetic transitions, and disciplined tactile interactions.
+**Zahra's World** is a boutique gift and lifestyle decor brand in Bangladesh. We bring you aesthetic room lighting and heartfelt gifts crafted with premium materials, safe packaging, and friendly customer care.
 
 - **Origin**: Savar, Dhaka, Bangladesh
-- **Fulfillment**: Insured Nationwide Door-to-Door Delivery with Cash on Delivery (COD)
-- **Concierge**: Dedicated Human Assistance via WhatsApp (`+880 1320 829916`)
+- **Fulfillment**: Nationwide Door-to-Door Delivery with Cash on Delivery (COD) across all 64 districts
+- **Customer Support**: Direct WhatsApp Ordering & Help (`+880 1320 829916`)
 
 ---
 

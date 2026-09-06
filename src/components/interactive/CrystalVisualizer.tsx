@@ -20,13 +20,13 @@ export const CrystalVisualizer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-slateTeal dark:text-mintFrost font-semibold block mb-2">
-            Bespoke Laser Artistry
+            Interactive Preview
           </span>
           <h2 className="font-display text-3xl sm:text-4xl font-semibold uppercase tracking-tight text-noir dark:text-canvas mb-3">
-            Interactive 3D Crystal Motif Visualizer
+            Preview 3D Crystal Ball Designs
           </h2>
           <p className="text-xs sm:text-sm text-noir/70 dark:text-canvas/70 font-sans">
-            Select any motif below to preview internal permanent 3D laser engraving illuminated by the solid beechwood LED base.
+            Click on any design below to see how it looks when illuminated on the warm wooden LED base.
           </p>
         </div>
 
@@ -57,7 +57,7 @@ export const CrystalVisualizer: React.FC = () => {
           <div className="lg:col-span-6 flex flex-col items-start">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-[8px] bg-palette-pink/20 text-roseBlossom-dark dark:text-palette-pink font-mono text-[10px] font-semibold uppercase tracking-wider mb-3">
               <Sparkles className="w-3 h-3" />
-              <span>Premium K9 Optical Sphere</span>
+              <span>Pure K9 Crystal Glass</span>
             </div>
 
             <h3 className="font-display text-2xl font-bold uppercase text-noir dark:text-canvas mb-2">
@@ -65,11 +65,11 @@ export const CrystalVisualizer: React.FC = () => {
             </h3>
 
             <p className="text-xs sm:text-sm text-noir/70 dark:text-canvas/70 leading-relaxed mb-6 font-sans">
-              Internal micro-laser focal points create permanent, luminous depth without compromising the mirror-polished glass surface.
+              Detailed 3D laser engraving inside pure crystal glass that never fades, paired with a natural wooden LED base.
             </p>
 
             <label className="font-mono text-[11px] uppercase tracking-wider text-slateTeal dark:text-mintFrost font-semibold block mb-3">
-              Select 3D Engraving Motif:
+              Choose a 3D Design:
             </label>
 
             {/* Motifs Grid */}
@@ -112,7 +112,7 @@ export const CrystalVisualizer: React.FC = () => {
                   className="px-6 py-3 rounded-[10px] bg-noir text-white font-mono text-xs font-semibold uppercase tracking-wider hover:bg-noir-hover transition-colors flex items-center gap-2 shadow-md"
                 >
                   <ShoppingBag className="w-3.5 h-3.5" />
-                  <span>Add Motif to Bag</span>
+                  <span>Add to Bag</span>
                 </button>
 
                 <a

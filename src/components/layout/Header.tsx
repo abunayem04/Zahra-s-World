@@ -80,13 +80,13 @@ export const Header: React.FC = () => {
         {/* Right: Actions Cluster (All Creations, Wishlist, Cart, Login, Sign Up, Concierge) */}
         <div className="flex items-center gap-2.5 shrink-0">
           
-          {/* "All Creations" Luxury Satin Pill Button */}
+          {/* "Shop All" Button */}
           <Link
             href="#collection"
             className="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-[10px] bg-gradient-to-r from-[#D81B60] via-[#C2185B] to-[#AD1457] hover:from-[#E91E63] hover:to-[#C2185B] text-white font-mono text-xs font-bold uppercase tracking-wider shadow-[0_2px_10px_rgba(216,27,96,0.25)] hover:shadow-[0_4px_16px_rgba(216,27,96,0.35)] transition-all hover:scale-[1.02] active:scale-[0.98]"
           >
             <Sparkles className="w-3.5 h-3.5 animate-pulse" />
-            <span>All Creations</span>
+            <span>Shop All</span>
           </Link>
 
           {/* Wishlist Frosted Glass Button */}
@@ -163,7 +163,7 @@ export const Header: React.FC = () => {
             onClick={() => setMobileMenuOpen(false)}
             className="py-2.5 border-b border-black/[0.04] flex items-center justify-between text-noir font-semibold"
           >
-            <span>All Creations</span>
+            <span>All Products</span>
             <Sparkles className="w-4 h-4 text-[#D81B60]" />
           </Link>
           <Link
@@ -178,14 +178,14 @@ export const Header: React.FC = () => {
             onClick={() => setMobileMenuOpen(false)}
             className="py-2.5 border-b border-black/[0.04] text-noir"
           >
-            About Atelier
+            About Us
           </Link>
           <Link
-            href="#dispatch-proof"
+            href="#why-choose-us"
             onClick={() => setMobileMenuOpen(false)}
             className="py-2.5 border-b border-black/[0.04] text-noir"
           >
-            Insured Delivery
+            Why Choose Us
           </Link>
           <a
             href="https://wa.me/8801320829916"
@@ -194,7 +194,7 @@ export const Header: React.FC = () => {
             className="py-2.5 flex items-center gap-2 text-[#D81B60] font-bold tracking-wider"
           >
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-            <span>WhatsApp Concierge (+880 1320-829916)</span>
+            <span>WhatsApp Order &amp; Help (+880 1320-829916)</span>
           </a>
 
           {/* Mobile Auth Actions */}
