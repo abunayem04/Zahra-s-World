@@ -232,27 +232,20 @@ export const ClientReviews: React.FC = () => {
                 <div className="absolute -top-10 -right-10 w-28 h-28 rounded-full bg-[#FFD3F6]/35 blur-2xl pointer-events-none group-hover:scale-125 transition-transform duration-500" />
 
                 <div className="relative z-10">
-                  {/* Top Row: Customer Avatar, Name, Location & Verified Badge */}
-                  <div className="flex items-center justify-between gap-3 mb-4">
-                    <div className="flex items-center gap-3">
-                      {/* Monogram Gradient Avatar */}
-                      <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-[#A80C42] via-[#C2185B] to-[#FFD3F6] text-white flex items-center justify-center font-bold text-xs shadow-sm ring-2 ring-white select-none shrink-0">
-                        {review.initials}
-                      </div>
-
-                      <div>
-                        <h4 className="font-playfair font-bold text-sm text-noir group-hover:text-[#A80C42] transition-colors leading-tight">
-                          {review.name}
-                        </h4>
-                        <div className="flex items-center gap-1 text-[11px] font-mono text-noir/55 mt-0.5">
-                          <MapPin className="w-3 h-3 text-[#A80C42]/70 shrink-0" />
-                          <span>{review.location}</span>
-                        </div>
+                  {/* Top Row: Customer Name, Location & Verified Badge */}
+                  <div className="flex items-start justify-between gap-3 mb-3.5">
+                    <div>
+                      <h4 className="font-playfair font-bold text-base sm:text-[17px] text-noir group-hover:text-[#A80C42] transition-colors leading-tight">
+                        {review.name}
+                      </h4>
+                      <div className="flex items-center gap-1 text-[11px] font-mono text-noir/55 mt-1">
+                        <MapPin className="w-3 h-3 text-[#A80C42]/70 shrink-0" />
+                        <span>{review.location}</span>
                       </div>
                     </div>
 
                     {/* Verified Buyer Pill */}
-                    <div className="inline-flex items-center gap-1 text-[10px] font-mono font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200 shrink-0">
+                    <div className="inline-flex items-center gap-1.5 text-[10px] font-mono font-semibold text-emerald-700 bg-emerald-50/90 px-2.5 py-1 rounded-full border border-emerald-200 shrink-0 shadow-2xs">
                       <CheckCircle2 className="w-3 h-3 text-emerald-600" />
                       <span>Verified</span>
                     </div>
@@ -319,27 +312,20 @@ export const ClientReviews: React.FC = () => {
                 <div className="absolute -top-10 -right-10 w-28 h-28 rounded-full bg-[#FFD3F6]/35 blur-2xl pointer-events-none group-hover:scale-125 transition-transform duration-500" />
 
                 <div className="relative z-10">
-                  {/* Top Row: Customer Avatar, Name, Location & Verified Badge */}
-                  <div className="flex items-center justify-between gap-3 mb-4">
-                    <div className="flex items-center gap-3">
-                      {/* Monogram Gradient Avatar */}
-                      <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-[#A80C42] via-[#C2185B] to-[#FFD3F6] text-white flex items-center justify-center font-bold text-xs shadow-sm ring-2 ring-white select-none shrink-0">
-                        {review.initials}
-                      </div>
-
-                      <div>
-                        <h4 className="font-playfair font-bold text-sm text-noir group-hover:text-[#A80C42] transition-colors leading-tight">
-                          {review.name}
-                        </h4>
-                        <div className="flex items-center gap-1 text-[11px] font-mono text-noir/55 mt-0.5">
-                          <MapPin className="w-3 h-3 text-[#A80C42]/70 shrink-0" />
-                          <span>{review.location}</span>
-                        </div>
+                  {/* Top Row: Customer Name, Location & Verified Badge */}
+                  <div className="flex items-start justify-between gap-3 mb-3.5">
+                    <div>
+                      <h4 className="font-playfair font-bold text-base sm:text-[17px] text-noir group-hover:text-[#A80C42] transition-colors leading-tight">
+                        {review.name}
+                      </h4>
+                      <div className="flex items-center gap-1 text-[11px] font-mono text-noir/55 mt-1">
+                        <MapPin className="w-3 h-3 text-[#A80C42]/70 shrink-0" />
+                        <span>{review.location}</span>
                       </div>
                     </div>
 
                     {/* Verified Buyer Pill */}
-                    <div className="inline-flex items-center gap-1 text-[10px] font-mono font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200 shrink-0">
+                    <div className="inline-flex items-center gap-1.5 text-[10px] font-mono font-semibold text-emerald-700 bg-emerald-50/90 px-2.5 py-1 rounded-full border border-emerald-200 shrink-0 shadow-2xs">
                       <CheckCircle2 className="w-3 h-3 text-emerald-600" />
                       <span>Verified</span>
                     </div>
