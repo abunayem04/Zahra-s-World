@@ -63,7 +63,7 @@ export const UnboxingGallery: React.FC = () => {
 
           {/* Statuesque Headline */}
           <h2 className="font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-noir tracking-tight leading-[1.12] mb-3">
-            The Unboxing Experience
+            Happy Client Moments
           </h2>
 
           <p className="font-sans text-xs sm:text-sm text-noir/70 max-w-xl mx-auto leading-relaxed">
