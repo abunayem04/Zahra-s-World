@@ -18,18 +18,18 @@ export const AboutSection: React.FC = () => {
   const brandPillars = [
     {
       icon: Gem,
-      title: "Optical K9 Precision",
-      desc: "Flawless, lead-free crystal glass engraved with micron-level laser fidelity to preserve 3D celestial nebulas for generations.",
+      title: "Curated Craftsmanship",
+      desc: "Premium optical K9 crystal spheres, hand-polished natural wooden bases, and high-fidelity audio keepsakes crafted to last for years.",
     },
     {
       icon: HeartHandshake,
-      title: "Crafted with Intention",
-      desc: "Every creation—from tactile analog voice keepsakes to kinetic sandscapes—is curated to turn fleeting emotions into permanent light.",
+      title: "Thoughtful Keepsakes",
+      desc: "Designed for birthdays, anniversaries, and heartfelt celebrations—turning meaningful personal memories into permanent, glowing art.",
     },
     {
       icon: ShieldCheck,
-      title: "Insured Nationwide Care",
-      desc: "Each item is encased in custom shockproof foam with double-wall corrugated packaging and 100% door-to-door transit protection.",
+      title: "Nationwide Care & COD",
+      desc: "Carefully packed in protective gift packaging with fast, reliable Cash on Delivery available across all 64 districts in Bangladesh.",
     },
   ];
 
@@ -50,10 +50,10 @@ export const AboutSection: React.FC = () => {
             The Atelier Story
           </span>
           <h2 className="font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-noir tracking-tight leading-[1.12] mb-4">
-            Where Light Meets Human Feeling
+            About Us
           </h2>
-          <p className="font-sans text-sm sm:text-base text-noir/70 max-w-xl mx-auto leading-relaxed">
-            Founded with a passion for celestial wonder and thoughtful keepsakes, Zahra&apos;s World bridges the gap between artisanal illumination and cherished personal memories.
+          <p className="font-sans text-sm sm:text-base text-noir/70 max-w-2xl mx-auto leading-relaxed">
+            Welcome to Zahra&apos;s World—a specialized boutique atelier dedicated to bringing heartfelt emotions to life through ambient lighting, celestial crystal art, and customized keepsakes.
           </p>
         </div>
 
@@ -101,19 +101,23 @@ export const AboutSection: React.FC = () => {
           {/* Right Column: Narrative & Philosophy */}
           <div className="lg:col-span-6 flex flex-col items-start text-left pt-6 lg:pt-0">
             <span className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-[#A80C42] mb-2 block">
-              Our Vision &amp; Heritage
+              Our Journey &amp; Mission
             </span>
             
             <h3 className="font-playfair text-2xl sm:text-3xl lg:text-[34px] font-bold text-noir leading-snug mb-5">
-              Turning fleeting moments into enduring light and living art.
+              Crafting meaningful keepsakes that illuminate your most precious moments.
             </h3>
 
             <p className="font-sans text-sm sm:text-[15px] text-noir/80 leading-relaxed mb-4">
-              We believe every gift tells a story. Whether it is a laser-sculpted solar system sphere resting beside your bed, a miniature cassette keychain preserving a loved one&apos;s laugh, or kinetic sand creating calming mountain horizons—our objects are made to be felt, kept, and cherished.
+              At <strong className="font-semibold text-noir">Zahra&apos;s World</strong>, we curate aesthetic, high-quality home decor and thoughtful gifts designed to make everyday spaces feel magical. From 3D laser-engraved K9 celestial crystal spheres and interactive voice cassette keychains to hypnotic moving sandscapes and ambient room dioramas, every piece in our collection is chosen with emotional depth and aesthetic finesse.
+            </p>
+
+            <p className="font-sans text-sm sm:text-[15px] text-noir/80 leading-relaxed mb-4">
+              Whether you are surprising someone special on their birthday, celebrating an anniversary, or styling your own personal sanctuary, our mission is to deliver unforgettable unboxing experiences with premium quality you can cherish forever.
             </p>
 
             <p className="font-sans text-sm sm:text-[15px] text-noir/80 leading-relaxed mb-8">
-              Based in Dhaka, our team handles every order with bespoke care, offering seamless nationwide Cash on Delivery and direct WhatsApp concierge assistance from inquiry to doorstep delivery.
+              Based in Dhaka, our dedicated team handles every order with bespoke care, offering seamless nationwide Cash on Delivery (COD) across Bangladesh and personal WhatsApp concierge assistance from inquiry to doorstep.
             </p>
 
             {/* Action Link to Collection */}
