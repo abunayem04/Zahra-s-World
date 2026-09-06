@@ -3,18 +3,14 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { 
-  Truck, 
-  RotateCcw, 
-  ShieldCheck, 
-  Headphones, 
   ArrowRight, 
-  ArrowUp,
+  ArrowUp, 
   Mail, 
   Check, 
   MapPin, 
   Phone, 
-  Clock,
-  ExternalLink
+  Clock, 
+  ExternalLink 
 } from "lucide-react";
 
 export const Footer: React.FC = () => {
@@ -39,80 +35,9 @@ export const Footer: React.FC = () => {
     <footer className="bg-[#090C1A] text-[#D1D5DB] border-t border-white/[0.08] font-sans antialiased selection:bg-[#D81B60] selection:text-white">
       
       {/* =========================================================================
-          1. VALUE PROPOSITIONS STRIP (Human, Clean, Authentic E-Commerce Trust)
+          1. NEWSLETTER & ATELIER CLUB (Refined, Editorial, Non-Gimmicky)
           ========================================================================= */}
       <div className="border-b border-white/[0.06] bg-[#070914]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
-            
-            {/* Value 1: Cash on Delivery */}
-            <div className="flex items-start gap-4">
-              <div className="w-11 h-11 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center shrink-0 text-[#FFD3F6]">
-                <Truck className="w-5 h-5" strokeWidth={1.5} />
-              </div>
-              <div>
-                <h4 className="font-sans text-sm font-semibold text-white tracking-tight">
-                  Doorstep Cash on Delivery
-                </h4>
-                <p className="text-xs text-white/55 mt-1 leading-relaxed">
-                  Inside Dhaka in 24–48 hours (Tk 70) and all 64 districts in 48–72 hours (Tk 130).
-                </p>
-              </div>
-            </div>
-
-            {/* Value 2: 7-Day Replacement */}
-            <div className="flex items-start gap-4">
-              <div className="w-11 h-11 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center shrink-0 text-[#C0E6DE]">
-                <RotateCcw className="w-5 h-5" strokeWidth={1.5} />
-              </div>
-              <div>
-                <h4 className="font-sans text-sm font-semibold text-white tracking-tight">
-                  7-Day Replacement Policy
-                </h4>
-                <p className="text-xs text-white/55 mt-1 leading-relaxed">
-                  Instant free replacement if your parcel encounters transit damage or mechanical defects.
-                </p>
-              </div>
-            </div>
-
-            {/* Value 3: Inspected Quality */}
-            <div className="flex items-start gap-4">
-              <div className="w-11 h-11 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center shrink-0 text-[#FFD3F6]">
-                <ShieldCheck className="w-5 h-5" strokeWidth={1.5} />
-              </div>
-              <div>
-                <h4 className="font-sans text-sm font-semibold text-white tracking-tight">
-                  Laser Inspected Quality
-                </h4>
-                <p className="text-xs text-white/55 mt-1 leading-relaxed">
-                  High-density K9 optical crystal, natural solid wood bases, and shockproof mailer boxes.
-                </p>
-              </div>
-            </div>
-
-            {/* Value 4: WhatsApp Support */}
-            <div className="flex items-start gap-4">
-              <div className="w-11 h-11 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center shrink-0 text-emerald-400">
-                <Headphones className="w-5 h-5" strokeWidth={1.5} />
-              </div>
-              <div>
-                <h4 className="font-sans text-sm font-semibold text-white tracking-tight">
-                  Dedicated Concierge
-                </h4>
-                <p className="text-xs text-white/55 mt-1 leading-relaxed">
-                  Personal assistance on WhatsApp (+880 1320-829916) every day from 9:00 AM to 11:00 PM.
-                </p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-      {/* =========================================================================
-          2. NEWSLETTER & ATELIER CLUB (Refined, Editorial, Non-Gimmicky)
-          ========================================================================= */}
-      <div className="border-b border-white/[0.06] bg-[#090C1A]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
             
