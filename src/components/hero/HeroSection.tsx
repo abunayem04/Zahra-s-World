@@ -70,13 +70,14 @@ const itemRevealVariants = {
   },
 };
 
-// Top 5 Most Demanded & Flagship Products for the Hero 3D Deck Swiper
+// Top 6 Most Demanded & Flagship Products for the Hero 3D Deck Swiper
 const FEATURED_HERO_IDS = [
   "crystal-ball-night-light",
   "retro-cassette-voice-recorder",
+  "car-wheel-rim-spinning-watch",
+  "volcano-flame-aroma-diffuser",
   "hello-kitty-silver-necklace-set",
-  "tulip-mirror-cube-lamp",
-  "astronaut-galaxy-star-projector",
+  "g-shaped-smart-lamp-speaker-charger",
 ];
 
 const DEMANDED_HERO_PRODUCTS = FEATURED_HERO_IDS
