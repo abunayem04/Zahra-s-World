@@ -10,6 +10,7 @@ interface GalleryItem {
   alt: string;
   colSpan: string;
   aspectClass: string;
+  badge?: string;
 }
 
 export const UnboxingGallery: React.FC = () => {
@@ -17,32 +18,44 @@ export const UnboxingGallery: React.FC = () => {
 
   const galleryItems: GalleryItem[] = [
     {
+      id: "parcel-stack",
+      image: "/assets/gallery/zahra_parcels_stack.jpg",
+      alt: "Zahra's World signature packaged parcel boxes ready for nationwide courier dispatch",
+      colSpan: "lg:col-span-7",
+      aspectClass: "h-[320px] sm:h-[400px] lg:h-[440px]",
+      badge: "Real Client Dispatch Stack",
+    },
+    {
+      id: "parcel-handheld",
+      image: "/assets/gallery/zahra_parcel_handheld.jpg",
+      alt: "Boutique Zahra's World sealed gift box delivered safely to client",
+      colSpan: "lg:col-span-5",
+      aspectClass: "h-[320px] sm:h-[400px] lg:h-[440px]",
+      badge: "Signature Gift Unboxing",
+    },
+    {
       id: "unboxing-crystal",
       image: "/assets/gallery/unboxing_crystal.jpg",
       alt: "Unboxing the glowing 3D Celestial Crystal Sphere",
-      colSpan: "lg:col-span-7",
-      aspectClass: "h-[320px] sm:h-[400px] lg:h-[440px]",
+      colSpan: "lg:col-span-4",
+      aspectClass: "h-[280px] sm:h-[340px] lg:h-[360px]",
+      badge: "3D Crystal Unboxing",
     },
     {
       id: "unboxing-cassette",
       image: "/assets/gallery/unboxing_cassette.jpg",
       alt: "Playing the Retro Pastel Voice Cassette Keychain",
-      colSpan: "lg:col-span-5",
-      aspectClass: "h-[320px] sm:h-[400px] lg:h-[440px]",
-    },
-    {
-      id: "unboxing-sandart",
-      image: "/assets/gallery/unboxing_sandart.jpg",
-      alt: "Interacting with the 360 Rotating Moving Sand Art Lamp",
-      colSpan: "lg:col-span-5",
-      aspectClass: "h-[320px] sm:h-[400px] lg:h-[440px]",
+      colSpan: "lg:col-span-4",
+      aspectClass: "h-[280px] sm:h-[340px] lg:h-[360px]",
+      badge: "Voice Cassette Playback",
     },
     {
       id: "unboxing-diorama",
       image: "/assets/gallery/unboxing_diorama.jpg",
       alt: "Unboxing the Swirling Snow Streetlamp Lantern and Velvet Jewelry Set",
-      colSpan: "lg:col-span-7",
-      aspectClass: "h-[320px] sm:h-[400px] lg:h-[440px]",
+      colSpan: "lg:col-span-4",
+      aspectClass: "h-[280px] sm:h-[340px] lg:h-[360px]",
+      badge: "Streetlamp Diorama Unboxing",
     },
   ];
 
@@ -81,7 +94,7 @@ export const UnboxingGallery: React.FC = () => {
               onClick={() => setSelectedImage(item.image)}
               className={`${item.colSpan} ${item.aspectClass} group relative rounded-[14px] sm:rounded-[16px] overflow-hidden cursor-pointer border border-noir/[0.08] shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_45px_-8px_rgba(216,27,96,0.18)] hover:border-[#D81B60]/40 transition-all duration-500 bg-[#FAF5F8] select-none`}
             >
-              {/* Pure Unobstructed Photographic Canvas (Zero Text On Image) */}
+              {/* Pure Photographic Canvas */}
               <Image
                 src={item.image}
                 alt={item.alt}
@@ -90,9 +103,16 @@ export const UnboxingGallery: React.FC = () => {
                 className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
               />
 
+              {/* Luxury Badge Tag */}
+              {item.badge && (
+                <div className="absolute top-3.5 left-3.5 z-10 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-white font-mono text-[10px] tracking-wider uppercase shadow-md pointer-events-none group-hover:bg-[#D81B60]/90 transition-colors">
+                  {item.badge}
+                </div>
+              )}
+
               {/* Subtle Ambient Hover Sheen */}
-              <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none flex items-center justify-center">
-                <div className="w-11 h-11 rounded-full bg-white/80 backdrop-blur-md text-noir flex items-center justify-center shadow-md scale-90 group-hover:scale-100 transition-transform duration-300">
+              <div className="absolute inset-0 bg-black/15 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none flex items-center justify-center">
+                <div className="w-11 h-11 rounded-full bg-white/90 backdrop-blur-md text-noir flex items-center justify-center shadow-lg scale-90 group-hover:scale-100 transition-transform duration-300">
                   <ZoomIn className="w-5 h-5 text-noir/80" />
                 </div>
               </div>

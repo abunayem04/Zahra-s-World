@@ -239,7 +239,9 @@ export const WhyChooseUs: React.FC = () => {
               <div 
                 className="absolute -inset-[100%] animate-[spin_5s_linear_infinite]"
                 style={{
-                  background: "conic-gradient(from 0deg at 50% 50%, transparent 0deg, transparent 270deg, #D81B60 310deg, #A80C42 335deg, #FFD3F6 355deg, transparent 360deg)"
+                  background: "conic-gradient(from 0deg at 50% 50%, transparent 0deg, transparent 270deg, #D81B60 310deg, #A80C42 335deg, #FFD3F6 355deg, transparent 360deg)",
+                  willChange: "transform",
+                  transform: "translate3d(0,0,0)",
                 }}
               />
             </div>
@@ -250,7 +252,9 @@ export const WhyChooseUs: React.FC = () => {
               <div 
                 className="absolute -inset-[100%] animate-[spin_5s_linear_infinite] pointer-events-none"
                 style={{
-                  background: "conic-gradient(from 0deg at 50% 50%, transparent 0deg, transparent 270deg, #D81B60 310deg, #A80C42 335deg, #FFD3F6 355deg, transparent 360deg)"
+                  background: "conic-gradient(from 0deg at 50% 50%, transparent 0deg, transparent 270deg, #D81B60 310deg, #A80C42 335deg, #FFD3F6 355deg, transparent 360deg)",
+                  willChange: "transform",
+                  transform: "translate3d(0,0,0)",
                 }}
               />
 
@@ -276,6 +280,7 @@ export const WhyChooseUs: React.FC = () => {
               className="w-full h-full overflow-visible" 
               viewBox="0 0 160 640" 
               preserveAspectRatio="none"
+              shapeRendering="geometricPrecision"
             >
               <defs>
                 <linearGradient id="curveGlowDefault" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -446,7 +451,9 @@ export const WhyChooseUs: React.FC = () => {
               <div 
                 className="absolute -inset-[100%] animate-[spin_5s_linear_infinite]"
                 style={{
-                  background: "conic-gradient(from 0deg at 50% 50%, transparent 0deg, transparent 270deg, #D81B60 310deg, #A80C42 335deg, #FFD3F6 355deg, transparent 360deg)"
+                  background: "conic-gradient(from 0deg at 50% 50%, transparent 0deg, transparent 270deg, #D81B60 310deg, #A80C42 335deg, #FFD3F6 355deg, transparent 360deg)",
+                  willChange: "transform",
+                  transform: "translate3d(0,0,0)",
                 }}
               />
             </div>
@@ -456,7 +463,9 @@ export const WhyChooseUs: React.FC = () => {
               <div 
                 className="absolute -inset-[100%] animate-[spin_5s_linear_infinite] pointer-events-none"
                 style={{
-                  background: "conic-gradient(from 0deg at 50% 50%, transparent 0deg, transparent 270deg, #D81B60 310deg, #A80C42 335deg, #FFD3F6 355deg, transparent 360deg)"
+                  background: "conic-gradient(from 0deg at 50% 50%, transparent 0deg, transparent 270deg, #D81B60 310deg, #A80C42 335deg, #FFD3F6 355deg, transparent 360deg)",
+                  willChange: "transform",
+                  transform: "translate3d(0,0,0)",
                 }}
               />
               <div className="relative z-10 rounded-[24px] bg-gradient-to-br from-white via-white to-[#FFF0F5]/80 border border-noir/[0.06] p-7 text-center">

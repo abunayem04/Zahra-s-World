@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { 
@@ -85,8 +85,11 @@ const DEMANDED_HERO_PRODUCTS = FEATURED_HERO_IDS
 
 export const HeroSection: React.FC = () => {
   const { openQuickView } = useCart();
+  const sectionRef = useRef<HTMLElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [isInView, setIsInView] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
 
   const totalProducts = DEMANDED_HERO_PRODUCTS.length;
 
@@ -98,17 +101,48 @@ export const HeroSection: React.FC = () => {
     setActiveIndex((prev) => (prev - 1 + totalProducts) % totalProducts);
   }, [totalProducts]);
 
-  // Auto-cycle cards every 3.8 seconds
+  // Responsive device check for fluid 3D card physics
   useEffect(() => {
-    if (isPaused) return;
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize, { passive: true });
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // IntersectionObserver to pause cycling when hero is out of view
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInView(entry.isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
+
+  // Auto-cycle cards every 3.8 seconds when visible & active
+  useEffect(() => {
+    if (isPaused || !isInView) return;
     const interval = setInterval(() => {
-      nextCard();
+      if (!document.hidden) {
+        nextCard();
+      }
     }, 3800);
     return () => clearInterval(interval);
-  }, [isPaused, nextCard]);
+  }, [isPaused, isInView, nextCard]);
 
   return (
-    <section className="relative overflow-hidden w-full min-h-[calc(100vh-80px)] flex items-center justify-center py-8 lg:py-12 px-4 sm:px-6 lg:px-8">
+    <section 
+      ref={sectionRef}
+      className="relative overflow-hidden w-full min-h-[calc(100vh-80px)] flex items-center justify-center py-8 lg:py-12 px-4 sm:px-6 lg:px-8"
+    >
       
       {/* =========================================================================
           BACKGROUND: 20 SEAMLESS HORIZONTAL COLOR STEPS (ZERO WHITE LINES)
@@ -158,6 +192,7 @@ export const HeroSection: React.FC = () => {
             repeat: Infinity,
             ease: "easeInOut",
           }}
+          style={{ willChange: "transform, opacity", transform: "translate3d(0,0,0)" }}
           className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[720px] h-[520px] rounded-full bg-white/45 blur-[130px] pointer-events-none" 
         />
         <motion.div 
@@ -172,6 +207,7 @@ export const HeroSection: React.FC = () => {
             repeat: Infinity,
             ease: "easeInOut",
           }}
+          style={{ willChange: "transform, opacity", transform: "translate3d(0,0,0)" }}
           className="absolute bottom-16 right-1/4 w-[480px] h-[480px] rounded-full bg-[#C0E6DE]/30 blur-[130px] pointer-events-none" 
         />
       </div>
@@ -267,7 +303,7 @@ export const HeroSection: React.FC = () => {
           >
             {/* Card Deck Stage with Perspective */}
             <div 
-              className="relative w-full max-w-[420px] sm:max-w-[480px] lg:max-w-[500px] h-[490px] sm:h-[530px] lg:h-[550px] flex items-center justify-center"
+              className="relative w-full max-w-[340px] xs:max-w-[420px] sm:max-w-[480px] lg:max-w-[500px] h-[430px] sm:h-[530px] lg:h-[550px] flex items-center justify-center overflow-visible"
               style={{ perspective: "1200px" }}
             >
               {DEMANDED_HERO_PRODUCTS.map((product, idx) => {
@@ -283,12 +319,12 @@ export const HeroSection: React.FC = () => {
 
                 const isFront = offset === 0;
 
-                // Exact fanned deck 3D geometry:
-                const rotation = offset * 8;
-                const rotateY = offset * -5;
-                const translateX = offset * 44;
-                const translateY = Math.abs(offset) * 14;
-                const scale = isFront ? 1 : 1 - Math.abs(offset) * 0.065;
+                // Adaptive fanned deck 3D geometry (silky on mobile & desktop):
+                const rotation = isMobile ? offset * 5 : offset * 8;
+                const rotateY = isMobile ? offset * -3 : offset * -5;
+                const translateX = isMobile ? offset * 24 : offset * 44;
+                const translateY = isMobile ? Math.abs(offset) * 8 : Math.abs(offset) * 14;
+                const scale = isFront ? 1 : 1 - Math.abs(offset) * (isMobile ? 0.05 : 0.065);
                 const zIndex = 20 - Math.abs(offset) * 4;
                 const blurAmount = isFront ? 0 : Math.min(Math.abs(offset) * 0.7, 2);
                 const brightness = isFront ? 1 : 0.92 - Math.abs(offset) * 0.08;
@@ -332,8 +368,10 @@ export const HeroSection: React.FC = () => {
                       border: isFront 
                         ? "2px solid rgba(255, 255, 255, 0.95)" 
                         : "1.5px solid rgba(255, 255, 255, 0.7)",
+                      transformStyle: "preserve-3d",
+                      willChange: "transform",
                     }}
-                    className={`absolute w-[280px] sm:w-[330px] lg:w-[350px] h-[390px] sm:h-[450px] lg:h-[480px] rounded-[20px] overflow-hidden cursor-pointer select-none ${
+                    className={`absolute w-[250px] xs:w-[280px] sm:w-[330px] lg:w-[350px] h-[370px] sm:h-[450px] lg:h-[480px] rounded-[20px] overflow-hidden cursor-pointer select-none ${
                       isFront
                         ? "shadow-[0_32px_80px_-12px_rgba(0,0,0,0.42),0_16px_36px_-6px_rgba(168,12,66,0.3)]"
                         : "shadow-[0_16px_38px_-8px_rgba(0,0,0,0.28)] opacity-90"

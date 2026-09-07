@@ -8,7 +8,15 @@ export interface ProductVariant {
 export interface Product {
   id: string;
   slug: string;
-  category: "crystal-lamps" | "retro-gadgets" | "romantic-gifts" | "ambient-dioramas" | "sand-art";
+  category: 
+    | "crystal-lamps" 
+    | "retro-gadgets" 
+    | "romantic-gifts" 
+    | "ambient-dioramas" 
+    | "sand-art" 
+    | "luxury-watches" 
+    | "smart-gadgets" 
+    | "personal-safety";
   categoryNameEn: string;
   badgeEn: string;
   nameEn: string;

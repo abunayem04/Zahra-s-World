@@ -1,10 +1,10 @@
 <div align="center">
 
 # ZAHRA'S WORLD
-### 3D GLOWING CRYSTAL LAMPS & THOUGHTFUL KEEPSAKES BOUTIQUE
+### 3D GLOWING CRYSTAL LAMPS, LUXURY TIMEPIECES & SMART GADGETS BOUTIQUE
 *Modern Boutique Store • Next.js 16 & React 19 Edition*
 
-[![Release](https://img.shields.io/badge/Release-v4.2.0--Payment_Ribbon_Polish-0D132C?style=for-the-badge&logoColor=FFD3F6)](#changelog--release-log)
+[![Release](https://img.shields.io/badge/Release-v5.0.0--Real_Product_Expansion-0D132C?style=for-the-badge&logoColor=FFD3F6)](#changelog--release-log)
 [![Framework](https://img.shields.io/badge/Stack-Next.js_16_%E2%80%A2_React_19_%E2%80%A2_TypeScript-426B69?style=for-the-badge)](#technical-architecture--stack)
 [![Motion](https://img.shields.io/badge/Motion-Framer_Motion_11_%E2%80%A2_Lenis-A80C42?style=for-the-badge&labelColor=0D132C)](#signature-interactive-features)
 [![Design-System](https://img.shields.io/badge/Design_System-Haute_Minimalism-426B69?style=for-the-badge)](#brand-visual-identity--color-system)
@@ -16,7 +16,7 @@
 <br/>
 
 > **"Turning special moments into beautiful, glowing memories."**  
-> An elegant online gift boutique built with Next.js 16, React 19, Framer Motion, and TypeScript for 3D laser-engraved crystal ball lamps, custom voice-recording cassette keychains, 360° rotating sand art, and ambient tabletop night lights.
+> An elegant online gift boutique built with Next.js 16, React 19, Framer Motion, and TypeScript for 3D laser-engraved crystal ball lamps, spinning car wheel watches, smart RGB gadgets, custom voice-recording cassette keychains, 360° rotating sand art, and ambient tabletop night lights.
 
 </div>
 
@@ -217,6 +217,22 @@ Open your browser at:
 ---
 
 ## 📜 Changelog & Release Log
+
+### [v5.0.0] — 2026-09-07
+- **Real Client Inventory & Image Integration (42 High-Resolution Assets)**:
+  - Processed and mapped all 42 uploaded client product and unboxing photos into semantic asset folders (`public/assets/products/` and `public/assets/gallery/`).
+  - Completely replaced placeholder imagery with authentic client photography across all product cards, detail views, and variant selectors.
+- **Product Category Expansion**:
+  - Expanded TypeScript data models to support 3 brand-new categories:
+    - `luxury-watches`: 3D Car Wheel Rim Spinning Quartz Watches (Brembo Red, Yellow, Volk Silver, Titanium), Arabic Numeral Palestine Map & Marble Watch (Azure Blue & Couple Set).
+    - `smart-gadgets`: Volcano Aroma Flame Diffuser, G-Shaped Smart RGB Atmosphere Lamp & 15W Wireless Charger, RGB Glowing Cat Ear Headphones, Sanrio Character Mini Fans (Kuromi, Pochacco, Pompompurin), Bluetooth Pocket Thermal Printer, Ergonomic Aluminum Laptop Stand, Semiconductor Gaming Phone Cooler, 3D Silicone AirPods Cases.
+    - `personal-safety`: Heavy-Duty Telescopic Self-Defense Steel Baton with tactical holster and presentation box.
+- **Authentic Client Unboxing Gallery ("Moments of Wonder")**:
+  - Integrated real customer parcel dispatch stack photography (`zahra_parcels_stack.jpg`) and handheld boutique unboxing parcel photos (`zahra_parcel_handheld.jpg`) into the asymmetric bento grid.
+  - Added luxury interactive badge pills and full-screen high-res lightbox inspection.
+- **Catalog Filtering & URL Synchronized Search**:
+  - Added dynamic category pill tabs for all 8 categories.
+  - Implemented real-time URL query parameter synchronization (`?category=` and `?q=`) wrapped in React 19 `Suspense`.
 
 ### [v4.2.0] — 2026-09-07
 - **Codebase Optimization & Dead File Purge**:

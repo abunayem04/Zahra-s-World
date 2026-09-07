@@ -83,25 +83,61 @@ export const TrendingShowcase: React.FC = () => {
     setIsDragging(false);
   };
 
+  const sectionRef = useRef<HTMLElement>(null);
+  const exactSetWidthRef = useRef<number>(0);
+  const [isInView, setIsInView] = useState(true);
+
+  // Measure and cache exactSetWidth without reading it in the rAF loop
+  const updateCachedWidth = useCallback(() => {
+    const el = scrollRef.current;
+    if (!el || el.children.length < PRODUCTS.length * 2) return;
+    const child0 = el.children[0] as HTMLElement;
+    const childSet1 = el.children[PRODUCTS.length] as HTMLElement;
+    if (child0 && childSet1) {
+      const w = childSet1.offsetLeft - child0.offsetLeft;
+      if (w > 0) {
+        exactSetWidthRef.current = w;
+      }
+    }
+  }, []);
+
   // Initial center alignment to middle set so users can pan both left & right
   useEffect(() => {
     const el = scrollRef.current;
     if (!el) return;
 
     const timer = setTimeout(() => {
-      if (el && el.children.length >= PRODUCTS.length * 2) {
-        const child0 = el.children[0] as HTMLElement;
-        const childSet1 = el.children[PRODUCTS.length] as HTMLElement;
-        if (child0 && childSet1) {
-          const exactSetWidth = childSet1.offsetLeft - child0.offsetLeft;
-          if (exactSetWidth > 0 && el.scrollLeft === 0) {
-            el.scrollLeft = exactSetWidth;
-          }
-        }
+      updateCachedWidth();
+      if (exactSetWidthRef.current > 0 && el.scrollLeft === 0) {
+        el.scrollLeft = exactSetWidthRef.current;
       }
     }, 60);
 
-    return () => clearTimeout(timer);
+    const handleResize = () => {
+      updateCachedWidth();
+    };
+
+    window.addEventListener("resize", handleResize, { passive: true });
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [updateCachedWidth]);
+
+  // Pause rAF when offscreen using IntersectionObserver
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInView(entry.isIntersecting);
+      },
+      { threshold: 0.05 }
+    );
+
+    observer.observe(section);
+    return () => observer.disconnect();
   }, []);
 
   // Global mouseup listener for smooth drag release anywhere
@@ -113,36 +149,40 @@ export const TrendingShowcase: React.FC = () => {
     return () => window.removeEventListener("mouseup", handleGlobalMouseUp);
   }, []);
 
-  // Smooth continuous auto-looping animation (Slow Right-to-Left)
+  // Smooth continuous auto-looping animation (Zero Layout Thrashing & 60-120fps GPU Smooth)
   useEffect(() => {
+    if (!isInView) return;
+
     let animId: number;
     let lastTime: number | null = null;
     const SPEED_PX_PER_SEC = 35; // Gentle, elegant slow crawl (~35px/s)
 
     const step = (time: number) => {
+      if (document.hidden) {
+        lastTime = time;
+        animId = requestAnimationFrame(step);
+        return;
+      }
+
       if (!lastTime) lastTime = time;
-      const delta = (time - lastTime) / 1000;
+      const delta = Math.min((time - lastTime) / 1000, 0.1); // Cap delta to prevent jump on tab switch
       lastTime = time;
 
       const el = scrollRef.current;
-      if (el && el.children.length >= PRODUCTS.length * 2) {
-        const child0 = el.children[0] as HTMLElement;
-        const childSet1 = el.children[PRODUCTS.length] as HTMLElement;
-        const exactSetWidth = childSet1 && child0 ? childSet1.offsetLeft - child0.offsetLeft : 0;
+      const exactSetWidth = exactSetWidthRef.current;
 
-        if (exactSetWidth > 0) {
-          // Move slowly right to left when not hovered, dragged, or interacted with
-          if (!isHovered && !isDragging && !isTouching && !isInteracting) {
-            el.scrollLeft += SPEED_PX_PER_SEC * delta;
-          }
+      if (el && exactSetWidth > 0) {
+        // Move slowly right to left when not hovered, dragged, or interacted with
+        if (!isHovered && !isDragging && !isTouching && !isInteracting) {
+          el.scrollLeft += SPEED_PX_PER_SEC * delta;
+        }
 
-          // Seamless infinite wrap check
-          if (!isInteracting) {
-            if (el.scrollLeft >= exactSetWidth * 2) {
-              el.scrollLeft -= exactSetWidth;
-            } else if (el.scrollLeft <= exactSetWidth * 0.4) {
-              el.scrollLeft += exactSetWidth;
-            }
+        // Seamless infinite wrap check
+        if (!isInteracting) {
+          if (el.scrollLeft >= exactSetWidth * 2) {
+            el.scrollLeft -= exactSetWidth;
+          } else if (el.scrollLeft <= exactSetWidth * 0.4) {
+            el.scrollLeft += exactSetWidth;
           }
         }
       }
@@ -152,10 +192,14 @@ export const TrendingShowcase: React.FC = () => {
 
     animId = requestAnimationFrame(step);
     return () => cancelAnimationFrame(animId);
-  }, [isHovered, isDragging, isTouching, isInteracting]);
+  }, [isInView, isHovered, isDragging, isTouching, isInteracting]);
 
   return (
-    <section id="collection" className="relative w-full py-14 sm:py-20 bg-gradient-to-b from-[#FAF5F8] via-[#FDFBFD] to-[#F5F1F4] overflow-hidden">
+    <section 
+      ref={sectionRef}
+      id="collection" 
+      className="relative w-full py-14 sm:py-20 bg-gradient-to-b from-[#FAF5F8] via-[#FDFBFD] to-[#F5F1F4] overflow-hidden"
+    >
       {/* Soft Ambient Caustic Halo Lights */}
       <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[800px] h-[340px] rounded-full bg-[#FFD3F6]/30 blur-[140px] pointer-events-none" />
       <div className="absolute bottom-10 right-10 w-[420px] h-[420px] rounded-full bg-[#C0E6DE]/20 blur-[130px] pointer-events-none" />

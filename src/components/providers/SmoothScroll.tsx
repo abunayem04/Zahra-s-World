@@ -6,15 +6,20 @@ import "lenis/dist/lenis.css";
 
 export const SmoothScroll: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   useEffect(() => {
-    // Initialize Lenis with boutique luxury cinematic inertia
+    // Respect user's motion preference
+    if (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return;
+    }
+
+    // Initialize Lenis with boutique luxury cinematic inertia (60-120fps fluid)
     const lenis = new Lenis({
-      duration: 1.25,
+      duration: 1.15,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: "vertical",
       gestureOrientation: "vertical",
       smoothWheel: true,
-      wheelMultiplier: 1.05,
-      touchMultiplier: 1.6,
+      wheelMultiplier: 1.0,
+      touchMultiplier: 1.2,
       infinite: false,
     });
 
@@ -29,7 +34,7 @@ export const SmoothScroll: React.FC<{ children: React.ReactNode }> = ({ children
           e.preventDefault();
           lenis.scrollTo(targetElement as HTMLElement, { 
             offset: -76, 
-            duration: 1.2,
+            duration: 1.1,
             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
           });
         }

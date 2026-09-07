@@ -1,8 +1,9 @@
 "use client";
 
-import React, { useState, useMemo, useEffect } from "react";
+import React, { useState, useMemo, useEffect, Suspense } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { PRODUCTS } from "@/data/products";
 import { useCart } from "@/context/CartContext";
 import { 
@@ -21,22 +22,41 @@ import {
 
 const CATEGORIES = [
   { id: "all", name: "All Products" },
+  { id: "luxury-watches", name: "Luxury Watches" },
+  { id: "smart-gadgets", name: "Smart Gadgets & Fans" },
   { id: "crystal-lamps", name: "3D Crystal Lamps" },
   { id: "retro-gadgets", name: "Voice Keepsakes" },
   { id: "romantic-gifts", name: "Jewelry & Gift Sets" },
+  { id: "personal-safety", name: "Personal Safety" },
   { id: "sand-art", name: "Moving Sand Art" },
   { id: "ambient-dioramas", name: "Tabletop Dioramas" },
 ];
 
 const PRODUCTS_PER_PAGE = 12;
 
-export default function ProductsPage() {
+function ProductsContent() {
   const { addItem, toggleWishlist, isWishlisted } = useCart();
-  const [selectedCategory, setSelectedCategory] = useState("all");
-  const [searchQuery, setSearchQuery] = useState("");
+  const searchParams = useSearchParams();
+  const initialCategory = searchParams.get("category") || "all";
+  const initialQuery = searchParams.get("q") || "";
+
+  const [selectedCategory, setSelectedCategory] = useState(initialCategory);
+  const [searchQuery, setSearchQuery] = useState(initialQuery);
   const [sortBy, setSortBy] = useState<"featured" | "price-asc" | "price-desc" | "rating">("featured");
   const [currentPage, setCurrentPage] = useState(1);
   const [addedId, setAddedId] = useState<string | null>(null);
+
+  // Sync state if URL query params change
+  useEffect(() => {
+    const cat = searchParams.get("category");
+    const q = searchParams.get("q");
+    if (cat && cat !== selectedCategory) {
+      setSelectedCategory(cat);
+    }
+    if (q !== null && q !== searchQuery) {
+      setSearchQuery(q);
+    }
+  }, [searchParams]);
 
   // Reset page to 1 on category/search/sort change
   useEffect(() => {
@@ -396,5 +416,19 @@ export default function ProductsPage() {
 
       </div>
     </div>
+  );
+}
+
+export default function ProductsPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen bg-[#FAF6F8] flex items-center justify-center py-20">
+          <div className="animate-spin rounded-full h-10 w-10 border-2 border-[#D81B60] border-t-transparent" />
+        </div>
+      }
+    >
+      <ProductsContent />
+    </Suspense>
   );
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Star, CheckCircle2, Quote, Sparkles, Gem, MapPin } from "lucide-react";
 
 interface Review {
@@ -141,8 +141,26 @@ const ROW_TWO_REVIEWS: Review[] = [
 ];
 
 export const ClientReviews: React.FC = () => {
+  const sectionRef = React.useRef<HTMLElement>(null);
+  const [isInView, setIsInView] = useState(true);
   const [isRowOnePaused, setIsRowOnePaused] = useState(false);
   const [isRowTwoPaused, setIsRowTwoPaused] = useState(false);
+
+  // Pause marquee when offscreen
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInView(entry.isIntersecting);
+      },
+      { threshold: 0.05 }
+    );
+
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
 
   // Duplicate items for seamless infinite scroll loop
   const rowOneItems = [...ROW_ONE_REVIEWS, ...ROW_ONE_REVIEWS, ...ROW_ONE_REVIEWS];
@@ -150,6 +168,7 @@ export const ClientReviews: React.FC = () => {
 
   return (
     <section 
+      ref={sectionRef}
       id="reviews" 
       className="relative w-full py-16 sm:py-24 bg-gradient-to-b from-[#F5F1F4] via-[#FDFBFD] to-[#FAF6FA] border-t border-noir/[0.06] overflow-hidden"
     >
@@ -214,13 +233,13 @@ export const ClientReviews: React.FC = () => {
           <div 
             className="flex gap-4 sm:gap-6 w-max animate-marquee-left py-2"
             style={{
-              animationPlayState: isRowOnePaused ? "paused" : "running",
+              animationPlayState: !isInView || isRowOnePaused ? "paused" : "running",
             }}
           >
             {rowOneItems.map((review, idx) => (
               <div
                 key={`r1-${idx}`}
-                className="w-[320px] sm:w-[370px] lg:w-[400px] relative rounded-[20px] bg-gradient-to-br from-white via-white to-[#FFF0F6]/80 border border-[#A80C42]/15 p-6 shadow-[0_4px_24px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_45px_-8px_rgba(168,12,66,0.22)] hover:border-[#A80C42]/45 hover:-translate-y-1.5 transition-all duration-400 flex flex-col justify-between select-none shrink-0 group overflow-hidden"
+                className="w-[280px] xs:w-[320px] sm:w-[370px] lg:w-[400px] relative rounded-[20px] bg-gradient-to-br from-white via-white to-[#FFF0F6]/80 border border-[#A80C42]/15 p-5 sm:p-6 shadow-[0_4px_24px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_45px_-8px_rgba(168,12,66,0.22)] hover:border-[#A80C42]/45 hover:-translate-y-1.5 transition-all duration-400 flex flex-col justify-between select-none shrink-0 group overflow-hidden"
               >
                 {/* Top Subtle Luxury Gradient Accent Line */}
                 <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#FFD3F6] via-[#D81B60] to-[#A80C42] opacity-75 group-hover:opacity-100 transition-opacity" />
@@ -294,13 +313,13 @@ export const ClientReviews: React.FC = () => {
           <div 
             className="flex gap-4 sm:gap-6 w-max animate-marquee-right py-2"
             style={{
-              animationPlayState: isRowTwoPaused ? "paused" : "running",
+              animationPlayState: !isInView || isRowTwoPaused ? "paused" : "running",
             }}
           >
             {rowTwoItems.map((review, idx) => (
               <div
                 key={`r2-${idx}`}
-                className="w-[320px] sm:w-[370px] lg:w-[400px] relative rounded-[20px] bg-gradient-to-br from-white via-white to-[#FFF0F6]/80 border border-[#A80C42]/15 p-6 shadow-[0_4px_24px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_45px_-8px_rgba(168,12,66,0.22)] hover:border-[#A80C42]/45 hover:-translate-y-1.5 transition-all duration-400 flex flex-col justify-between select-none shrink-0 group overflow-hidden"
+                className="w-[280px] xs:w-[320px] sm:w-[370px] lg:w-[400px] relative rounded-[20px] bg-gradient-to-br from-white via-white to-[#FFF0F6]/80 border border-[#A80C42]/15 p-5 sm:p-6 shadow-[0_4px_24px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_45px_-8px_rgba(168,12,66,0.22)] hover:border-[#A80C42]/45 hover:-translate-y-1.5 transition-all duration-400 flex flex-col justify-between select-none shrink-0 group overflow-hidden"
               >
                 {/* Top Subtle Luxury Gradient Accent Line */}
                 <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#A80C42] via-[#D81B60] to-[#FFD3F6] opacity-75 group-hover:opacity-100 transition-opacity" />
